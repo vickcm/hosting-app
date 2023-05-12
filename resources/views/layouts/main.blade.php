@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    @vite(['resources/css/app.css', 'resources/scss/app.scss'])
+
+    <title>@yield('title') :: Hosting - Servicio </title>
+</head>
+
+<body>
+    <div id="app">
+
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+                <div class="container-fluid">
+                    <a class="navbar-brand text-warning" href="{{ route('home') }}">Hosting Servicio</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+                        aria-controls="navbar" aria-expanded="false" aria-label="Abrir/cerrar menú de navegación">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbar">
+                        <ul class="navbar-nav">
+                            <li class="nav-item ">
+                                <a class="nav-link " href="{{ route('home') }}">Home</a>
+                                <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('about') }}">Quiénes Somos</a>
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link" href="{{ route('posts') }}">Blog</a>
+                            </li> 
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container py-3">
+                @yield('header-hero')
+
+            </div>
+         
+    
+
+        </header>
+
+     
+        <main class="container py-3">
+
+            <section>
+                @yield('main')
+            </section>
+
+            <section>
+                @yield('products')
+            </section>
+            
+
+        </main>
+
+
+
+        <footer class="bg-dark text-light py-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Información de contacto</h5>
+                        <p>Teléfono: 555-1234<br>Email: info@misitio.com</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Redes sociales</h5>
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><a href="#">Facebook</a></li>
+                            <li class="list-inline-item"><a href="#">Twitter</a></li>
+                            <li class="list-inline-item"><a href="#">Instagram</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+
+    @vite(['resources/js/app.js'])
+
+</body>
+
+</html>

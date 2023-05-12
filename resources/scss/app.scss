@@ -1,0 +1,15 @@
+
+$primary: #0a6789;
+$secondary: #fa6632;
+$success: #0a996f;
+$danger: #cf0638;
+$warning: #fecd23;
+$light: #F1F6F9;
+$dark: #212A3E;
+
+$table-hover-color:           $dark;
+$table-hover-bg-factor:       .085;
+$table-hover-bg:              rgba($secondary, $table-hover-bg-factor);
+
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+@import 'bootstrap/scss/bootstrap';
