@@ -34,6 +34,22 @@
                              <li class="nav-item">
                                 <a class="nav-link" href="{{ route('posts') }}">Blog</a>
                             </li> 
+                            
+
+                           @auth
+                           <li class="nav-item">
+                            <form action="{{ route('auth.processLogout') }}" method="post">
+                                @csrf
+                              
+                                <button type="submit" class="btn  nav-link">{{ auth()->user()->username }} (Cerrar Sesión)</button>
+                            </form>
+                        </li>
+                             
+                            @else
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('auth.formLogin') }}">Iniciar Sesión</a>
+                            </li>
+                            @endauth
                         </ul>
                     </div>
                 </div>
@@ -50,6 +66,17 @@
 
      
         <main class="container py-3">
+
+            @if (Session::has('message'))
+            <div class="alert alert-{{ Session::get('type') }} alert-dismissible fade show"
+                role="alert">
+                <p>{!! Session::get('message') !!}
+                </p>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar">
+
+                </button>
+            </div>
+        @endif
 
             <section>
                 @yield('main')
