@@ -6,8 +6,8 @@
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    @vite(['resources/css/app.css', 'resources/scss/app.scss'])
-
+    <link rel="stylesheet" href="{{ url('css/app.css') }}">
+    <link rel="stylesheet" href="{{ url('css/bootstrap.min.css') }}">
     <title>@yield('title') :: Hosting - Servicio </title>
 </head>
 
@@ -113,7 +113,7 @@
     </div>
 
 
-    @vite(['resources/js/app.js'])
+    <script src="{{ url('bootstrap.bundle.js') }}"></script>
 
 </body>
 
