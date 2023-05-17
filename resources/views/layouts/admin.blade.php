@@ -1,93 +1,69 @@
 <!doctype html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ url('css/app.css') }}">
-    <link rel="stylesheet" href="{{ url('css/bootstrap.min.css') }}">
-
-
+    <link rel="stylesheet" href="{{ url('css/bootstrap/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url('css/style.css') }}">
     <title>@yield('title') :: Hosting - Servicio </title>
 </head>
-
 <body>
-    <div id="app">
-        
-        <div class="container-fluid m-0">
-            <div class="row">
-                <header class="col-2">
-                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-left vh-100">
-                        <div class="container-fluid flex-column">
-                          <a class="navbar-brand  d-flex flex-column justify-content-center" href="{{ route('home') }}">Mi Sitio</a>
-                          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                          </button>
-                          <div class="collapse navbar-collapse" id="navbarNav">
-                            <ul class="navbar-nav flex-column">
-                              <li class="nav-item">
-                                <a class="nav-link" href="#">Inicio</a>
-                              </li>
-                              <li class="nav-item">
-                                <a class="nav-link" href="#">Nosotros</a>
-                              </li>
-                              <li class="nav-item">
-                                <a class="nav-link" href="#">Productos</a>
-                              </li>
-                              <li class="nav-item">
-                                <a class="nav-link" href="#">Contacto</a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                    </nav>
-                    
-                </header>
-              
-
-              
-                  
-                <div class="col-10">
-                    <main class="container py-3">
-
-                        @if (Session::has('message'))
-                            <div class="alert alert-{{ Session::get('type') }} alert-dismissible fade show"
-                                role="alert">
-                                <p>{!! Session::get('message') !!}
-                                </p>
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar">
-
-                                </button>
-                            </div>
-                        @endif
-                        @yield('abm-post')
-                    </main>
-                </div>
-            </div>
+    <!-- Navegación -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <p class="offcanvas-title fs-4" id="offcanvasExampleLabel">NubeWeb <img src="/public/img/logo.png" alt="logo del sitio, nube web"></p>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <footer class="bg-dark text-white py-3">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h5>Información de contacto</h5>
-                        <p>Teléfono: 555-1234<br>Email: info@misitio.com</p>
-                    </div>
-                    <div class="col-md-6">
-                        <h5>Redes sociales</h5>
-                        <ul class="list-inline">
-                            <li class="list-inline-item"><a href="#">Facebook</a></li>
-                            <li class="list-inline-item"><a href="#">Twitter</a></li>
-                            <li class="list-inline-item"><a href="#">Instagram</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        <div class="user-wrapper"> <!-- chekear este csss -->
+            <p> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+                </svg> 
+                sojita2004@hotmail.com
+            </p>
+            <small>Admin</small>
+        </div>
+        <div class="sidebar offcanvas-body">
+            <nav class="sidebar-menu">
+                <ul class="list-unstyled">
+                    <li class="nav-item mb-3">
+                        <a class="nav-link" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-text" viewBox="0 0 16 16"><path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/><path d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8zm0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/></svg>
+                            Posteos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                            <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/></svg>
+                            Cerrar Sesion
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </div>
-    <script src="{{ url('bootstrap.bundle.js') }}"></script>
-
+    <main>
+        <header class="dashboard-header">
+            <div class="d-flex">
+                <button class="btn btn-header" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/></svg>
+                </button>
+                <h1 class="text-center fs-2 mt-1 mb-0 mt-md-0 mb-md-1">Panel de Administración || NuveWeb</h1>
+            </div>
+        </header>
+        <!-- Panel -->
+        <section class="container-fluid dashboard">
+            @if (Session::has('message'))
+                <div class="alert alert-{{ Session::get('type') }} alert-dismissible fade show" role="alert">
+                    <p> {!! Session::get('message') !!} </p>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+                </div>
+            @endif
+            @yield('abm-post')
+        </section>
+    </main>
+    <script src="{{ url('js/bootstrap.bundle.js') }}"></script>
 </body>
-
 </html>
