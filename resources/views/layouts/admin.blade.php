@@ -12,7 +12,7 @@
     <!-- Navegación -->
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-header">
-            <p class="offcanvas-title fs-4" id="offcanvasExampleLabel">NubeWeb <img src="/public/img/logo.png" alt="logo del sitio, nube web"></p>
+            <p class="offcanvas-title fs-4" id="offcanvasExampleLabel">NubeWeb <img src="{{ url('img/logo.png') }}" alt="logo del sitio, nube web"></p>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="user-wrapper"> <!-- chekear este csss -->
