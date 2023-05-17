@@ -60,3 +60,20 @@ html, body, #app{
     padding-top: 8px;
     padding-left: 29px;
 }
+
+
+
+    .sidebar-menu a{
+        padding-left: 1rem;
+        display: block;
+        font-size: 1.1rem;
+    }
+    .sidebar-menu ul li a:hover{
+        background-color: #c9ccff;
+        padding: 10px;
+        border-radius: 10px;
+    }
+.user-wrapper {
+    padding-top: 8px;
+    padding-left: 29px;
+}
