@@ -44,7 +44,7 @@ class PostsSeeder extends Seeder
                     
                     No importa si eres un principiante en WordPress o un usuario avanzado, elegir un hosting especializado en esta plataforma puede ayudarte a obtener el mejor rendimiento para tu sitio web.",
                     "user_id"=> 2,
-                    "category_id"=> 1,
+                    "category_id"=> 2,
                     'created_at' => now(),
                     'updated_at' => now(),
                 ],
@@ -59,7 +59,7 @@ class PostsSeeder extends Seeder
                     
                     No importa si eres un principiante en WordPress o un usuario avanzado, elegir un hosting especializado en esta plataforma puede ayudarte a obtener el mejor rendimiento para tu sitio web.",
                     "user_id"=> 1,
-                    "category_id"=> 2,
+                    "category_id"=> 3,
                     'created_at' => now(),
                     'updated_at' => now(),
                 ],
@@ -74,7 +74,7 @@ class PostsSeeder extends Seeder
                     
                     No importa si eres un principiante en WordPress o un usuario avanzado, elegir un hosting especializado en esta plataforma puede ayudarte a obtener el mejor rendimiento para tu sitio web.",
                     "user_id"=> 1,
-                    "category_id"=> 2,
+                    "category_id"=> 4,
                     'created_at' => now(),
                     'updated_at' => now(),
                 ],

@@ -8,13 +8,13 @@ use Doctrine\DBAL\Schema\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
-
+use App\Models\Category;
 
 class PostController extends Controller
 {
     public function posts() {
 
-        $posts = Post::all();
+        $posts = Post::with(['category'])->get(); // soluciona query n+1
         return view('posts', [
             'posts' => $posts,
         ]);

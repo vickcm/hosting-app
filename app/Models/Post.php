@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use App\Models\Category;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+
 
 class Post extends Model
 {
@@ -34,7 +37,7 @@ class Post extends Model
             'title' => 'required|min:5',
             'content' => 'required|min:30',
             'user_id' => 'required|integer',
-            'category_id' => 'required|integer',
+            // 'category_id' => 'required|integer',
         ];
     }
 
@@ -46,11 +49,15 @@ class Post extends Model
             'content.min' => 'El campo contenido debe tener al menos 30 caracteres',
             'user_id.required' => 'El campo usuario es obligatorio',
             'user_id.integer' => 'El campo usuario debe ser un número entero',
-            'category_id.required' => 'El campo categoría es obligatorio',
+            // 'category_id.required' => 'El campo categoría es obligatorio',
             'category_id.integer' => 'El campo categoría debe ser un número entero',
 
         ];
     }   
+
+    public function category():BelongsTo  {
+        return $this->belongsTo(Category::class, 'category_id', 'category_id');
+    }
 
     
 }

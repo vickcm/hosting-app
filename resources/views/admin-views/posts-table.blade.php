@@ -34,7 +34,7 @@
                     <td class="fw-semibold">{{ $post->title }}</td>
                     <td>{{ $post->getShortContent($post->content, 300) }}</td>
                     <td>{{ $post->user_id }}</td>
-                    <td>{{ $post->category_id }}</td>
+                    <td>{{ $post->category->name }}</td>
                     <td>
                         <div class="d-flex gap-2">
 
