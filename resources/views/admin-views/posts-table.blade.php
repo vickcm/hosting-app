@@ -8,16 +8,16 @@
 <div class="mb-3 d-flex cards-abm">
     <div class="card me-3">
         <div class="card-body">
-            <p class="card-title">CANTIDAD DE POSTEOS</p>
+            <p class="card-title">{{ count($posts) }}</p>
             <span class="card-text">Posteos</span>
         </div>
     </div>
-    <div class="card">
+   {{--  <div class="card">
         <div class="card-body">
-            <p class="card-title">CANTIDAD CATEGORÍAS</p>
+            <p class="card-title"></p>
             <span class="card-text">Categorías</span>
         </div>
-    </div>
+    </div> --}}
 </div>
 <div class="card">
     <div class="card-header d-flex flex-column flex-md-row justify-content-md-between align-items-center">

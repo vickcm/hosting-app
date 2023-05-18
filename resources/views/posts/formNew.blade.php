@@ -9,7 +9,9 @@
 @section('title', 'Publicar una Entrada')
 
 @section('abm-post')
-!doctype html>
+
+
+<!doctype html>
 <html lang="es">
 <head>
     <h2 class="mb-3 text-center titulo-admin">Publicar una Entrada</h2>

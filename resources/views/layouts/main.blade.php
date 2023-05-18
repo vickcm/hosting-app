@@ -39,7 +39,7 @@
                             <form action="{{ route('auth.processLogout') }}" method="post">
                                 @csrf
                               
-                                <button type="submit" class="btn  nav-link">{{ auth()->user()->username }} (Cerrar Sesión)</button>
+                                <button type="submit" class="btn  nav-link">{{ auth()->user()->email }} (Cerrar Sesión)</button>
                             </form>
                         </li>
                              
