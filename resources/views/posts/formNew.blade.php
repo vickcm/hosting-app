@@ -11,7 +11,6 @@
 @section('abm-post')
     <h2 class="mb-3">Publicar una Entrada</h2>
 
-
     <form action="{{ route('posts.processNew') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
@@ -22,7 +21,6 @@
                 aria-describedby="error-title" 
                 @enderror
                 value="{{ old('title') }}">
-
             @error('title')
                 <div class="text-danger mt-1 bg-light p-2" id="error-title">
                     <i class="bi bi-exclamation-triangle" title="error"></i>

@@ -1,11 +1,9 @@
 <?php
-
 /** @var \App\Models\Post[]|\Illuminate\Database\Eloquent\Collection $posts
  *
  * use _ to indicate that this is a partial view
  */
 ?>
-
 
 <div class="row">
     

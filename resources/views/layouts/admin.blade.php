@@ -6,13 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ url('css/bootstrap/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url('css/style.css') }}">
-    <title>@yield('title') :: Hosting - Servicio </title>
+    <title>@yield('title') :: NubeWeb  </title>
+    <link rel="icon" href="{{ url('img/logo.png') }}">
 </head>
 <body>
     <!-- Navegación -->
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas offcanvas-start"  tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-header">
-            <p class="offcanvas-title fs-4" id="offcanvasExampleLabel">NubeWeb <img src="{{ url('img/logo.png') }}" alt="logo del sitio, nube web"></p>
+            <a href="{{ route('home') }}" target="_blank" class="offcanvas-title fs-4 text-decoration-none" id="offcanvasExampleLabel">NubeWeb <img src="{{ url('img/logo.png') }}" alt="logo del sitio, nube web"></a>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="user-wrapper"> <!-- chekear este csss -->
@@ -50,10 +51,9 @@
                 <button class="btn btn-header" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/></svg>
                 </button>
-                <h1 class="text-center fs-2 mt-1 mb-0 mt-md-0 mb-md-1">Panel de Administración || NuveWeb</h1>
+                <h1 class="text-center fs-2 mt-1 mb-0 mt-md-0 mb-md-1">Panel de Administración || <span>NuveWeb</span></h1>
             </div>
         </header>
-        <!-- Panel -->
         <section class="container-fluid dashboard">
             @if (Session::has('message'))
                 <div class="alert alert-{{ Session::get('type') }} alert-dismissible fade show" role="alert">
