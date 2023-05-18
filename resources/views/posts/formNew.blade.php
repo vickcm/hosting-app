@@ -9,7 +9,7 @@
 @section('title', 'Publicar una Entrada')
 
 @section('abm-post')
-    <h2 class="mb-3 text-center title-nuevo">Publicar una Entrada</h2>
+    <h2 class="mb-3 text-center titulo-admin">Publicar una Entrada</h2>
     <div class="form-nueva-entrada">
         <form action="{{ route('posts.processNew') }}" method="post" enctype="multipart/form-data">
             @csrf

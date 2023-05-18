@@ -86,7 +86,7 @@ html, body, #app{
     height: 250px;
     box-shadow: 0px 1px 3px 1px rgb(54 72 182 / 45%);
 }
-.editar-titulo, .title-nuevo{
+.titulo-admin{
     color: #3648b6;
 }
 .borrar-titulo{
