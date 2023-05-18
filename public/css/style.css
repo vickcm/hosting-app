@@ -155,7 +155,15 @@ hr{
     padding: 20px;
 }
 .section-cuatro .card-body{
-    height: 10rem;
+    min-height: 13rem;
+}
+.section-cuatro .btn-entradas{
+    background: #3648b6;
+    color: #fff;
+    border-radius: 10px;
+}
+.section-cuatro .btn-entradas:hover{
+    background: #12289f;
 }
 @media screen and (max-width: 768px) {
     .form-editar, .form-nueva-entrada{
