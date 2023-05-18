@@ -105,10 +105,29 @@ html, body, #app{
     padding: 20px;
 }
 .section-dos{
-    background: #fbfafc;
+    background: #fff;
     padding: 20px;
 }	
-
+.section-dos h2{
+    color: #150e6b;
+}
+.section-dos .card-body-dos{
+    background: #e1e5f052;
+    padding: 15px;
+    border-radius: 10px;
+    width: 18rem;
+    height: 9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.section-dos .card-body-dos img{
+    padding: 10px;
+    background: linear-gradient(238deg, #e1e5f0, #c9ccff);
+    border-radius: 50px;
+    height: 64px;
+    width: 70px;
+}
 
 @media screen and (max-width: 768px) {
     .form-editar, .form-nueva-entrada{

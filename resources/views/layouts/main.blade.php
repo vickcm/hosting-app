@@ -64,8 +64,8 @@
                 @yield('products')
             </section>
         </main>
-        <footer class="bg-light">
-            <p class="m-0">Micaela Guggiari &copy; 2023 | App Hibridas | Brian Lara</p>
+        <footer class="bg-light d-flex justify-content-center align-items-center mt-3">
+            <p class="m-0">Micaela Guggiari && Victoria Castro Mena &copy; 2023 || Portales y Comercio Electronico || Santiago Gallino</p>
         </footer>
     </div>
     <script src="{{ url('js/bootstrap.bundle.js') }}"></script>
