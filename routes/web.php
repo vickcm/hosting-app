@@ -69,3 +69,7 @@ Route::get('entradas/{id}/eliminar', [\App\Http\Controllers\PostController::clas
 
 Route::post('entradas/{id}/eliminar', [\App\Http\Controllers\PostController::class, 'processDelete'])
     ->name('posts.processDelete');
+
+// ABM CATEGORIAS 
+Route::get('categorias', [\App\Http\Controllers\CategoryController::class, 'index'])
+    ->name('categories-abm');
