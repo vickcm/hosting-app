@@ -3,13 +3,13 @@
 
 ?>
 
-@section('title', 'Últimas entradas')
+@section('title', 'Blog')
 
 @extends('layouts.main')
 
 @section('main')
 
-    <h1 class="mb-3">Ultimas Entradas</h1>
+    <h1 class="mb-3">Nuestro Blog de noticias</h1>
     @include('posts._allpost-data')
 
 @endsection

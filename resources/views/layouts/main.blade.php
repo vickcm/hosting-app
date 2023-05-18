@@ -48,24 +48,17 @@
             </nav>
         </header>
         <main class="container-fluid container-fluid-lg">
-            <section class="section-uno row">
-                @yield('header-hero')
-            </section>
+         
             @if (Session::has('message'))
             <div class="alert alert-{{ Session::get('type') }} alert-dismissible fade show" role="alert">
                 <p>{!! Session::get('message') !!}</p>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
             </div>
             @endif
-            <section class="section-dos">
-                @yield('products')
-            </section>
-            <section class="section-tres row">
-                @yield('main')
-            </section>
-            <section class="section-cuatro row">
-                @yield('posts')
-            </section>
+
+            @yield('main')
+            
+           
         </main>
         <footer class="d-flex justify-content-center align-items-center">
             <p class="m-0">Micaela Guggiari && Victoria Castro Mena &copy; 2023 || Portales y Comercio Electronico || Santiago Gallino</p>
