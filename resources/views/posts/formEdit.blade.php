@@ -19,10 +19,10 @@ echo '</pre>'; */
         <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
         <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/><path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/></svg>
     </h2>
-    <div class="row form-editar">
+    <div class="form-editar">
         <form action="{{ route('posts.processEdit', ['id' => $post->id  ] ) }}" method="post" enctype="multipart/form-data">
             @csrf
-            <div class="mb-3 col-12">
+            <div class="mb-3">
                 <label for="title" class="form-label">Título</label>
                 <input type="text" id="title" name="title" class="form-control"
                     placeholder="Ingrese el título de la entrada"
@@ -37,7 +37,7 @@ echo '</pre>'; */
                     </div>
                 @enderror
             </div>
-            <div class="mb-3 col-12">
+            <div class="mb-3">
                 <label for="user_id" class="form-label">Usuario</label>
                 <input type="number" id="user_id" name="user_id" class="form-control"
                     @error('user_id')
@@ -52,7 +52,7 @@ echo '</pre>'; */
                     </div>
                 @enderror
             </div>
-            <div class="mb-3 col-12">
+            <div class="mb-3">
                 <label for="category_id" class="form-label">Categoría</label>
                 <input type="number" id="category_id" name="category_id" class="form-control"
                     @error('category_id')
@@ -66,7 +66,7 @@ echo '</pre>'; */
                     </div>
                 @enderror
             </div>
-            <div class="mb-3 col-12">
+            <div class="mb-3">
                 <label for="content" class="form-label">Contenido</label>
                 <textarea id="content" name="content" class="form-control"
                 @error('content') aria-describedby="error-content" @enderror
@@ -78,14 +78,14 @@ echo '</pre>'; */
                     </div>
                 @enderror
             </div>
-            <div class="mb-3 col-12"> Imagen actual 
+            <div class="mb-3"> Imagen actual 
                 @if($post->image !== null && Storage::has('img/' . $post->image))
                     <img class="mw-100" src="{{ Storage::url('img/' . $post->image) }}" alt="{{ $post->image_description }}">
                 @else
                     <p>Acá iría una imagen diciendo que no hay imagen.</p>
                 @endif
             </div>
-            <div class="mb-3 col-12">
+            <div class="mb-3">
                 <label for="image">Imagen</label>
                 <input type="file" id="image" name="image" class="form-control"
                 @error('image') aria-describedby="error-image" @enderror
@@ -97,8 +97,8 @@ echo '</pre>'; */
                     </div>
                 @enderror
             </div>
-            <div>
-                <button type="submit" class="btn btn-warning">Editar Entrada</button>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-warning me-3">Editar Entrada</button>
                 <a href="{{ route('home') }}" class="btn btn-success" type="submit"> <!-- ACA VA EL LINK ADMIN -->
                     Cancelar
                 </a>
