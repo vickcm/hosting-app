@@ -24,4 +24,4 @@
     <div class="card-title"> {{$post->title}} </div>
     <div class="card-body"> {{$post->content}} </div>
 </div>
- --}}
+--}}
