@@ -13,7 +13,7 @@
     <div id="app">
         <header>
             <nav class="navbar navbar-expand-lg main-nav" >
-                <div class="container-fluid">
+                <div class="container">
                     <a class="navbar-brand text-white" href="{{ route('home') }}">NubeWeb <img src="{{ url('img/logo.png') }}" alt="logo del sitio, nube web" width="30" height="24" class="d-inline-block align-text-top"> </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Abrir/cerrar menú de navegación">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" class="bi" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path></svg>
@@ -57,14 +57,17 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
             </div>
             @endif
-            <section class="section-dos row">
-                @yield('main')
-            </section>
-            <section>
+            <section class="section-dos">
                 @yield('products')
             </section>
+            <section class="section-tres row">
+                @yield('main')
+            </section>
+            <section class="section-cuatro row">
+                @yield('posts')
+            </section>
         </main>
-        <footer class="bg-light d-flex justify-content-center align-items-center mt-3">
+        <footer class="d-flex justify-content-center align-items-center">
             <p class="m-0">Micaela Guggiari && Victoria Castro Mena &copy; 2023 || Portales y Comercio Electronico || Santiago Gallino</p>
         </footer>
     </div>

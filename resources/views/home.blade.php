@@ -10,12 +10,12 @@
         <div>
             <label class="text-uppercase text-secondary-emphasis fw-medium">crea tu propio sitio con</label>
             <h1 class="text-uppercase text-white fs-2">
-                premium hosting
+                NubeWeb
             </h1>
             <p class="text-uppercase text-secondary-emphasis fw-medium">
-                minitexto                         
+                premium hosting                         
             </p>
-            <button class="btn btn-danger">Ver Productos</button>
+            <button class="btn btn-dashboard">Ver Productos</button>
         </div>
     </div>
     <div class="col-12 col-md-7 d-flex justify-content-center justify-content-md-start">
@@ -26,8 +26,17 @@
     </div>
 @endsection
 
+@section('products')
+<div class="row">
+    <x-product-data :products="$products" /> 
+</div>
+@endsection
+
 @section('main')
-<div class="col-12">
+<div class="col-12 d-flex justify-content-center">
+    <hr>
+</div>
+<div class="col-12 mt-3">
     <h2 class="text-center">¿Porqué Elegirnos?</h2>
 </div>
 <div class="col-12 mt-3">
@@ -38,20 +47,17 @@
         </div>
         <div class="card-body-dos mt-2 mt-md-0">
             <img src="{{ url('img/encrypted.png') }}" class="card-img-top" alt="...">
-            <p>Seguro y Protegido</p>
+            <p class="fw-semibold text-center mt-2">Seguro y Protegido</p>
         </div>
         <div class="card-body-dos mt-2 mt-md-0">
             <img src="{{ url('img/helpline.png') }}" class="card-img-top" alt="...">
-            <p>Nuestro Apoyo Dedicado</p>
+            <p class="fw-semibold text-center mt-2">Nuestro Apoyo Dedicado</p>
         </div>
     </div>
 </div>
 @endsection
 
-@section('products')
-<div class="row">
-    <x-product-data :products="$products" /> 
-</div>
+@section('posts')
 <div class="row">
     <x-latest-posts :posts="$posts"/>
 </div> 

@@ -7,11 +7,8 @@
 @extends('layouts.main')
 
 @section('main')
-
     <h2 class="mb-3">Productos</h2>
-
     <div class="row">
         @include('products._allproducts-data')
     </div>
-
 @endsection
