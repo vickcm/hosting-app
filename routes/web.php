@@ -41,9 +41,13 @@ Route::get('/productos', [\App\Http\Controllers\ProductController::class, 'index
     ->name('products.products');
 
 
-// ABM 
-Route::get('/dashboard', [\App\Http\Controllers\AdminController::class, 'dashboard'])
-    ->name('dashboard');
+// ADMIN - POSTEOS - ENTRADAS
+Route::get('/dashboard', [\App\Http\Controllers\AdminController::class, 'indexPosts'])
+    ->name('dashboardPosts');
+
+// ADMIN - CATEGORIAS 
+Route::get('/dashboard/categorias', [\App\Http\Controllers\AdminController::class, 'indexCategories'])
+    ->name('dashboardCategories');
 
 Route::get('entradas/nueva', [\App\Http\Controllers\PostController::class, 'formNew'])
     ->name('posts.formNew');
@@ -70,6 +74,3 @@ Route::get('entradas/{id}/eliminar', [\App\Http\Controllers\PostController::clas
 Route::post('entradas/{id}/eliminar', [\App\Http\Controllers\PostController::class, 'processDelete'])
     ->name('posts.processDelete');
 
-// ABM CATEGORIAS 
-Route::get('categorias', [\App\Http\Controllers\CategoryController::class, 'index'])
-    ->name('categories-abm');

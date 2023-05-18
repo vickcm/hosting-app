@@ -49,7 +49,7 @@ class PostController extends Controller
 
         Post::create($data);
         return redirect()
-            ->route('dashboard')
+            ->route('dashboardPosts')
             ->with('message', 'Entrada creada correctamente')
             ->with('type', 'warning');
     }
@@ -84,7 +84,7 @@ class PostController extends Controller
         $this->deleteImage($oldImage);
 
         return redirect()
-            ->route('dashboard')
+            ->route('dashboardPosts')
             ->with('message', 'Entrada editada correctamente')
             ->with('type', 'warning');
     }
@@ -107,7 +107,7 @@ class PostController extends Controller
         $this->deleteImage($post->image);
 
         return redirect()
-            ->route('dashboard')
+            ->route('dashboardPosts')
             ->with('message', 'Entrada eliminada correctamente')
             ->with('type', 'success');
 

@@ -25,7 +25,7 @@ class AuthController extends Controller
         }
 
         $request->session()->regenerate();
-        return redirect()->route('dashboard')
+        return redirect()->route('dashboardPosts')
             ->with('message', 'Bienvenido ' . auth()->user()->username)
             ->with('type', 'success');
     }

@@ -99,7 +99,7 @@ echo '</pre>'; */
             </div>
             <div class="d-flex justify-content-center">
                 <button type="submit" class="btn btn-warning me-3">Editar Entrada</button>
-                <a href="{{ route('home') }}" class="btn btn-success" type="submit"> <!-- ACA VA EL LINK ADMIN -->
+                <a href="{{ route('dashboardPosts') }}" class="btn btn-success" type="submit"> <!-- ACA VA EL LINK ADMIN -->
                     Cancelar
                 </a>
             </div>

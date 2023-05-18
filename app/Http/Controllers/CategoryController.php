@@ -9,14 +9,6 @@ class CategoryController extends Controller
 {
     //
 
-    public function index()
-    {
-        $categories = Category::all();
-
-
-        return view('admin-views.categories-table', [
-            'categories' => $categories,
-        ]);
-    }
+   
 
 }
