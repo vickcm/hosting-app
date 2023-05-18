@@ -157,13 +157,15 @@ hr{
 .section-cuatro .card-body{
     min-height: 13rem;
 }
-.section-cuatro .btn-entradas{
-    background: #3648b6;
+.btn-entradas{
     color: #fff;
+    background: #3648b6;
     border-radius: 10px;
 }
-.section-cuatro .btn-entradas:hover{
+.btn-entradas:hover{
+    color: #fff;
     background: #12289f;
+    border-radius: 10px;
 }
 @media screen and (max-width: 768px) {
     .form-editar, .form-nueva-entrada{
