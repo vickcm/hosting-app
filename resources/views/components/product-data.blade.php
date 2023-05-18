@@ -5,11 +5,9 @@ print_r($product);
 echo '</pre>'; 
  */
 ?>
-
 <section>
     <h2 class="mb-3">Productos</h2>
-   
-   <div class="row">
+    <div class="row">
         @foreach ($products as $product)
             <div class="col-md-4">
                 <div class="card">
@@ -22,8 +20,5 @@ echo '</pre>';
                 </div>
             </div>
         @endforeach
-
     </div> 
-
 </section>
-

@@ -11,108 +11,63 @@
 </head>
 <body>
     <div id="app">
-
         <header>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+            <nav class="navbar navbar-expand-lg main-nav" >
                 <div class="container-fluid">
-                    <a class="navbar-brand text-warning" href="{{ route('home') }}">Hosting Servicio</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
-                        aria-controls="navbar" aria-expanded="false" aria-label="Abrir/cerrar menú de navegación">
-                        <span class="navbar-toggler-icon"></span>
+                    <a class="navbar-brand text-white" href="{{ route('home') }}">NubeWeb <img src="{{ url('img/logo.png') }}" alt="logo del sitio, nube web" width="30" height="24" class="d-inline-block align-text-top"> </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Abrir/cerrar menú de navegación">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" class="bi" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path></svg>
                     </button>
                     <div class="collapse navbar-collapse justify-content-end" id="navbar">
                         <ul class="navbar-nav">
                             <li class="nav-item ">
-                                <a class="nav-link " href="{{ route('home') }}">Home</a>
+                                <a class="nav-link text-white" href="{{ route('home') }}">Inicio</a>
                                 <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('about') }}">Quiénes Somos</a>
+                                <a class="nav-link text-white" href="{{ route('about') }}">Nosotros</a>
                             </li>
-                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('posts') }}">Blog</a>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{ route('posts') }}">Blog</a>
                             </li> 
-                            
-
-                           @auth
-                           <li class="nav-item">
-                            <form action="{{ route('auth.processLogout') }}" method="post">
-                                @csrf
-                              
-                                <button type="submit" class="btn  nav-link">{{ auth()->user()->email }} (Cerrar Sesión)</button>
-                            </form>
-                        </li>
-                             
+                            @auth
+                            <li class="nav-item">
+                                <form action="{{ route('auth.processLogout') }}" method="post">
+                                    @csrf
+                                    <button type="submit" class="btn  nav-link">{{ auth()->user()->email }} (Cerrar Sesión)</button>
+                                </form>
+                            </li>
                             @else
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('auth.formLogin') }}">Iniciar Sesión</a>
+                                <a class="nav-link text-white" href="{{ route('auth.formLogin') }}">Iniciar Sesión</a>
                             </li>
                             @endauth
                         </ul>
                     </div>
                 </div>
             </nav>
-
-            <div class="container py-3">
-                @yield('header-hero')
-
-            </div>
-         
-    
-
         </header>
-
-     
-        <main class="container py-3">
-
+        <main class="container-fluid container-fluid-lg">
+            <section class="section-uno row">
+                @yield('header-hero')
+            </section>
             @if (Session::has('message'))
-            <div class="alert alert-{{ Session::get('type') }} alert-dismissible fade show"
-                role="alert">
-                <p>{!! Session::get('message') !!}
-                </p>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar">
-
-                </button>
+            <div class="alert alert-{{ Session::get('type') }} alert-dismissible fade show" role="alert">
+                <p>{!! Session::get('message') !!}</p>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
             </div>
-        @endif
-
-            <section>
+            @endif
+            <section class="section-dos row">
                 @yield('main')
             </section>
-
             <section>
                 @yield('products')
             </section>
-            
-
         </main>
-
-
-
-        <footer class="bg-dark text-light py-3">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h5>Información de contacto</h5>
-                        <p>Teléfono: 555-1234<br>Email: info@misitio.com</p>
-                    </div>
-                    <div class="col-md-6">
-                        <h5>Redes sociales</h5>
-                        <ul class="list-inline">
-                            <li class="list-inline-item"><a href="#">Facebook</a></li>
-                            <li class="list-inline-item"><a href="#">Twitter</a></li>
-                            <li class="list-inline-item"><a href="#">Instagram</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        <footer class="bg-light">
+            <p class="m-0">Micaela Guggiari &copy; 2023 | App Hibridas | Brian Lara</p>
         </footer>
-
     </div>
-
-
-    <script src="{{ url('bootstrap.bundle.js') }}"></script>
-
+    <script src="{{ url('js/bootstrap.bundle.js') }}"></script>
 </body>
-
 </html>
