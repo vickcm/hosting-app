@@ -14,8 +14,9 @@
         <header>
             <nav class="navbar navbar-expand-lg main-nav" >
                 <div class="container">
-                    <a class="navbar-brand text-white" href="{{ route('home') }}">NubeWeb <img src="{{ url('img/logo.png') }}" alt="logo del sitio, nube web" width="30" height="24" class="d-inline-block align-text-top"> </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Abrir/cerrar menú de navegación">
+                    <a class="navbar-brand text-white" href="{{ route('home') }}">NubeWeb <img src="{{ url('img/logo.png') }}" alt="logo del sitio, nube web" width="30" height="24" class="d-inline-block align-text-top"> 
+                    </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Abrir/cerrar menú de navegación">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" class="bi" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path></svg>
                     </button>
                     <div class="collapse navbar-collapse justify-content-end" id="navbar">
@@ -34,7 +35,7 @@
                             <li class="nav-item">
                                 <form action="{{ route('auth.processLogout') }}" method="post">
                                     @csrf
-                                    <button type="submit" class="btn  nav-link">{{ auth()->user()->email }} (Cerrar Sesión)</button>
+                                    <button class="btn nav-link text-white">{{ auth()->user()->email }} (Cerrar Sesión)</button>
                                 </form>
                             </li>
                             @else
@@ -47,18 +48,14 @@
                 </div>
             </nav>
         </header>
-        <main class="container-fluid container-fluid-lg">
-         
+        <main class="container-fluid">
             @if (Session::has('message'))
             <div class="alert alert-{{ Session::get('type') }} alert-dismissible fade show" role="alert">
                 <p>{!! Session::get('message') !!}</p>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
             </div>
             @endif
-
             @yield('main')
-            
-           
         </main>
         <footer class="d-flex justify-content-center align-items-center">
             <p class="m-0">Micaela Guggiari && Victoria Castro Mena &copy; 2023 || Portales y Comercio Electronico || Santiago Gallino</p>

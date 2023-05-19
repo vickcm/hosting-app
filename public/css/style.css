@@ -28,6 +28,10 @@ hr{
     height: 1px;
     border: none;
 }
+.alert{
+    width: 30%;
+    margin: auto;
+}
 /* DASHBOARD */
 /* header */
 .dashboard-header{
@@ -58,12 +62,13 @@ hr{
 .offcanvas-header a {
     color: #150e6b;
 }
-.sidebar-menu a{
+.sidebar-menu a, .sidebar-menu form button{
     font-size: 1.1rem;
     padding: 10px;
     display: block;
+    border-radius: 10px;
 }
-.sidebar-menu ul li a:hover{
+.sidebar-menu ul li a:hover, .sidebar-menu ul li form button:hover{
     background-color: #c9ccff;
     border-radius: 10px;
 }
@@ -115,14 +120,21 @@ hr{
     padding: 20px;
 }
 .section-dos .productos{
+    padding: 10px;
     border: #e1e5f0 1px solid;
     border-radius: 10px;
     display: flex;
     justify-content: center;
 }
-.section-dos .productos:hover {
-    color: #fff;
-    background-color: #3648b6;
+.section-dos .btn-hostin{
+    color: #150e6b;
+    border: #3648b6 1px solid;
+    border-radius: 10px;
+}
+.section-dos .btn-hostin:hover{
+    color: #150e6b;
+    background-color: #3647b650;
+    border: #3648b6 1px solid;
     border-radius: 10px;
 }
 .section-tres{
@@ -138,10 +150,13 @@ hr{
     padding: 15px;
     border-radius: 10px;
     width: 18rem;
-    height: 9rem;
+    height: 13rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.section-tres .card-body-dos p:last-child{
+    font-size: 14px;
 }
 .section-tres .card-body-dos img{
     padding: 10px;
@@ -167,11 +182,93 @@ hr{
     background: #12289f;
     border-radius: 10px;
 }
+/* blog */
+.section-blog{
+    width: 77%;
+    margin: auto;
+}
+.blog{
+    color: #150e6b;
+}
+.section-blog .card {
+    min-height: 13rem;
+}
+/* nosotros */
+.section-nosotros{
+    margin: auto;
+    width: 85%;
+}
+.section-nosotros div h1, .section-nosotros div h2 {
+    color: #3648b6;
+}
+.section-nosotros div label{
+    font-size: 18px;
+}
+.section-nosotros div label strong, .section-nosotros .last-div div label strong{
+    color: #150e6b;
+}
+.section-nosotros .div-diferentes{
+    background: #fff;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 6px;
+    box-shadow: 2px 1px 3px 2px rgb(0 0 0 / 8%);
+}
+.section-nosotros .div-diferentes label:last-child{
+    font-size: 16px;
+}
+.section-nosotros .last-div{
+    width: 80%;
+    margin: auto;
+}
+/* login */
+.login{
+    width: 40%;
+    margin: auto;
+    background: #e1e5f04a;
+    padding: 54px;
+    border-radius: 10px;
+}
+.login form button{
+    background: #c9ccff;
+    border-radius: 10px;
+}
+.login form button:hover{
+    background: #a8acf8;
+    border-radius: 10px;
+}
 @media screen and (max-width: 768px) {
     .form-editar, .form-nueva-entrada{
         width: 100%;
     }
     .section-tres{
         margin: 0;
+    }
+    .section-blog{
+        width: 100%;
+        margin: 0;
+    }
+    .login{
+        width: 100%;
+        margin: 0;
+    }
+    .alert{
+        width: 100%;
+    }
+    .section-nosotros{
+        margin: 0;
+        width: 100%;
+    }
+    .section-nosotros div:last-child{
+        padding: 20px;
+    }
+}
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+    .section-tres{
+        margin: 0;
+    }
+    .section-nosotros{
+        margin: 0;
+        width: 100%;
     }
 }

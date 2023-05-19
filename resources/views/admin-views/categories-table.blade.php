@@ -34,7 +34,6 @@
                         <th scope="col">Id</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Descripción</th>
-                       
                     </tr>
                 </thead>
                 <tbody>

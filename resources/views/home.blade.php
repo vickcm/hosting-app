@@ -8,7 +8,6 @@
 @section('title', 'Home')
 
 @section('main')
-
     <section class="section-uno row">
         <div class="col-12 col-md-5 p-3 text-right d-flex  justify-content-center justify-content-md-end align-items-center">
             <div>
@@ -25,17 +24,12 @@
         <div class="col-12 col-md-7 d-flex justify-content-center justify-content-md-start">
             <picture>
                 <source srcset="{{ url('img/section-uno-desktop.png') }}" media="(min-width:768px)">
-                <img class="img-fluid" alt="persona mirando compu creando una idea"
-                    src="{{ url('img/section-uno-mobile.png') }}">
+                <img class="img-fluid" alt="persona mirando compu creando una idea" src="{{ url('img/section-uno-mobile.png') }}">
             </picture>
         </div>
-
     </section>
 
     <section class="section-dos">
-        <div class="row"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea fugiat consectetur, debitis obcaecati harum eveniet numquam praesentium, beatae saepe deserunt rem corrupti accusantium tempora, voluptatibus nostrum inventore. Odit, nobis perspiciatis. 
-
-        </div>
         <div class="row">
             <x-product-data :products="$products" />
         </div>
@@ -52,19 +46,21 @@
                 <div class="card-body-dos">
                     <img src="{{ url('img/server.png') }}" alt="nuve atendiendo servidor">
                     <p class="fw-semibold text-center mt-2">99.9% Garantía de tiempo de actividad</p>
+                    <p class="text-center">Compartir procesos y datos sobre la base que necesita saber</p>
                 </div>
                 <div class="card-body-dos mt-2 mt-md-0">
                     <img src="{{ url('img/encrypted.png') }}" class="card-img-top" alt="...">
                     <p class="fw-semibold text-center mt-2">Seguro y Protegido</p>
+                    <p class="text-center">Nuestro equipo aseguró que su sitio web siempre esté seguro y protegido</p>
                 </div>
                 <div class="card-body-dos mt-2 mt-md-0">
                     <img src="{{ url('img/helpline.png') }}" class="card-img-top" alt="...">
                     <p class="fw-semibold text-center mt-2">Nuestro Apoyo Dedicado</p>
+                    <p class="text-center"> loreminsupmasdjkasd</p>
                 </div>
             </div>
         </div>
     </section>
-   
 
     <div class="section-cuatro row">
         <x-latest-posts :posts="$posts" />
