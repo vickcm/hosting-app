@@ -1,16 +1,16 @@
-@extends('layouts.admin')
+@extends('layouts.main')
 
 @section('title', __('No encontrado'))
 @section('code', 'La página no fue encontrada pero te invitamos a seguir navegando por nuestro sitio.')
 
 
-@section('abm-post')
+@section('main')
 
 <p>
-    La solicitud no pudo procesarse. 
+    Página no encontrada.
 </p>
 
-<a href="{{ route('dashboard') }}" role="button" class="btn btn-success">
-    Ir al Administrador
+<a href="{{ route('home') }}" role="button" class="btn btn-success">
+    Ir al Sitio Web 
 </a>
 @endsection

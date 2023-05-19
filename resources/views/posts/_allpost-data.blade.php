@@ -8,8 +8,12 @@
 <div class="col-md-4">
     <div class="card">
         <div class="card-body">
+            <div class="text-end fw-bold text-primary">
+                {{ $post->category->name }}
+            </div>
             <h5 class="card-title" > {{ $post->title }} </h5>
             <p class="card-text">{{ $post->getShortContent($post->content, 100) }}</p>
+           
             <a href="#" class="btn btn-entradas">Ver más</a>
         </div>
     </div>
