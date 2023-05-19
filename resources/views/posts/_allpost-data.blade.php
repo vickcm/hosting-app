@@ -4,9 +4,8 @@
  * use _ to indicate that this is a partial view
  */
 ?>
-<div class="row section-blog">
 @foreach ($posts as $post)
-    <div class="col-md-4 mt-3 mb-3">
+    <div class="col-12 col-md-4 mt-3 mb-3">
         <div class="card">
             <div class="card-body">
                 <div class="fw-medium text-secondary mb-2">
@@ -19,7 +18,6 @@
         </div>
     </div>
 @endforeach
-</div>
 {{-- <div class="card">
     <div>
         imagen

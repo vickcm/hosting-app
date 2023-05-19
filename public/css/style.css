@@ -259,8 +259,12 @@ hr{
         margin: 0;
         width: 100%;
     }
-    .section-nosotros div:last-child{
+    .section-nosotros div:nth-child(2){
         padding: 20px;
+    }
+    .section-nosotros .last-div{
+        width: 100%;
+        margin: 0;
     }
 }
 @media screen and (min-width: 769px) and (max-width: 1200px) {

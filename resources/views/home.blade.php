@@ -8,33 +8,33 @@
 @section('title', 'Home')
 
 @section('main')
-    <section class="section-uno row">
-        <div class="col-12 col-md-5 p-3 text-right d-flex  justify-content-center justify-content-md-end align-items-center">
-            <div>
-                <label class="text-uppercase text-secondary-emphasis fw-medium">crea tu propio sitio con</label>
-                <h1 class="text-uppercase text-white fs-2">
-                    NubeWeb
-                </h1>
-                <p class="text-uppercase text-secondary-emphasis fw-medium">
-                    premium hosting
-                </p>
-                <button class="btn btn-dashboard">Ver Productos</button>
-            </div>
+<section class="section-uno row">
+    <div class="col-12 col-md-5 p-3 text-right d-flex  justify-content-center justify-content-md-end align-items-center">
+        <div>
+            <label class="text-uppercase text-secondary-emphasis fw-medium">crea tu propio sitio con</label>
+            <h1 class="text-uppercase text-white fs-2">
+                NubeWeb
+            </h1>
+            <p class="text-uppercase text-secondary-emphasis fw-medium">
+                premium hosting
+            </p>
+            <button class="btn btn-dashboard">Ver Productos</button>
         </div>
-        <div class="col-12 col-md-7 d-flex justify-content-center justify-content-md-start">
-            <picture>
-                <source srcset="{{ url('img/section-uno-desktop.png') }}" media="(min-width:768px)">
-                <img class="img-fluid" alt="persona mirando compu creando una idea" src="{{ url('img/section-uno-mobile.png') }}">
-            </picture>
-        </div>
-    </section>
-
-    <section class="section-dos">
-        <div class="row">
-            <x-product-data :products="$products" />
-        </div>
-    </section>
-    <section class="section-tres row" >
+    </div>
+    <div class="col-12 col-md-7 d-flex justify-content-center justify-content-md-start">
+        <picture>
+            <source srcset="{{ url('img/section-uno-desktop.png') }}" media="(min-width:768px)">
+            <img class="img-fluid" alt="persona mirando compu creando una idea" src="{{ url('img/section-uno-mobile.png') }}">
+        </picture>
+    </div>
+</section>
+<section class="section-dos">
+    <div class="row">
+        <x-product-data :products="$products" />
+    </div>
+</section>
+<section class="section-tres">
+    <div class="row">
         <div class="col-12 d-flex justify-content-center">
             <hr>
         </div>
@@ -60,9 +60,9 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <div class="section-cuatro row">
-        <x-latest-posts :posts="$posts" />
     </div>
+</section>
+<section class="section-cuatro row">
+    <x-latest-posts :posts="$posts" />
+</section>
 @endsection

@@ -23,7 +23,7 @@ echo '</pre>';
     
             </div>
         @else
-            <p>Acá iría una imagen diciendo que no hay imagen. asdasdasdasdasd</p>
+            <p>Acá iría una imagen diciendo que no hay imagen. </p>
         @endif
           </div>
           <div class="col-md-7">

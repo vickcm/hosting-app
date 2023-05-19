@@ -2,7 +2,7 @@
     <h2 class="text-dark my-4">Últimas entradas</h2>
 </div>
 @foreach ($posts as $post)
-<div class="col-md-4">
+<div class="col-12 col-md-4">
     <div class="card mt-3">
         <div class="card-body">
             <h3 class="card-title" > {{ $post->title }} </h3>
