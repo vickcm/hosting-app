@@ -33,6 +33,9 @@
     </section>
 
     <section class="section-dos">
+        <div class="row"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea fugiat consectetur, debitis obcaecati harum eveniet numquam praesentium, beatae saepe deserunt rem corrupti accusantium tempora, voluptatibus nostrum inventore. Odit, nobis perspiciatis. 
+
+        </div>
         <div class="row">
             <x-product-data :products="$products" />
         </div>

@@ -19,18 +19,18 @@ class ProductsSeeder extends Seeder
         DB::table('products')->insert([
             [
              
-                'title' => 'titulo 1',
-                'subtitle' => 'subtitulo 1',
-                'description' => 'descripción 1',
+                'title' => 'Web Hosting',
+                'subtitle' => 'También denominado Hosting compartido, nuestro hosting más económico. ',
+                'description' => 'Funciona en recursos compartidos. Por lo tanto, es tan bueno como un plan inicial básico. Rendimiento Estándar, 1 sitio web, 1 base de datos. Ideal WordPress, Drupal, Joomla, PrestaShop, Magento',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
 
             [
              
-                'title' => 'titulo 2',
-                'subtitle' => 'subtitulo 2',
-                'description' => 'descripción 2',
+                'title' => 'Deluxe',
+                'subtitle' => 'Hosting de múltiples sitios con SSL para todos los sitios.',
+                'description' => 'Dominio y correo electrónico gratis por un año. Rendimiento Estándar con Sitios web ilimitados y Bases de datos ilimitadas. Ideal para emprendedores, diseñadores y agencias web.',
                 'created_at' => now(),
                 'updated_at' => now(),
             ]

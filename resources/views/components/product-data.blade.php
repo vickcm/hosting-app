@@ -6,7 +6,7 @@ echo '</pre>';
  */
 ?>
 <div class="col-12">
-    <h2 class="mb-3 mt-3 mt-md-5 text-center">Productos</h2>
+    <h2 class="mb-3 mt-3 mt-md-5 text-center">Servicios de Hosting</h2>
 </div>
 <div class="col-12">
     <div class="row justify-content-center">
@@ -18,6 +18,8 @@ echo '</pre>';
                         <h3 class=""> {{ $product->title }} </h3>
                         <p class="mb-2 text-muted">{{ $product->subtitle }}</p>
                         <p class="">{{ $product->description }}</p>
+                        <button class="btn btn-primary">Consultar</button>
+                        
                     </div>
                 </div>
             </a>
