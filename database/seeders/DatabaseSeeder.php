@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use phpDocumentor\Reflection\Types\This;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,6 +13,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        $this->call(AuthorsSeeder::class);
         $this->call(CategoriesSeeder::class);
         $this->call(PostsSeeder::class);
         $this->call(ProductsSeeder::class);

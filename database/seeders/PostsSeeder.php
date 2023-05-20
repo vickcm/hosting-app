@@ -18,6 +18,7 @@ class PostsSeeder extends Seeder
             [
                 [
                     "category_id"=> 1,
+                    "author_id"=> 1,
 
                     "title"=> "Cómo elegir el mejor hosting para tu sitio web",
                     "content"=> "En la actualidad, elegir el hosting adecuado para tu sitio web es una de las decisiones más importantes que tendrás que tomar. La elección del hosting puede afectar no solo al rendimiento de tu sitio web, sino también a la seguridad y la accesibilidad del mismo.
@@ -46,6 +47,7 @@ class PostsSeeder extends Seeder
                     No importa si eres un principiante en WordPress o un usuario avanzado, elegir un hosting especializado en esta plataforma puede ayudarte a obtener el mejor rendimiento para tu sitio web.",
                     "user_id"=> 2,
                     "category_id"=> 2,
+                    "author_id"=> 1,
                     'created_at' => now(),
                     'updated_at' => now(),
                 ],
@@ -60,6 +62,7 @@ class PostsSeeder extends Seeder
                     
                     No importa si eres un principiante en WordPress o un usuario avanzado, elegir un hosting especializado en esta plataforma puede ayudarte a obtener el mejor rendimiento para tu sitio web.",
                     "user_id"=> 1,
+                    "author_id"=> 1,
                     "category_id"=> 3,
                     'created_at' => now(),
                     'updated_at' => now(),
@@ -75,6 +78,7 @@ class PostsSeeder extends Seeder
                     
                     No importa si eres un principiante en WordPress o un usuario avanzado, elegir un hosting especializado en esta plataforma puede ayudarte a obtener el mejor rendimiento para tu sitio web.",
                     "user_id"=> 1,
+                    "author_id"=> 1,
                     "category_id"=> 4,
                     'created_at' => now(),
                     'updated_at' => now(),

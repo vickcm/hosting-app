@@ -37,7 +37,6 @@ class Post extends Model
             'title' => 'required|min:5',
             'content' => 'required|min:30',
             'user_id' => 'required|integer',
-            // 'category_id' => 'required|integer',
         ];
     }
 
@@ -49,8 +48,7 @@ class Post extends Model
             'content.min' => 'El campo contenido debe tener al menos 30 caracteres',
             'user_id.required' => 'El campo usuario es obligatorio',
             'user_id.integer' => 'El campo usuario debe ser un número entero',
-            // 'category_id.required' => 'El campo categoría es obligatorio',
-            'category_id.integer' => 'El campo categoría debe ser un número entero',
+           
 
         ];
     }   
