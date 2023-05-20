@@ -4,10 +4,7 @@
 /** @var \Illuminate\Support\ViewErrorBag $errors */
 use Illuminate\Support\Facades\Storage;
 
-/* echo '<pre>';
-print_r ($post);
-echo '</pre>'; */
-?>
+
 
 @extends('layouts.admin')
 
