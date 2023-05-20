@@ -32,7 +32,9 @@ class PostController extends Controller
 
     public function formNew()
     {
-        return view('posts.formNew');
+        return view('posts.formNew', [
+            'categories' => Category::all(),
+        ]);
     }
 
     public function processNew(request $request) 

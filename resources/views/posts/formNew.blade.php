@@ -2,6 +2,8 @@
 // Laravel crea en todas las vistas de Blade, automáticamente, una variable $errors de tipo ViewErrorBag.
 // Esta variable contiene los mensajes de error que hayan ocurrido, en caso de haberlos.
 /** @var \Illuminate\Support\ViewErrorBag $errors */
+/** @var \App\Models\Category[]|\Illuminate\Database\Eloquent\Collection $categories */
+
 ?>
 
 @extends('layouts.admin')
@@ -48,20 +50,30 @@
                     </div>
                 @enderror
             </div>
+            crear un select con los usuarios
+
             <div class="mb-3">
                 <label for="category_id" class="form-label">Categoría</label>
-                <input type="number" id="category_id" name="category_id" class="form-control"
-                    @error('category_id')
-                    aria-describedby="error-catergory_id" 
-                    @enderror
-                    value="{{ old('category_id') }}"  >
+                <select
+                    name="category_id"
+                    id="category_id"
+                    class="form-control"
+                    @error('category_id') aria-describedby="error-category_id" @enderror
+                >
+                    <option value=""></option>
+                    @foreach($categories as $category)
+                        <option
+                            value="{{ $category->category_id }}"
+                            @selected(old('category_id') == $category->category_id)
+                        >{{ $category->name }}</option>
+                    @endforeach
+                </select>
                 @error('category_id')
-                    <div class="text-danger mt-1 bg-light p-2" id="error-category_id">
-                        <i class="bi bi-exclamation-triangle" title="error"></i>
-                        {{ $message }}
-                    </div>
+                    <div class="text-danger" id="error-category_id">{{ $message }}</div>
                 @enderror
             </div>
+            
+           
             <div class="mb-3">
                 <label for="content" class="form-label">Contenido</label>
                 <textarea id="content" name="content" class="form-control"
