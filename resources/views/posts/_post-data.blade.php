@@ -23,7 +23,7 @@ echo '</pre>';
     
             </div>
         @else
-            <p>Acá iría una imagen diciendo que no hay imagen. </p>
+        <img class="card-img" src="{{ url('img/datacenter300x300.jpg') }}" alt="sala de servidores">
         @endif
           </div>
           <div class="col-md-7">

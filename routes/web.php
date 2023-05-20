@@ -51,9 +51,36 @@ Route::get('/dashboard/categorias', [\App\Http\Controllers\AdminController::clas
     ->name('dashboardCategories')
     ->middleware('auth');
 
+Route::get('categorias/nueva', [\App\Http\Controllers\CategoryController::class, 'formNew'])
+    ->name('categories.formNew')
+    ->middleware('auth');
+
+Route::post('categorias/nueva', [\App\Http\Controllers\CategoryController::class, 'processNew'])
+    ->name('categories.processNew')
+    ->middleware('auth');
+
+Route::get('categorias/{id}/editar', [\App\Http\Controllers\CategoryController::class, 'formEdit'])
+    ->name('categories.formEdit')
+    ->middleware('auth');
+
+Route::post('categorias/{id}/editar', [\App\Http\Controllers\CategoryController::class, 'processEdit'])
+    ->name('categories.processEdit')
+    ->middleware('auth');
+
+Route::get('categorias/{id}/eliminar', [\App\Http\Controllers\CategoryController::class, 'confirmDelete'])
+    ->name('categories.confirmDelete')
+    ->middleware('auth');
+
+Route::post('categorias/{id}/eliminar', [\App\Http\Controllers\CategoryController::class, 'processDelete'])
+    ->name('categories.processDelete')
+    ->middleware('auth');
+
+
 Route::get('entradas/nueva', [\App\Http\Controllers\PostController::class, 'formNew'])
     ->name('posts.formNew')
     ->middleware('auth');
+
+
 
 Route::post('entradas/nueva', [\App\Http\Controllers\PostController::class, 'processNew'])
     ->name('posts.processNew')

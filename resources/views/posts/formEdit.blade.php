@@ -78,11 +78,12 @@ echo '</pre>'; */
                     </div>
                 @enderror
             </div>
-            <div class="mb-3"> Imagen actual 
+            <div class="mb-3 fw-semibold"> Imagen actual 
                 @if($post->image !== null && Storage::has('img/' . $post->image))
                     <img class="mw-100" src="{{ Storage::url('img/' . $post->image) }}" alt="{{ $post->image_description }}">
                 @else
-                    <p>Acá iría una imagen diciendo que no hay imagen.</p>
+                <img class="mw-100" src="{{ url('img/datacenter300x300.jpg') }}" alt="sala de servidores">
+
                 @endif
             </div>
             <div class="mb-3">
