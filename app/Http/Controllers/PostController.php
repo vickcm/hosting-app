@@ -9,12 +9,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Category;
+use App\Models\Author;
 
 class PostController extends Controller
 {
     public function posts() {
 
-        $posts = Post::with(['category'])->get(); // soluciona query n+1
+        $posts = Post::with(['category', 'author'])->get(); // soluciona query n+1
         return view('posts', [
             'posts' => $posts,
         ]);
@@ -34,6 +35,7 @@ class PostController extends Controller
     {
         return view('posts.formNew', [
             'categories' => Category::all(),
+            'authors' => Author::all(),
         ]);
     }
 
@@ -63,7 +65,8 @@ class PostController extends Controller
 
         return view('posts.formEdit', [
             'post' => $post,
-            'categories' => Category::all()
+            'categories' => Category::all(),
+            'authors' => Author::all(),
         ]);
 
     }

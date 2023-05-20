@@ -30,7 +30,6 @@ class PostsSeeder extends Seeder
                     Además, es importante que el hosting ofrezca medidas de seguridad adecuadas, como certificados SSL, copias de seguridad y protección contra ataques de malware.
                     
                     En resumen, elegir el hosting adecuado para tu sitio web es una decisión crucial que puede afectar significativamente al rendimiento y seguridad de tu sitio web. Tómate el tiempo necesario para investigar y comparar diferentes opciones de hosting antes de tomar una decisión final.",
-                    "user_id"=> 1,            
                     'created_at' => now(),
                     'updated_at' => now(),
                 ],
@@ -45,7 +44,6 @@ class PostsSeeder extends Seeder
                     En general, los planes de hosting para WordPress ofrecen una configuración preinstalada de la plataforma, lo que te permite comenzar a trabajar en tu sitio web de manera rápida y sencilla. Además, estos planes suelen incluir herramientas de optimización de rendimiento, como caché de página y CDN, para mejorar la velocidad de carga de tu sitio web.
                     
                     No importa si eres un principiante en WordPress o un usuario avanzado, elegir un hosting especializado en esta plataforma puede ayudarte a obtener el mejor rendimiento para tu sitio web.",
-                    "user_id"=> 2,
                     "category_id"=> 2,
                     "author_id"=> 1,
                     'created_at' => now(),
@@ -61,7 +59,6 @@ class PostsSeeder extends Seeder
                     En general, los planes de hosting para WordPress ofrecen una configuración preinstalada de la plataforma, lo que te permite comenzar a trabajar en tu sitio web de manera rápida y sencilla. Además, estos planes suelen incluir herramientas de optimización de rendimiento, como caché de página y CDN, para mejorar la velocidad de carga de tu sitio web.
                     
                     No importa si eres un principiante en WordPress o un usuario avanzado, elegir un hosting especializado en esta plataforma puede ayudarte a obtener el mejor rendimiento para tu sitio web.",
-                    "user_id"=> 1,
                     "author_id"=> 1,
                     "category_id"=> 3,
                     'created_at' => now(),
@@ -77,7 +74,6 @@ class PostsSeeder extends Seeder
                     En general, los planes de hosting para WordPress ofrecen una configuración preinstalada de la plataforma, lo que te permite comenzar a trabajar en tu sitio web de manera rápida y sencilla. Además, estos planes suelen incluir herramientas de optimización de rendimiento, como caché de página y CDN, para mejorar la velocidad de carga de tu sitio web.
                     
                     No importa si eres un principiante en WordPress o un usuario avanzado, elegir un hosting especializado en esta plataforma puede ayudarte a obtener el mejor rendimiento para tu sitio web.",
-                    "user_id"=> 1,
                     "author_id"=> 1,
                     "category_id"=> 4,
                     'created_at' => now(),

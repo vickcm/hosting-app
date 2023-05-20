@@ -11,7 +11,10 @@
                 <div class="fw-medium text-secondary mb-2">
                     {{ $post->category->name }}
                 </div>
-                <h5 class="card-title" > {{ $post->title }} </h5>
+                <h2 class="card-title" > {{ $post->title }} </h2>
+                <div class="fw-medium text-secondary mb-2">Autor:
+                    {{ $post->author->name }}
+                </div>
                 <p class="card-text">{{ $post->getShortContent($post->content, 100) }}</p>
                 <a href="#" class="btn btn-entradas float-end">Ver más</a>
             </div>

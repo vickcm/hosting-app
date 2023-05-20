@@ -36,18 +36,23 @@ use Illuminate\Support\Facades\Storage;
                 @enderror
             </div>
             <div class="mb-3">
-                <label for="user_id" class="form-label">Usuario</label>
-                <input type="number" id="user_id" name="user_id" class="form-control"
-                    @error('user_id')
-                    aria-describedby="error-user_id" 
-                    @enderror
-                    value="{{ old('user_id', $post->user_id) }}"  
-                    >
-                @error('user_id')
-                    <div class="text-danger mt-1 bg-light p-2" id="error-user_id">
-                        <i class="bi bi-exclamation-triangle" title="error"></i>
-                        {{ $message }}
-                    </div>
+                <label for="author_id" class="form-label">Autor</label>
+                <select
+                    name="author_id"
+                    id="author_id"
+                    class="form-control"
+                    @error('author_id') aria-describedby="error-author_id" @enderror
+                >
+                    <option value=""></option>
+                    @foreach($authors as $author)
+                        <option
+                            value="{{ $author->author_id }}"
+                            @selected(old('author_id', $post->author_id) == $author->author_id)
+                        >{{ $author->name }}</option>
+                    @endforeach
+                </select>
+                @error('author_id')
+                <div class="text-danger" id="error-author_id">{{ $message }}</div>
                 @enderror
             </div>
 

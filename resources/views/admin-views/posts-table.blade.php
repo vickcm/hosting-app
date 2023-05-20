@@ -33,7 +33,7 @@
                     <tr>
                         <th scope="col">Título</th>
                         <th scope="col">Contenido</th>
-                        <th scope="col">Usuario</th>
+                        <th scope="col">Autor</th>
                         <th scope="col">Categoría</th>
                         <th scope="col">Acciones</th>
                     </tr>
@@ -43,7 +43,7 @@
                         <tr>
                             <td class="fw-semibold">{{ $post->title }}</td>
                             <td>{{ $post->getShortContent($post->content, 300) }}</td>
-                            <td>{{ $post->user_id }}</td>
+                            <td>{{ $post->author->name }}</td>
                             <td>{{ $post->category->name }}</td>
                             <td>
                                 <div class="d-flex flex-column gap-2">
