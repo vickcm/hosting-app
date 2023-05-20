@@ -63,6 +63,7 @@ class PostController extends Controller
 
         return view('posts.formEdit', [
             'post' => $post,
+            'categories' => Category::all()
         ]);
 
     }
