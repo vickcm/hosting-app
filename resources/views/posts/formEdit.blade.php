@@ -5,6 +5,7 @@
 use Illuminate\Support\Facades\Storage;
 
 
+?>
 
 @extends('layouts.admin')
 
@@ -90,6 +91,22 @@ use Illuminate\Support\Facades\Storage;
                 >
                 @error('image')
                     <div class="text-danger mt-1 bg-light p-2" id="error-image">
+                        <i class="bi bi-exclamation-triangle" title="error"></i>
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
+
+            <div class="mb-3">
+                <label for="image_description" class="form-label">Descripción de la Imagen</label>
+                <input type="text" id="image_description" name="image_description" class="form-control"
+                    placeholder="Ingrese la descripción de la imagen"
+                    @error('image_description')
+                    aria-describedby="error-image_description" 
+                    @enderror
+                    value="{{ old('image_description', $post->image_description) }}">
+                @error('image_description')
+                    <div class="text-danger mt-1 bg-light p-2" id="error-image_description">
                         <i class="bi bi-exclamation-triangle" title="error"></i>
                         {{ $message }}
                     </div>

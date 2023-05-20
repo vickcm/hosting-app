@@ -86,9 +86,25 @@
                     </div>
                 @enderror
             </div>
+
+            <div class="mb-3">
+                <label for="image_description" class="form-label">Ingrese la descripción de la imagen</label>
+                <input type="text" id="image_description" name="image_description" class="form-control"
+                placeholder="Ingrese la descripción de la imagen"
+                @error('image_description')
+                aria-describedby="error-image_description" 
+                @enderror
+                value="{{ old('title') }}">
+                @error('image_description')
+                    <div class="text-danger mt-1 bg-light p-2" id="error-image_description">
+                        <i class="bi bi-exclamation-triangle" title="error"></i>
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
             <div class="d-flex justify-content-center">
                 <button type="submit" class="btn btn-primary me-3">Publicar</button>
-                <a href="{{ route('home') }}" class="btn btn-success" type="submit"> <!-- ACA VA EL LINK ADMIN -->
+                <a href="{{ route('dashboardPosts') }}" class="btn btn-success" type="submit"> <!-- ACA VA EL LINK ADMIN -->
                     Cancelar
                 </a>
             </div>
