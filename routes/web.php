@@ -2,16 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
 // Generales Web 
 
@@ -96,7 +86,8 @@ Route::post('entradas/{id}/editar', [\App\Http\Controllers\PostController::class
     ->name('posts.processEdit')
     ->middleware('auth');
 
-
+Route::get('blog/entradas/{id}', [\App\Http\Controllers\PostController::class, 'viewFullPost'])
+    ->name('posts.fullpost');  
 
 Route::get('entradas/{id}', [\App\Http\Controllers\PostController::class, 'view'])
     ->name('posts.view');

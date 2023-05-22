@@ -31,6 +31,16 @@ class PostController extends Controller
         ]);
     }
 
+    public function viewFullPost(int $id)
+    {
+        
+        $post = Post::findOrFail($id);
+
+        return view('posts.fullpost', [
+            'post' => $post,
+        ]);
+    }
+
     public function formNew()
     {
         return view('posts.formNew', [

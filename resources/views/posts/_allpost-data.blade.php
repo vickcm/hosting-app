@@ -16,7 +16,7 @@
                     {{ $post->author->name }}
                 </div>
                 <p class="card-text">{{ $post->getShortContent($post->content, 100) }}</p>
-                <a href="#" class="btn btn-entradas float-end">Ver más</a>
+                <a href="{{ route('posts.fullpost', ['id' => $post->id]) }}" class="btn btn-entradas float-end">Ver más</a>
             </div>
         </div>
     </div>
