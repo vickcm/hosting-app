@@ -11,7 +11,7 @@ echo '</pre>';
 <div class="col-12">
     <div class="row justify-content-center">
         @foreach ($products as $product)
-        <div class="col-md-4" style="width: 18rem;"> 
+        <div class="col-md-4"> 
             <div class="productos mt-3">
                 <div class="mt-2">
                     <img class="img-fluid" alt="servicio de hosting" src="{{ url('img/hosting.png') }}">

@@ -16,7 +16,7 @@
 <!doctype html>
 <html lang="es">
 <head>
-    <h2 class="mb-3 text-center titulo-admin">Publicar una Entrada</h2>
+    <h1 class="mb-3 text-center titulo-admin">Publicar una Entrada</h1>
     <div class="form-nueva-entrada">
         <form action="{{ route('posts.processNew') }}" method="post" enctype="multipart/form-data">
             @csrf
@@ -35,7 +35,6 @@
                     </div>
                 @enderror
             </div>
-           
             <div class="mb-3">
                 <label for="category_id" class="form-label">Categoría</label>
                 <select
@@ -56,7 +55,6 @@
                     <div class="text-danger" id="error-category_id">{{ $message }}</div>
                 @enderror
             </div>
-
             <div class="mb-3">
                 <label for="author_id" class="form-label">Autor</label>
                 <select
@@ -77,8 +75,6 @@
                     <div class="text-danger" id="error-author_id">{{ $message }}</div>
                 @enderror
             </div>
-            
-           
             <div class="mb-3">
                 <label for="content" class="form-label">Contenido</label>
                 <textarea id="content" name="content" class="form-control"
@@ -103,7 +99,6 @@
                     </div>
                 @enderror
             </div>
-
             <div class="mb-3">
                 <label for="image_description" class="form-label">Ingrese la descripción de la imagen</label>
                 <input type="text" id="image_description" name="image_description" class="form-control"

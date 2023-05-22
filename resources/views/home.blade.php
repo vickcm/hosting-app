@@ -46,17 +46,14 @@
                 <div class="card-body-dos">
                     <img src="{{ url('img/server.png') }}" alt="nuve atendiendo servidor">
                     <p class="fw-semibold text-center mt-2">99.9% Garantía de tiempo de actividad</p>
-                    <p class="text-center">Compartir procesos y datos sobre la base que necesita saber</p>
                 </div>
                 <div class="card-body-dos mt-2 mt-md-0">
                     <img src="{{ url('img/encrypted.png') }}" class="card-img-top" alt="...">
                     <p class="fw-semibold text-center mt-2">Seguro y Protegido</p>
-                    <p class="text-center">Nuestro equipo aseguró que su sitio web siempre esté seguro y protegido</p>
                 </div>
                 <div class="card-body-dos mt-2 mt-md-0">
                     <img src="{{ url('img/helpline.png') }}" class="card-img-top" alt="...">
                     <p class="fw-semibold text-center mt-2">Nuestro Apoyo Dedicado</p>
-                    <p class="text-center"> loreminsupmasdjkasd</p>
                 </div>
             </div>
         </div>

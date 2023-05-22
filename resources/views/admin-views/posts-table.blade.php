@@ -21,7 +21,7 @@
 </div>
 <div class="card">
     <div class="card-header d-flex flex-column flex-md-row justify-content-md-between align-items-center">
-        <h2 class="fs-3">Entradas - Posteos</h2>
+        <h1 class="fs-3">Entradas - Posteos</h1>
         <div class="">
             <a class="btn btn-dashboard" role="button" href="{{ route('posts.formNew') }}">Publicar una Nueva Entrada</a>
         </div>

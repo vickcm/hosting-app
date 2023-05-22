@@ -129,6 +129,7 @@ hr{
     border-radius: 10px;
     display: flex;
     justify-content: center;
+    min-height: 22rem;
 }
 .section-dos .btn-hostin{
     color: #150e6b;
@@ -154,7 +155,6 @@ hr{
     padding: 15px;
     border-radius: 10px;
     width: 18rem;
-    height: 13rem;
     display: flex;
     flex-direction: column;
     align-items: center;

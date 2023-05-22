@@ -21,7 +21,7 @@
 </div>
 <div class="card">
     <div class="card-header d-flex flex-column flex-md-row justify-content-md-between align-items-center">
-        <h2 class="fs-3">Categorías Disponibles</h2>
+        <h1 class="fs-3">Categorías Disponibles</h1>
         <div class="">
             <a class="btn btn-dashboard" role="button" href="{{ route('categories.formNew') }}">Crear una Nueva Categoría</a>
         </div>
