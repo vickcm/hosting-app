@@ -7,7 +7,7 @@
         <div class="card-body">
             <h3 class="card-title" > {{ $post->title }} </h3>
             <p class="card-text">{{ $post->getShortContent($post->content, 100) }}</p>
-            <a href="#" class="btn btn-entradas">Ver más</a>
+            <a href="{{ route('posts.fullpost', ['id' => $post->id]) }}" class="btn btn-entradas">Ver más</a>
         </div>
     </div>
 </div>
