@@ -200,6 +200,13 @@ hr{
 .section-blog .card {
     min-height: 13rem;
 }
+.section-entrada-blog{
+    width: 60%;
+    margin: auto;
+}
+.section-entrada-blog a {
+    padding-left: 0px !important;
+}
 /* nosotros */
 .section-nosotros{
     margin: auto;
@@ -254,7 +261,10 @@ hr{
     .section-tres{
         margin: 0;
     }
-    .section-blog{
+    .section-blog, 
+    .section-entrada-blog, 
+    .section-nosotros .last-div,
+    .section-nosotros{
         width: 100%;
         margin: 0;
     }
@@ -265,16 +275,8 @@ hr{
     .alert{
         width: 100%;
     }
-    .section-nosotros{
-        margin: 0;
-        width: 100%;
-    }
     .section-nosotros div:nth-child(2){
         padding: 20px;
-    }
-    .section-nosotros .last-div{
-        width: 100%;
-        margin: 0;
     }
 }
 @media screen and (min-width: 769px) and (max-width: 1200px) {
