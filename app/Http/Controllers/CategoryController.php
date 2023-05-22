@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    //
-
     public function formNew()
     {
         return view('categories.formNew');
@@ -16,11 +14,8 @@ class CategoryController extends Controller
 
     public function processNew(request $request) 
     {
-
-      
         $data = $request->except(['_token']);
         $request->validate(Category::validationRules(), Category::validationMessages());
-
         
         Category::create($data);
         return redirect()
@@ -29,11 +24,8 @@ class CategoryController extends Controller
             ->with('type', 'warning');
     }
 
-
-
     public function formEdit(int $id)
     {
-        
         $category = Category::findOrFail($id);
 
         return view('categories.formEdit', [
@@ -46,7 +38,6 @@ class CategoryController extends Controller
         $category = Category::findOrFail($id);
         $data = $request->except(['_token']);
         $request->validate(Category::validationRules(), Category::validationMessages());
-
         $category->update($data);
 
         return redirect()
@@ -84,7 +75,4 @@ class CategoryController extends Controller
             ->with('message', 'Categoría eliminada correctamente')
             ->with('type', 'warning');
     }
-    
-
-
 }

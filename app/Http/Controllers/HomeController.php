@@ -9,17 +9,16 @@ use App\Models\Post;
 
 class HomeController extends Controller
 {
-    public function home() {
+    public function home() 
+    {
         return view('home', [
             'products' => Product::all(),
             'posts' => Post::all(),
-
         ]);
     }
 
-    public function about() {
+    public function about() 
+    {
         return view('about');
     }
-
-
 }
