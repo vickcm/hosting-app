@@ -13,9 +13,10 @@ use App\Models\Author;
 
 class PostController extends Controller
 {
-    public function posts() {
-
+    public function posts() 
+    {
         $posts = Post::with(['category', 'author'])->get(); // soluciona query n+1
+
         return view('posts', [
             'posts' => $posts,
         ]);
@@ -23,7 +24,6 @@ class PostController extends Controller
 
     public function view(int $id)
     {
-        
         $post = Post::findOrFail($id);
 
         return view('posts.view', [
@@ -41,15 +41,12 @@ class PostController extends Controller
 
     public function processNew(request $request) 
     {
-
-      
         $data = $request->except(['_token']);
         $request->validate(Post::validationRules(), Post::validationMessages());
 
         if ($request->hasFile('image')) {
             $data['image'] = $this->uploadImage($request);
         }
-
 
         Post::create($data);
         return redirect()
@@ -60,7 +57,6 @@ class PostController extends Controller
 
     public function formEdit(int $id)
     {
-        
         $post = Post::findOrFail($id);
 
         return view('posts.formEdit', [
@@ -68,16 +64,13 @@ class PostController extends Controller
             'categories' => Category::all(),
             'authors' => Author::all(),
         ]);
-
     }
 
     public function processEdit(int $id, Request $request)
     {
-        
         $post = Post::findOrFail($id);
         $request->validate(Post::validationRules(), Post::validationMessages());
         $data = $request->except(['_token']);
-
         $oldImage = null;
 
         if ($request->hasFile('image')) {
@@ -95,11 +88,10 @@ class PostController extends Controller
             ->with('type', 'warning');
     }
 
-
     public function confirmDelete(int $id)
     {
-        
         $post = Post::findOrFail($id);
+
         return view('posts.confirmDelete', [
             'post' => $post,
         ]);
@@ -116,10 +108,7 @@ class PostController extends Controller
             ->route('dashboardPosts')
             ->with('message', 'Entrada eliminada correctamente')
             ->with('type', 'success');
-
-       
     }
-
     protected function uploadImage(Request $request):string
     {
         $request->validate([
@@ -132,20 +121,11 @@ class PostController extends Controller
         $image->storeAs('img', $imageName, 'public');
 
         return $imageName;
-
-        
     }
-
     protected function deleteImage(?string $file):void
     {
         if ($file != null && Storage::has('img/' . $file)) {
             Storage::delete('img/' . $file);
         }   
     }
-
-    
-        
-    
-
-   
 }

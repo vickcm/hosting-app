@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
-
     public function formLogin()
     {
         return view('auth.formLogin');
@@ -25,6 +24,7 @@ class AuthController extends Controller
         }
 
         $request->session()->regenerate();
+        
         return redirect()->route('dashboardPosts')
             ->with('message', 'Bienvenido ' . auth()->user()->username)
             ->with('type', 'success');
@@ -35,14 +35,9 @@ class AuthController extends Controller
         auth()->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
+
         return redirect()->route('home')
             ->with('message', 'Sesión cerrada correctamente')
             ->with('type', 'success');
-            
-
-
     }
-
-
-    //
 }
