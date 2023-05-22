@@ -3,8 +3,6 @@
 // Esta variable contiene los mensajes de error que hayan ocurrido, en caso de haberlos.
 /** @var \Illuminate\Support\ViewErrorBag $errors */
 use Illuminate\Support\Facades\Storage;
-
-
 ?>
 
 @extends('layouts.admin')
@@ -43,7 +41,6 @@ use Illuminate\Support\Facades\Storage;
                     class="form-control"
                     @error('author_id') aria-describedby="error-author_id" @enderror
                 >
-                    <option value=""></option>
                     @foreach($authors as $author)
                         <option
                             value="{{ $author->author_id }}"
@@ -55,7 +52,6 @@ use Illuminate\Support\Facades\Storage;
                 <div class="text-danger" id="error-author_id">{{ $message }}</div>
                 @enderror
             </div>
-
             <div class="mb-3">
                 <label for="category_id" class="form-label">Categoría</label>
                 <select
@@ -64,7 +60,6 @@ use Illuminate\Support\Facades\Storage;
                     class="form-control"
                     @error('category_id') aria-describedby="error-category_id" @enderror
                 >
-                    <option value=""></option>
                     @foreach($categories as $category)
                         <option
                             value="{{ $category->category_id }}"
@@ -76,7 +71,6 @@ use Illuminate\Support\Facades\Storage;
                 <div class="text-danger" id="error-category_id">{{ $message }}</div>
                 @enderror
             </div>
-        
             <div class="mb-3">
                 <label for="content" class="form-label">Contenido</label>
                 <textarea id="content" name="content" class="form-control"
@@ -94,7 +88,6 @@ use Illuminate\Support\Facades\Storage;
                     <img class="mw-100" src="{{ Storage::url('img/' . $post->image) }}" alt="{{ $post->image_description }}">
                 @else
                 <img class="mw-100" src="{{ url('img/datacenter300x300.jpg') }}" alt="sala de servidores">
-
                 @endif
             </div>
             <div class="mb-3">
@@ -109,7 +102,6 @@ use Illuminate\Support\Facades\Storage;
                     </div>
                 @enderror
             </div>
-
             <div class="mb-3">
                 <label for="image_description" class="form-label">Descripción de la Imagen</label>
                 <input type="text" id="image_description" name="image_description" class="form-control"
@@ -127,7 +119,7 @@ use Illuminate\Support\Facades\Storage;
             </div>
             <div class="d-flex justify-content-center">
                 <button type="submit" class="btn btn-warning me-3">Editar Entrada</button>
-                <a href="{{ route('dashboardPosts') }}" class="btn btn-success" type="submit"> <!-- ACA VA EL LINK ADMIN -->
+                <a href="{{ route('dashboardPosts') }}" class="btn btn-success"> 
                     Cancelar
                 </a>
             </div>

@@ -225,6 +225,9 @@ hr{
     width: 80%;
     margin: auto;
 }
+.section-nosotros hr {
+    width: 13%;
+}
 /* login */
 .login{
     width: 40%;

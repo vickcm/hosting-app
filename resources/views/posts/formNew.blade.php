@@ -11,11 +11,6 @@
 @section('title', 'Publicar una Entrada')
 
 @section('abm-post')
-
-
-<!doctype html>
-<html lang="es">
-<head>
     <h1 class="mb-3 text-center titulo-admin">Publicar una Entrada</h1>
     <div class="form-nueva-entrada">
         <form action="{{ route('posts.processNew') }}" method="post" enctype="multipart/form-data">
@@ -43,7 +38,6 @@
                     class="form-control"
                     @error('category_id') aria-describedby="error-category_id" @enderror
                 >
-                    <option value=""></option>
                     @foreach($categories as $category)
                         <option
                             value="{{ $category->category_id }}"
@@ -63,7 +57,6 @@
                     class="form-control"
                     @error('author_id') aria-describedby="error-author_id" @enderror
                 >
-                    <option value=""></option>
                     @foreach($authors as $author)
                         <option
                             value="{{ $author->author_id }}"
@@ -116,7 +109,7 @@
             </div>
             <div class="d-flex justify-content-center">
                 <button type="submit" class="btn btn-primary me-3">Publicar</button>
-                <a href="{{ route('dashboardPosts') }}" class="btn btn-success" type="submit"> <!-- ACA VA EL LINK ADMIN -->
+                <a href="{{ route('dashboardPosts') }}" class="btn btn-success">
                     Cancelar
                 </a>
             </div>

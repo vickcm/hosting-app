@@ -17,6 +17,7 @@
                 <p class="card-text">{{ $category->description }}</p>
             </div>
         </div>
+    </div>
     <div class="d-flex justify-content-center mt-3">
         <form action="{{ route('categories.processDelete', ['id' => $category->category_id] ) }}" method="post">
             @csrf
@@ -26,7 +27,7 @@
             <button class="btn btn-danger" type="submit">
                 Confirmo eliminación 
             </button>
-            <a href="{{ route('dashboardCategories') }}" class="btn btn-success" type="submit"> <!-- ACA VA EL LINK ADMIN -->
+            <a href="{{ route('dashboardCategories') }}" class="btn btn-success"> 
                 Cancelar
             </a>
         </form>
