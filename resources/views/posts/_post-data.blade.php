@@ -30,7 +30,7 @@ echo '</pre>';
           <div class="card-body">
             <div class="card-title text-end">Categoría: {{$post->category->name}}, por {{$post->author->name}}
             </div>
-            <div class="card-title fw-semibold">{{$post->title}}</div>
+            <h2 class="card-title fw-semibold"> {{$post->title}}</h2>
             <p class="card-text">{{$post->content}}</p>
           </div>
         </div>

@@ -20,7 +20,7 @@
             <button class="btn btn-danger" type="submit">
                 Confirmo eliminación 
             </button>
-            <a href="{{ route('dashboardPosts') }}" class="btn btn-success" type="submit"> 
+            <a href="{{ route('dashboardPosts') }}" class="btn btn-success"> 
                 Cancelar
             </a>
         </form>

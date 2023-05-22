@@ -29,8 +29,8 @@
         <div class="col-12 col-md-5 div-diferentes">
             <label class="text-center fw-medium">
                 Rendimiento superior
-                <hr>
             </label>
+            <hr>
             <label>
                 Contamos con servidores de última generación y una infraestructura optimizada para garantizar velocidades de carga rápidas y tiempos de respuesta excepcionales.
             </label>
@@ -38,8 +38,8 @@
         <div class="col-12 col-md-5 div-diferentes">
             <label  class="text-center fw-medium">
                 Seguridad de primer nivel
-                <hr>
             </label>
+            <hr>
             <label>
                 Tu seguridad es nuestra prioridad. Implementamos medidas rigurosas para proteger tus datos y salvaguardar tus sitios web y aplicaciones de cualquier amenaza potencial.
             </label>
@@ -47,8 +47,8 @@
         <div class="col-12 col-md-5 div-diferentes">
             <label class="text-center fw-medium">
                 Soporte experto
-                <hr>
             </label>
+            <hr>
             <label>
                 Nuestro equipo de soporte técnico está disponible las 24 horas del día, los 7 días de la semana, para ayudarte en cualquier momento. Estamos aquí para resolver tus dudas y brindarte asistencia personalizada cuando más lo necesites.
             </label>
@@ -56,8 +56,8 @@
         <div class="col-12 col-md-5 div-diferentes">
             <label class="text-center fw-medium">
                 Flexibilidad y escalabilidad
-                <hr>
             </label>
+            <hr>
             <label>
                 Entendemos que tus necesidades pueden cambiar con el tiempo. Por eso, ofrecemos planes de hosting flexibles y escalables, para que puedas ajustar tu infraestructura según tu crecimiento y demanda.
             </label>
@@ -65,8 +65,8 @@
         <div class="col-12 col-md-5 div-diferentes">
             <label class="text-center fw-medium">
                 Facilidad de uso
-                <hr>
             </label>
+            <hr>
             <label>
                 Queremos que disfrutes de una experiencia sin complicaciones. Nuestro panel de control intuitivo y amigable te permitirá administrar tus servicios de hosting de manera sencilla, incluso si no tienes experiencia técnica previa.
             </label>

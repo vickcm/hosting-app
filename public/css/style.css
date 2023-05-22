@@ -120,6 +120,9 @@ hr{
     background: linear-gradient(92deg, #150e6b, #12289f, #3648b6);
     padding: 20px;
 }
+.section-uno label, .section-uno p{
+    color: #d8dbdda8;
+}
 .section-dos{
     padding: 20px;
 }
@@ -224,6 +227,9 @@ hr{
 .section-nosotros .last-div{
     width: 80%;
     margin: auto;
+}
+.section-nosotros hr {
+    width: 13%;
 }
 /* login */
 .login{
