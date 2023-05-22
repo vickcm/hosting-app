@@ -11,11 +11,11 @@
 <section class="section-uno row">
     <div class="col-12 col-md-5 p-3 text-right d-flex  justify-content-center justify-content-md-end align-items-center">
         <div>
-            <label class="text-uppercase text-secondary-emphasis fw-medium">crea tu propio sitio con</label>
+            <label class="text-uppercase fw-medium">crea tu propio sitio con</label>
             <h1 class="text-uppercase text-white fs-2">
                 NubeWeb
             </h1>
-            <p class="text-uppercase text-secondary-emphasis fw-medium">
+            <p class="text-uppercase  fw-medium">
                 premium hosting
             </p>
             <button class="btn btn-dashboard">Ver Productos</button>
