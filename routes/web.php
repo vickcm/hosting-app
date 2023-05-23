@@ -23,8 +23,11 @@ Route::post('/cerrar-sesion', [\App\Http\Controllers\AuthController::class, 'pro
 
 
 // Posteos - Entradas 
-Route::get('/blog', [\App\Http\Controllers\PostController::class, 'posts'])
+Route::get('/blog', [\App\Http\Controllers\BlogController::class, 'indexBlog'])
     ->name('posts');
+
+Route::get('blog/entradas/{id}', [\App\Http\Controllers\BlogController::class, 'viewFullPost'])
+    ->name('posts.fullpost');
 
 // Productos
 Route::get('/productos', [\App\Http\Controllers\ProductController::class, 'index'])
@@ -86,8 +89,7 @@ Route::post('entradas/{id}/editar', [\App\Http\Controllers\PostController::class
     ->name('posts.processEdit')
     ->middleware('auth');
 
-Route::get('blog/entradas/{id}', [\App\Http\Controllers\PostController::class, 'viewFullPost'])
-    ->name('posts.fullpost');  
+
 
 Route::get('entradas/{id}', [\App\Http\Controllers\PostController::class, 'view'])
     ->name('posts.view');
@@ -99,4 +101,3 @@ Route::get('entradas/{id}/eliminar', [\App\Http\Controllers\PostController::clas
 Route::post('entradas/{id}/eliminar', [\App\Http\Controllers\PostController::class, 'processDelete'])
     ->name('posts.processDelete')
     ->middleware('auth');
-

@@ -13,14 +13,7 @@ use App\Models\Author;
 
 class PostController extends Controller
 {
-    public function posts() 
-    {
-        $posts = Post::with(['category', 'author'])->get(); // soluciona query n+1
-
-        return view('posts', [
-            'posts' => $posts,
-        ]);
-    }
+    
 
     public function view(int $id)
     {
@@ -31,15 +24,7 @@ class PostController extends Controller
         ]);
     }
 
-    public function viewFullPost(int $id)
-    {
-        
-        $post = Post::findOrFail($id);
-
-        return view('posts.fullpost', [
-            'post' => $post,
-        ]);
-    }
+   
 
     public function formNew()
     {
