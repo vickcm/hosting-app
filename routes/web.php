@@ -3,24 +3,12 @@
 use Illuminate\Support\Facades\Route;
 
 
-// Generales Web 
+// Generales Web sin Auth 
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'home'])
     ->name('home');
 Route::get('/quienes-somos', [\App\Http\Controllers\HomeController::class, 'about'])
     ->name('about');
-
-// Autenticación 
-
-Route::get('/iniciar-sesion', [\App\Http\Controllers\AuthController::class, 'formLogin'])
-    ->name('auth.formLogin');
-
-Route::post('/iniciar-sesion', [\App\Http\Controllers\AuthController::class, 'processLogin'])
-    ->name('auth.processLogin');
-
-Route::post('/cerrar-sesion', [\App\Http\Controllers\AuthController::class, 'processLogout'])
-    ->name('auth.processLogout');
-
 
 // Posteos - Entradas 
 Route::get('/blog', [\App\Http\Controllers\BlogController::class, 'indexBlog'])
@@ -33,6 +21,19 @@ Route::get('blog/entradas/{id}', [\App\Http\Controllers\BlogController::class, '
 Route::get('/productos', [\App\Http\Controllers\ProductController::class, 'index'])
     ->name('products.products');
 
+
+// Autenticación - proceso login - logout 
+
+Route::get('/iniciar-sesion', [\App\Http\Controllers\AuthController::class, 'formLogin'])
+    ->name('auth.formLogin');
+
+Route::post('/iniciar-sesion', [\App\Http\Controllers\AuthController::class, 'processLogin'])
+    ->name('auth.processLogin');
+
+Route::post('/cerrar-sesion', [\App\Http\Controllers\AuthController::class, 'processLogout'])
+    ->name('auth.processLogout');
+
+// *** A PARTIR DE ACÁ TODO ADMIN AUTH ** 
 
 // ADMIN - POSTEOS - ENTRADAS
 Route::get('/dashboard', [\App\Http\Controllers\AdminController::class, 'indexPosts'])
@@ -68,11 +69,11 @@ Route::post('categorias/{id}/eliminar', [\App\Http\Controllers\CategoryControlle
     ->name('categories.processDelete')
     ->middleware('auth');
 
+// ADMIN ABM ENTRADAS-POSTEOS
 
 Route::get('entradas/nueva', [\App\Http\Controllers\PostController::class, 'formNew'])
     ->name('posts.formNew')
     ->middleware('auth');
-
 
 
 Route::post('entradas/nueva', [\App\Http\Controllers\PostController::class, 'processNew'])
@@ -88,8 +89,6 @@ Route::get('entradas/{id}/editar', [\App\Http\Controllers\PostController::class,
 Route::post('entradas/{id}/editar', [\App\Http\Controllers\PostController::class, 'processEdit'])
     ->name('posts.processEdit')
     ->middleware('auth');
-
-
 
 Route::get('entradas/{id}', [\App\Http\Controllers\PostController::class, 'view'])
     ->name('posts.view');
