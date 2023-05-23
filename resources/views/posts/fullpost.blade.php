@@ -22,14 +22,15 @@
             @else
                 <img src="{{ url('img/datacenter300x300.jpg') }}" alt="sala de servidores">
             @endif
-            <p class="">{{ $post->category->name }} </p>
+            <p class="">{{ $post->category->name }}, {{$post->author->name}} </p>
+             
         </div>
         <div class="col-12 col-md-8">
             <h2 class="card-title fw-semibold">{{ $post->title }}</h2>
         </div>
 
       {{--   El bucle @foreach itera sobre cada objeto $post y luego utiliza explode("\n", $post->content) para dividir el contenido en párrafos en función de las líneas nuevas (\n). Luego, se muestra cada párrafo dentro de una etiqueta <p> utilizando {{ $paragraph }}. --}}
-        
+
         <div class="post">
             @foreach (explode("\n", $post->content) as $paragraph)
                 <p>{{ $paragraph }}</p>
@@ -37,7 +38,6 @@
         </div>
         
   
-    </div>
         
     </article>
 </section>
