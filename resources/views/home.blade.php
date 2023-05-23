@@ -18,7 +18,7 @@
             <p class="text-uppercase  fw-medium">
                 premium hosting
             </p>
-            <button class="btn btn-dashboard">Ver Productos</button>
+            <a href="#productos_ancla" class="btn btn-dashboard">Ver Productos</a>
         </div>
     </div>
     <div class="col-12 col-md-7 d-flex justify-content-center justify-content-md-start">
@@ -28,7 +28,7 @@
         </picture>
     </div>
 </section>
-<section class="section-dos">
+<section id="productos_ancla" class="section-dos">
     <div class="row">
         <x-product-data :products="$products" />
     </div>

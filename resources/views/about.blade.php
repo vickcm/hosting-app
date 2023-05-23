@@ -62,15 +62,7 @@
                 Entendemos que tus necesidades pueden cambiar con el tiempo. Por eso, ofrecemos planes de hosting flexibles y escalables, para que puedas ajustar tu infraestructura según tu crecimiento y demanda.
             </label>
         </div>
-        <div class="col-12 col-md-5 div-diferentes">
-            <label class="text-center fw-medium">
-                Facilidad de uso
-            </label>
-            <hr>
-            <label>
-                Queremos que disfrutes de una experiencia sin complicaciones. Nuestro panel de control intuitivo y amigable te permitirá administrar tus servicios de hosting de manera sencilla, incluso si no tienes experiencia técnica previa.
-            </label>
-        </div>
+        
     </div>
     <div class="row align-items-center last-div">
         <div class="col-12 col-md-6">
@@ -78,7 +70,7 @@
                 En <strong>NubeWeb</strong>, nos enorgullece respaldar tu éxito en línea. Te invitamos a unirte a nuestra comunidad de clientes satisfechos y descubrir la diferencia que podemos hacer en tu proyecto digital.
                 <strong>¡Haz crecer tu presencia en línea con NubeWeb hoy mismo!</strong>
             </label>
-            <button type="submit" class="btn btn-dashboard mt-2">Ver hostings disponibles</button>
+            <a href="{{ route('home') }}" class="btn btn-dashboard mt-2">Ver hostings disponibles</a>
         </div>
         <div class="col-12 col-md-6">
             <picture>

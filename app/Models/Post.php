@@ -46,8 +46,8 @@ class Post extends Model
             'title.min' => 'El campo título debe tener al menos 5 caracteres',
             'content.required' => 'El campo contenido es obligatorio',
             'content.min' => 'El campo contenido debe tener al menos 30 caracteres',
-            'category_id.required' => 'El campo categoría es obligatorio',
-            'author_id.required' => 'El campo autor es obligatorio',
+            'category_id.required' => 'Debe seleccionar una categoría',
+            'author_id.required' => 'Debe seleccionar un autor',
         ];
     }
 
