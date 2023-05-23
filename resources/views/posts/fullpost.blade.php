@@ -27,9 +27,17 @@
         <div class="col-12 col-md-8">
             <h2 class="card-title fw-semibold">{{ $post->title }}</h2>
         </div>
-        <div class="col-12">
-            <p class="card-text">{{ $post->content }}</p>
+
+      {{--   El bucle @foreach itera sobre cada objeto $post y luego utiliza explode("\n", $post->content) para dividir el contenido en párrafos en función de las líneas nuevas (\n). Luego, se muestra cada párrafo dentro de una etiqueta <p> utilizando {{ $paragraph }}. --}}
+        
+        <div class="post">
+            @foreach (explode("\n", $post->content) as $paragraph)
+                <p>{{ $paragraph }}</p>
+            @endforeach
         </div>
+        
+  
+    </div>
         
     </article>
 </section>
