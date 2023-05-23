@@ -18,9 +18,11 @@ echo '</pre>';
                     <h3 class=""> {{ $product->title }} </h3>
                     <p class="mb-2 text-muted">{{ $product->subtitle }}</p>
                     <p class="">{{ $product->description }}</p>
+                    <p>$ {{ $product->price }}  </p>
                     <button class="btn btn-hostin">Consultar</button>
                 </div>
             </div>
+
         </div>
         @endforeach
     </div> 

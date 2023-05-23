@@ -14,15 +14,16 @@ class ProductsSeeder extends Seeder
      */
     public function run(): void
     {
-        // Para interactuar con las tablas, vamos a usar la clase DB de Laravel, que nos da acceso al
-        // "Query Builder".
+        
+        // recordar precios expresarlos en centavos para un correcto manejo de los decimales. 
+        // 1.25 = 125 esto tendrá mas sentido cuando se haga el ABM del producto. Pero se deja listo. 
         DB::table('products')->insert([
             [
              
                 'title' => 'Web Hosting Mensual',
                 'subtitle' => 'También denominado Hosting compartido, nuestro hosting más económico. ',
                 'description' => 'Funciona en recursos compartidos. Por lo tanto, es tan bueno como un plan inicial básico. Rendimiento Estándar, 1 sitio web, 1 base de datos. Ideal WordPress, Drupal, Joomla, PrestaShop, Magento',
-                'price' => 1250,
+                'price' => 125000,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -32,7 +33,7 @@ class ProductsSeeder extends Seeder
                 'title' => 'Deluxe',
                 'subtitle' => 'Hosting de múltiples sitios con SSL para todos los sitios.',
                 'description' => 'Dominio y correo electrónico gratis por un año. Rendimiento Estándar con Sitios web ilimitados y Bases de datos ilimitadas. Ideal para emprendedores, diseñadores y agencias web.',
-                'price' => 2250,
+                'price' => 225000,
                 'created_at' => now(),
                 'updated_at' => now(),
             ]
