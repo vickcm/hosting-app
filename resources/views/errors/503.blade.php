@@ -1,5 +1,6 @@
-@extends('errors::minimal')
+@extends('layouts.main')
 
 @section('title', __('Service Unavailable'))
-@section('code', '503')
-@section('message', __('Service Unavailable'))
+@section('main')
+@include('errors._contentError')
+@endsection

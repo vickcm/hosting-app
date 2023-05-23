@@ -1,6 +1,8 @@
 <?php
 /** @var \App\Models\Post[]|\Illuminate\Database\Eloquent\Collection $posts
  */
+
+ 
 ?>
 
 @extends('layouts.main')

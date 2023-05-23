@@ -30,7 +30,7 @@ class PostsSeeder extends Seeder
                     Además, es importante que el hosting ofrezca medidas de seguridad adecuadas, como certificados SSL, copias de seguridad y protección contra ataques de malware.
                     
                    Elegir el hosting adecuado para tu sitio web es una decisión crucial que puede afectar significativamente al rendimiento y seguridad de tu sitio web. Tómate el tiempo necesario para investigar y comparar diferentes opciones de hosting antes de tomar una decisión final.",
-                   'image' => 'images.jpg',
+                   'image' => 'server-turbo-300x300.jpg',
 
                     'created_at' => now(),
                     'updated_at' => now(),
@@ -48,7 +48,7 @@ class PostsSeeder extends Seeder
                     No importa si eres un principiante en WordPress o un usuario avanzado, elegir un hosting especializado en esta plataforma puede ayudarte a obtener el mejor rendimiento para tu sitio web.",
                     "category_id" => 2,
                     "author_id" => 1,
-                    'image' => 'images.jpg',
+                    'image' => 'hosting-wordpress.jpg',
 
                     'created_at' => now(),
                     'updated_at' => now(),
@@ -65,7 +65,7 @@ class PostsSeeder extends Seeder
                     No importa si eres un principiante en WordPress o un usuario avanzado, elegir un hosting especializado en esta plataforma puede ayudarte a obtener el mejor rendimiento para tu sitio web.",
                     "author_id" => 1,
                     "category_id" => 3,
-                    'image' => 'images.jpg',
+                    'image' => 'Web-Hosting-300x300.jpg',
 
                     'created_at' => now(),
                     'updated_at' => now(),
@@ -86,7 +86,7 @@ class PostsSeeder extends Seeder
                     Estamos orgullosos de haber sido parte del éxito en línea de Decoraciones Viviana and Co. y seguiremos trabajando para brindarles un servicio de hosting de calidad y confianza. ¡Felicidades a Decoraciones Viviana and Co. por su crecimiento y logros en el mundo digital!",
                     "author_id" => 2,
                     "category_id" => 4,
-                    'image' => 'images.jpg',
+                    'image' => 'decoraciones_viviana.jpg',
                     'created_at' => now(),
                     'updated_at' => now(),
                     
