@@ -58,7 +58,7 @@
             @yield('main')
         </main>
         <footer class="d-flex justify-content-center align-items-center">
-            <p class="m-0">Micaela Guggiari && Victoria Castro Mena &copy; 2023 || Portales y Comercio Electronico || Santiago Gallino</p>
+            <p class="m-0">Micaela Guggiari && Victoria Castro Menna &copy; 2023 || Portales y Comercio Electrónico || Santiago Gallino</p>
         </footer>
     </div>
     <script src="{{ url('js/bootstrap.bundle.js') }}"></script>
