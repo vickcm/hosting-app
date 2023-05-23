@@ -27,11 +27,7 @@ class Post extends Model
      |--------------------------------------------------------------------------
      */
 
-    // usar Str::limit() para acortar el contenido de los posts 
-    public function getShortContent($text, $limit)
-    {
-        return Str::limit($text, $limit);
-    }
+ 
 
     public static function validationRules(): array
     {

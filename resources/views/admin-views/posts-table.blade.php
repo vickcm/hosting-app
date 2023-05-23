@@ -1,5 +1,7 @@
 <?php
 /** @var \App\Models\Post[]|\Illuminate\Database\Eloquent\Collection $posts */
+use Illuminate\Support\Str;
+
 ?>
 @extends('layouts.admin')
 @section('title', 'Listado de Entradas')
@@ -12,12 +14,7 @@
             <span class="card-text">Posteos</span>
         </div>
     </div>
-    {{-- <div class="card">
-            <div class="card-body">
-                <p class="card-title"></p>
-                <span class="card-text">Categorías</span>
-            </div>
-        </div> --}}
+ 
 </div>
 <div class="card">
     <div class="card-header d-flex flex-column flex-md-row justify-content-md-between align-items-center">
@@ -42,7 +39,7 @@
                     @foreach ($posts as $post)
                         <tr>
                             <td class="fw-semibold">{{ $post->title }}</td>
-                            <td>{{ $post->getShortContent($post->content, 300) }}</td>
+                            <td>{{ Str::words($post->content, 30) }}</td>
                             <td>{{ $post->author->name }}</td>
                             <td>{{ $post->category->name }}</td>
                             <td>

@@ -2,7 +2,11 @@
 /** @var \App\Models\Post[]|\Illuminate\Database\Eloquent\Collection $posts
  *
  * use _ to indicate that this is a partial view
+ * 
  */
+
+ use Illuminate\Support\Str;
+
 ?>
 @foreach ($posts as $post)
     <div class="col-12 col-md-4 mt-3 mb-3">
@@ -15,7 +19,7 @@
                 <div class="fw-medium text-secondary mb-2">Autor:
                     {{ $post->author->name }}
                 </div>
-                <p class="card-text">{{ $post->getShortContent($post->content, 100) }}</p>
+                <p class="card-text">{{ Str::words($post->content, 30) }}</p>
                 <a href="{{ route('posts.fullpost', ['id' => $post->id]) }}" class="btn btn-entradas float-end">Ver más</a>
             </div>
         </div>
