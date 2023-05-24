@@ -7,7 +7,7 @@ use App\Models\Post;
 
 class BlogController extends Controller
 {
-    public function indexBlog() 
+    public function indexBlog()
     {
         $posts = Post::with(['category', 'author'])->get(); // soluciona query n+1
 
@@ -15,10 +15,10 @@ class BlogController extends Controller
             'posts' => $posts,
         ]);
     }
-    
+
     public function viewFullPost(int $id)
     {
-        
+
         $post = Post::findOrFail($id);
 
         return view('posts.fullpost', [
