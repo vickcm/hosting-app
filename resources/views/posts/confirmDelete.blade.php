@@ -1,5 +1,7 @@
 <?php
 /** @var \App\Models\Post[]|\Illuminate\Database\Eloquent\Collection $posts */
+
+
 ?>
 
 @section('title', 'Confirmación de eliminación de entrada')
