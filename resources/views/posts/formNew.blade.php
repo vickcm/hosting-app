@@ -96,7 +96,7 @@
             </div>
             <div class="d-flex justify-content-center">
                 <button type="submit" class="btn btn-primary me-3">Publicar</button>
-                <a href="{{ route('dashboardPosts') }}" class="btn btn-success">
+                <a href="{{ route('dashboardPosts') }}" class="btn btn-cancelar">
                     Cancelar
                 </a>
             </div>

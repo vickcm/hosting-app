@@ -1,11 +1,7 @@
 <?php
 /** @var \App\Models\Posts[]|\Illuminate\Database\Eloquent\Collection $posts */
-
 use Illuminate\Support\Str;
 ?>
-
-
-
 <div class="col-12">
     <h2 class="text-dark my-4">Últimas entradas</h2>
 </div>

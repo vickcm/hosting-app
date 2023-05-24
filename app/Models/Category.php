@@ -18,7 +18,6 @@ class Category extends Model
     {
         return $this->hasMany(Post::class, 'category_id', 'category_id');
     }
-    
 
     public static function validationRules():array 
     {

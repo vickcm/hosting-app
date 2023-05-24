@@ -4,9 +4,7 @@
  * use _ to indicate that this is a partial view
  * 
  */
-
- use Illuminate\Support\Str;
-
+use Illuminate\Support\Str;
 ?>
 @foreach ($posts as $post)
     <div class="col-12 col-md-4 mt-3 mb-3">

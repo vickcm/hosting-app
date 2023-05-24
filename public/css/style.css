@@ -25,7 +25,6 @@ footer p {
 strong {
     font-weight: normal;
 }
-
 hr{
     background-color: #3648b6;
     width: 60%;
@@ -35,6 +34,14 @@ hr{
 .alert{
     width: 30%;
     margin: auto;
+}
+.btn-cancelar{
+    color: #e1e5f0;
+    background: #b40a1a;
+}
+.btn-cancelar:hover{
+    color: #e1e5f0;
+    background: #aa0f0f;
 }
 /* DASHBOARD */
 /* header */
@@ -201,11 +208,21 @@ hr{
     min-height: 13rem;
 }
 .section-entrada-blog{
-    width: 60%;
+    width: 70%;
     margin: auto;
+    margin-bottom: 20px;
 }
 .section-entrada-blog a {
     padding-left: 0px !important;
+}
+.section-entrada-blog article {
+    background: #c9ccff21;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.2);
+}
+.section-entrada-blog article p {
+    font-size: 17px;
 }
 /* nosotros */
 .section-nosotros{

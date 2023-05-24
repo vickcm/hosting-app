@@ -7,8 +7,6 @@ use App\Models\Post;
 
 class BlogController extends Controller
 {
-    //
-
     public function indexBlog() 
     {
         $posts = Post::with(['category', 'author'])->get(); // soluciona query n+1

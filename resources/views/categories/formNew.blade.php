@@ -42,7 +42,7 @@
         </div>
         <div class="d-flex justify-content-center">
             <button type="submit" class="btn btn-primary me-3">Crear</button>
-            <a href="{{ route('dashboardCategories') }}" class="btn btn-success"> 
+            <a href="{{ route('dashboardCategories') }}" class="btn btn-cancelar"> 
                 Cancelar
             </a>
         </div>

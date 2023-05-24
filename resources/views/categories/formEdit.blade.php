@@ -50,7 +50,7 @@ echo '</pre>'; */
             </div>
             <div class="d-flex justify-content-center">
                 <button type="submit" class="btn btn-warning me-3">Editar Categoria</button>
-                <a href="{{ route('dashboardCategories') }}" class="btn btn-success"> 
+                <a href="{{ route('dashboardCategories') }}" class="btn btn-cancelar"> 
                     Cancelar
                 </a>
             </div>

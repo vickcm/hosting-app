@@ -119,7 +119,7 @@ use Illuminate\Support\Facades\Storage;
             </div>
             <div class="d-flex justify-content-center">
                 <button type="submit" class="btn btn-warning me-3">Editar Entrada</button>
-                <a href="{{ route('dashboardPosts') }}" class="btn btn-success"> 
+                <a href="{{ route('dashboardPosts') }}" class="btn btn-cancelar"> 
                     Cancelar
                 </a>
             </div>

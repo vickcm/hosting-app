@@ -12,7 +12,6 @@
             <span class="card-text">Categorías</span>
         </div>
     </div>
-   
 </div>
 <div class="card">
     <div class="card-header d-flex flex-column flex-md-row justify-content-md-between align-items-center">

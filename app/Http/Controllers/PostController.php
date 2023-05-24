@@ -23,9 +23,7 @@ class PostController extends Controller
             'post' => $post,
         ]);
     }
-
-   
-
+    
     public function formNew()
     {
         return view('posts.formNew', [

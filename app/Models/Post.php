@@ -19,15 +19,12 @@ class Post extends Model
 
 
     /*
-     |--------------------------------------------------------------------------
-     | function str limit limita a cantidad de caracteres a mostrar 
-      @param int $long para determinar cuantos caracteres se van a mostrar
-      retorna un string
-
-     |--------------------------------------------------------------------------
+    |--------------------------------------------------------------------------
+    | function str limit limita a cantidad de caracteres a mostrar 
+        @param int $long para determinar cuantos caracteres se van a mostrar
+        retorna un string
+    |--------------------------------------------------------------------------
      */
-
- 
 
     public static function validationRules(): array
     {
