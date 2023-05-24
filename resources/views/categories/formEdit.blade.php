@@ -3,9 +3,6 @@
 // Esta variable contiene los mensajes de error que hayan ocurrido, en caso de haberlos.
 /** @var \Illuminate\Support\ViewErrorBag $errors */
 
-/* echo '<pre>';
-print_r ($post);
-echo '</pre>'; */
 ?>
 
 @extends('layouts.admin')

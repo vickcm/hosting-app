@@ -14,9 +14,9 @@
                 ¡Bienvenido a NubeWeb!
             </h1>
             <label class="mt-2">
-                En NubeWeb, nos apasiona brindar soluciones de <strong> hosting confiables y de alto rendimiento </strong>  para tu presencia en línea. Nos enorgullece ofrecer un entorno seguro y estable para alojar tus sitios web, aplicaciones y proyectos digitales.</label>
+                En NubeWeb, nos apasiona brindar soluciones de <strong> <span lang="en">hosting</span> confiables y de alto rendimiento </strong>  para tu presencia en línea. Nos enorgullece ofrecer un entorno seguro y estable para alojar tus sitios web, aplicaciones y proyectos digitales.</label>
             <label class="mt-2">
-                <strong> Nuestra misión es simplificar tu experiencia en la nube,</strong> proporcionándote servicios de hosting sólidos y escalables. Ya seas un emprendedor, una pequeña empresa o una organización en crecimiento, nuestro objetivo es asegurarnos de que encuentres en NubeWeb la plataforma perfecta para tus necesidades.
+                <strong> Nuestra misión es simplificar tu experiencia en la nube,</strong> proporcionándote servicios de <span lang="en">hosting</span>  sólidos y escalables. Ya seas un emprendedor, una pequeña empresa o una organización en crecimiento, nuestro objetivo es asegurarnos de que encuentres en NubeWeb la plataforma perfecta para tus necesidades.
             </label>
         </div>    
     </div>
@@ -59,7 +59,7 @@
             </label>
             <hr>
             <label>
-                Entendemos que tus necesidades pueden cambiar con el tiempo. Por eso, ofrecemos planes de hosting flexibles y escalables, para que puedas ajustar tu infraestructura según tu crecimiento y demanda.
+                Entendemos que tus necesidades pueden cambiar con el tiempo. Por eso, ofrecemos planes de <span lang="en">hosting</span> flexibles y escalables, para que puedas ajustar tu infraestructura según tu crecimiento y demanda.
             </label>
         </div>
         
@@ -70,7 +70,7 @@
                 En <strong>NubeWeb</strong>, nos enorgullece respaldar tu éxito en línea. Te invitamos a unirte a nuestra comunidad de clientes satisfechos y descubrir la diferencia que podemos hacer en tu proyecto digital.
                 <strong>¡Haz crecer tu presencia en línea con NubeWeb hoy mismo!</strong>
             </label>
-            <a href="{{ route('home') }}" class="btn btn-dashboard mt-2">Ver hostings disponibles</a>
+            <a href="{{ route('home') }}" class="btn btn-dashboard mt-2">Ver <span lang="en"> hostings </span>disponibles</a>
         </div>
         <div class="col-12 col-md-6">
             <picture>

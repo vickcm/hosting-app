@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -24,7 +23,7 @@ class AuthController extends Controller
         }
 
         $request->session()->regenerate();
-        
+
         return redirect()->route('dashboardPosts')
             ->with('message', 'Bienvenido ' . auth()->user()->username)
             ->with('type', 'success');
