@@ -10,6 +10,9 @@ html, body, #app{
     height: 100%;
     margin: 0!important;
 }
+header {
+    z-index: 1;
+}
 #app {
     display: grid;
     grid-template-rows: 56px 1fr 75px;
