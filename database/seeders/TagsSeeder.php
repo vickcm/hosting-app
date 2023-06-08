@@ -16,19 +16,13 @@ class TagsSeeder extends Seeder
     {
         DB::table('tags')->insert([
             [
-             
                 'tag_id' => 1,
                 'name' => 'Web Hosting Mensual',
-               
             ],
-
             [
-             
                 'tag_id' => 2,
                 'name' => 'Deluxe',
-                
             ]
-         
-        ]);  //
+        ]);
     }
 }

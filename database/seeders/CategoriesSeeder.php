@@ -13,8 +13,7 @@ class CategoriesSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('categories')->insert(
-         [
+        DB::table('categories')->insert([
             [
                 'category_id' => 1, 
                 'name' => 'Novedades',
@@ -35,8 +34,6 @@ class CategoriesSeeder extends Seeder
                 'name' => 'Casos de éxito',
                 'description' => 'publicaciones que destacan historias de éxito de clientes que utilizan el hosting y han logrado resultados positivos.',
             ] 
-         ]   
-           
-        );
+        ]);
     }
 }

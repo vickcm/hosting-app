@@ -24,7 +24,6 @@ class AuthorsSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ], 
-
             [
                 'author_id' => 2,
                 'name' => 'Lucas García',
@@ -32,10 +31,6 @@ class AuthorsSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ]
-          
-           
-            
         ]);
-
     }
 }
