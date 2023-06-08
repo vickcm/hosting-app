@@ -11,11 +11,11 @@
 <section class="section-uno row">
     <div class="col-12 col-md-5 p-3 text-right d-flex  justify-content-center justify-content-md-end align-items-center">
         <div>
-            <label class="text-uppercase fw-medium">crea tu propio sitio con</label>
+            <p class="text-uppercase fw-medium">crea tu propio sitio con</p>
             <h1 class="text-uppercase text-white fs-2">
                 NubeWeb
             </h1>
-            <p class="text-uppercase  fw-medium">
+            <p class="text-uppercase fw-medium">
                 premium hosting
             </p>
             <a href="#productos_ancla" class="btn btn-dashboard">Ver Productos</a>
@@ -39,7 +39,7 @@
             <hr>
         </div>
         <div class="col-12 mt-3">
-            <h2 class="text-center">¿Porqué Elegirnos?</h2>
+            <h2 class="text-center">¿Por qué Elegirnos?</h2>
         </div>
         <div class="col-12 mt-3">
             <div class="d-flex justify-content-evenly flex-column flex-md-row align-items-center">
