@@ -24,10 +24,10 @@
         <div class="col-12 col-md-4 mb-3 mt-3 mt-md-0">
             @if ($post->image !== null && Storage::has('img/' . $post->image))
                 <div>
-                    <img src="{{ Storage::url('img/' . $post->image) }}" alt="{{ $post->image_description }}">
+                    <img class="img-fluid" src="{{ Storage::url('img/' . $post->image) }}" alt="{{ $post->image_description }}">
                 </div>
             @else
-                <img src="{{ url('img/datacenter300x300.jpg') }}" alt="sala de servidores">
+                <img class="img-fluid" src="{{ url('img/datacenter300x300.jpg') }}" alt="sala de servidores">
             @endif
         </div>
         {{--   El bucle @foreach itera sobre cada objeto $post y luego utiliza explode("\n", $post->content) para dividir el contenido en párrafos en función de las líneas nuevas (\n). Luego, se muestra cada párrafo dentro de una etiqueta <p> utilizando {{ $paragraph }}. --}}

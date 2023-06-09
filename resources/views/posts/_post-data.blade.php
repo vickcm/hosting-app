@@ -1,6 +1,5 @@
 <?php
 /** @var \App\Models\Post[]|\Illuminate\Database\Eloquent\Collection $posts
-
  */
 ?>
 
@@ -11,9 +10,7 @@
                 <div class="col-md-5">
                     @if ($post->image !== null && Storage::has('img/' . $post->image))
                         <div>
-                            <img class="card-img" src="{{ Storage::url('img/' . $post->image) }}"
-                                alt="{{ $post->image_description }}">
-
+                            <img class="card-img" src="{{ Storage::url('img/' . $post->image) }}" alt="{{ $post->image_description }}">
                         </div>
                     @else
                         <img class="card-img" src="{{ url('img/datacenter300x300.jpg') }}" alt="sala de servidores">
