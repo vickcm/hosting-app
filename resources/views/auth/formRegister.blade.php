@@ -3,7 +3,7 @@
 @section('main')
 <h1 class="text-center mb-5 mt-5 blog">Crear una cuenta</h1>
 <div class="login">
-    <form action="{{ route('auth.processLogin') }}" method="post">
+    <form action="{{ route('auth.processRegister') }}" method="post">
         @csrf
         <div class="mb-3">
             <label for="username" class="form-label">Nombre de Usuario</label>
