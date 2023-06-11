@@ -31,8 +31,8 @@ class Post extends Model
         return [
             'title' => 'required',
             'content' => 'required|min:30',
-            'category_id' => 'required',
-            'author_id' => 'required',
+            'category_id' => 'required| not_in:0',
+            'author_id' => 'required| not_in:0',
         ];
     }
 
@@ -43,7 +43,10 @@ class Post extends Model
             'content.required' => 'El campo contenido es obligatorio',
             'content.min' => 'El campo contenido debe tener al menos 30 caracteres',
             'category_id.required' => 'Debe seleccionar una categoría',
+            'category_id.not_in' => 'Debe seleccionar una categoría',
             'author_id.required' => 'Debe seleccionar un autor',
+            'author_id.not_in' => 'Debe seleccionar un autor',
+
         ];
     }
 

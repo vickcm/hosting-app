@@ -14,7 +14,7 @@
     <form action="{{ route('categories.processNew') }}" method="post">
         @csrf
         <div class="mb-3">
-            <label for="name" class="form-label">Nombre</label>
+            <label for="name" class="form-label">Nombre <span class="text-danger">*</span> <span class="form-aclaracion" >Campo obligatorio</span></label>
             <input type="text" id="name" name="name" class="form-control"
             placeholder="Ingrese el nombre de la categoría"
             @error('name')
@@ -29,7 +29,7 @@
             @enderror
         </div>
         <div class="mb-3">
-            <label for="description" class="form-label">Descripcion</label>
+            <label for="description" class="form-label">Descripción <span class="text-danger">*</span> <span class="form-aclaracion" >Campo obligatorio</span></label>
             <textarea id="description" name="description" class="form-control"
             @error('description') aria-describedby="error-description" @enderror
             >{{ old('description') }}</textarea>

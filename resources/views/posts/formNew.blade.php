@@ -33,7 +33,7 @@
                 <label for="category_id" class="form-label">Categoría <span class="text-danger">*</span> <span class="form-aclaracion" >Campo obligatorio</span></label>
                 <select name="category_id" id="category_id" class="form-control"
                     @error('category_id') aria-describedby="error-category_id" @enderror>
-                    <option value=""> </option>
+                    <option value="0">Seleccionar una Categoría</option>
                     @foreach ($categories as $category)
                         <option value="{{ $category->category_id }}" @selected(old('category_id') == $category->category_id)>{{ $category->name }}
                         </option>
@@ -47,7 +47,7 @@
                 <label for="author_id" class="form-label">Autor <span class="text-danger">*</span> <span class="form-aclaracion" >Campo obligatorio</span></label>
                 <select name="author_id" id="author_id" class="form-control"
                     @error('author_id') aria-describedby="error-author_id" @enderror>
-                    <option value=""> </option>
+                    <option value="0">Seleccionar un Autor</option>
 
                     @foreach ($authors as $author)
                         <option value="{{ $author->author_id }}" @selected(old('author_id') == $author->author_id)>{{ $author->name }}</option>

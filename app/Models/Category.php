@@ -22,8 +22,8 @@ class Category extends Model
     public static function validationRules():array 
     {
         return [
-            'name' => 'required|min:3',
-            'description' => 'required|min:20',
+            'name' => 'required',
+            'description' => 'required',
         ];
     }
 
@@ -31,9 +31,7 @@ class Category extends Model
     {
         return [
             'name.required' => 'El campo nombre es obligatorio',
-            'name.min' => 'El campo nombre debe tener al menos 3 caracteres',
             'description.required' => 'El campo descripción es obligatorio',
-            'description.min' => 'El campo descripción debe tener al menos 20 caracteres',
         ];
     }   
     // use HasFactory;
