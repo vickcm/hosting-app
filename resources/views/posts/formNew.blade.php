@@ -15,7 +15,7 @@
         <form action="{{ route('posts.processNew') }}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
-                <label for="title" class="form-label">Título</label>
+                <label for="title" class="form-label">Título <span class="text-danger">*</span> <span class="form-aclaracion" >Campo obligatorio</span> </label>
                 <input type="text" id="title" name="title" class="form-control"
                     placeholder="Ingrese el título de la entrada"
                     @error('title')
@@ -30,7 +30,7 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label for="category_id" class="form-label">Categoría</label>
+                <label for="category_id" class="form-label">Categoría <span class="text-danger">*</span> <span class="form-aclaracion" >Campo obligatorio</span></label>
                 <select name="category_id" id="category_id" class="form-control"
                     @error('category_id') aria-describedby="error-category_id" @enderror>
                     <option value=""> </option>
@@ -44,7 +44,7 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label for="author_id" class="form-label">Autor</label>
+                <label for="author_id" class="form-label">Autor <span class="text-danger">*</span> <span class="form-aclaracion" >Campo obligatorio</span></label>
                 <select name="author_id" id="author_id" class="form-control"
                     @error('author_id') aria-describedby="error-author_id" @enderror>
                     <option value=""> </option>
@@ -58,7 +58,7 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label for="content" class="form-label">Contenido</label>
+                <label for="content" class="form-label">Contenido <span class="text-danger">*</span> <span class="form-aclaracion" >Campo obligatorio, debe contenedor al menos 30 caracteres</span></label>
                 <textarea id="content" name="content" class="form-control"
                     @error('content') aria-describedby="error-content" @enderror>{{ old('content') }}</textarea>
                 @error('content')

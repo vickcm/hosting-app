@@ -29,7 +29,7 @@ class Post extends Model
     public static function validationRules(): array
     {
         return [
-            'title' => 'required|min:5',
+            'title' => 'required',
             'content' => 'required|min:30',
             'category_id' => 'required',
             'author_id' => 'required',
@@ -40,7 +40,6 @@ class Post extends Model
     {
         return [
             'title.required' => 'El campo título es obligatorio',
-            'title.min' => 'El campo título debe tener al menos 5 caracteres',
             'content.required' => 'El campo contenido es obligatorio',
             'content.min' => 'El campo contenido debe tener al menos 30 caracteres',
             'category_id.required' => 'Debe seleccionar una categoría',

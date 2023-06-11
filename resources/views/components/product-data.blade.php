@@ -13,10 +13,10 @@
             <div class="productos mt-3">
                 <div class="mt-2">
                     <img class="img-fluid" alt="servicio de hosting" src="{{ url('img/hosting.png') }}">
-                    <h3 class=""> {{ $product->title }} </h3>
+                    <h3 > {{ $product->title }} </h3>
                     <p class="mb-2 text-muted">{{ $product->subtitle }}</p>
-                    <p class="">{{ $product->description }}</p>
-                    <p>$ {{ $product->price }}  </p>
+                    <p >{{ $product->description }}</p>
+                    <p class="text-primary fw-bold">$ {{ $product->price }}  </p>
                     <button class="btn btn-hostin">Consultar</button>
                 </div>
             </div>

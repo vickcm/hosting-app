@@ -108,6 +108,10 @@ hr{
     border-radius: 10px;
     margin: auto;
 }
+.form-aclaracion {
+    color: grey;
+    font-size: 10px;
+}
 .form-editar form textarea, .form-nueva-entrada form textarea{
     resize: none;
     height: 250px;
