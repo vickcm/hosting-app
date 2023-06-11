@@ -1,6 +1,6 @@
 <?php
 namespace App\Models;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as BaseUser;
 use Illuminate\Notifications\Notifiable;
@@ -36,5 +36,10 @@ class User extends BaseUser
             'password.required' => 'El campo contraseña es obligatorio',
             'password.min' => 'El campo contraseña debe tener al menos 6 caracteres',
         ];
+    }
+
+    public function products()
+    {
+        return $this->belongsToMany(Product::class, 'users_has_products', 'user_id', 'product_id');
     }
 }

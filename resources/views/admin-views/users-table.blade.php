@@ -23,7 +23,11 @@
                         <tr>
                             <td>{{ $user->user_id }}</td>
                             <td class="fw-semibold">{{ $user->username }}</td>
-                            <td>servicio contratado X </td>
+                            <td>
+                                @foreach ($user->products as $product)
+                                    {{ $product->title }}
+                                @endforeach
+                            </td>
                             
                                 
                             

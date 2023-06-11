@@ -25,13 +25,13 @@ class AdminController extends Controller
     }
 
     public function indexUsers()
-    {
-        $users = User::where('role', 'user')
+{
+    $users = User::with('products')->where('role', 'user')
         ->select('username', 'email', 'user_id')
         ->get();
 
-        return view('admin-views.users-table', [
-            'users' => $users,
-        ]);
-    }
+    return view('admin-views.users-table', [
+        'users' => $users,
+    ]);
+}
 }
