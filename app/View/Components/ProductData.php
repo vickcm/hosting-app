@@ -1,7 +1,5 @@
 <?php
-
 namespace App\View\Components;
-
 use Closure;
 use Illuminate\View\Component;
 use Illuminate\Contracts\View\View;
@@ -9,8 +7,6 @@ use App\Models\Product;
 
 class ProductData extends Component
 {
-    
-
     /**
      * Create a new component instance.
      *
@@ -19,9 +15,7 @@ class ProductData extends Component
      */
     public function __construct(public $products)
     {
-        
     }
-    
     /**
      * Get the view / contents that represent the component.
      *

@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Models\Post;
 
@@ -18,7 +17,6 @@ class BlogController extends Controller
 
     public function viewFullPost(int $id)
     {
-
         $post = Post::with('category', 'author')->findOrFail($id);
 
         return view('posts.fullpost', [

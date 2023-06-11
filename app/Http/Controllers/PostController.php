@@ -1,8 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
-
 use App\Models\Post;
 use Doctrine\DBAL\Schema\View;
 use Illuminate\Http\Request;
@@ -13,8 +10,6 @@ use App\Models\Author;
 
 class PostController extends Controller
 {
-    
-
     public function view(int $id)
     {
         $post = Post::findOrFail($id);

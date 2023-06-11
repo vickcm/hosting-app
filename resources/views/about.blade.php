@@ -20,50 +20,55 @@
             </p>
         </div>    
     </div>
-    <div class="row justify-content-center">
-        <div class="col-12">
-            <h2 class="text-center mt-3 mb-3">
-                ¿Qué nos hace diferentes?
-            </h2>
-        </div>
-        <div class="col-12 col-md-5 div-diferentes">
-            <p class="text-center fw-medium">
-                Rendimiento superior
-            </p>
-            <hr>
-            <p>
-                Contamos con servidores de última generación y una infraestructura optimizada para garantizar velocidades de carga rápidas y tiempos de respuesta excepcionales.
-            </p>
-        </div>
-        <div class="col-12 col-md-5 div-diferentes">
-            <p  class="text-center fw-medium">
-                Seguridad de primer nivel
-            </p>
-            <hr>
-            <p>
-                Tu seguridad es nuestra prioridad. Implementamos medidas rigurosas para proteger tus datos y salvaguardar tus sitios web y aplicaciones de cualquier amenaza potencial.
-            </p>
-        </div>
-        <div class="col-12 col-md-5 div-diferentes">
-            <p class="text-center fw-medium">
-                Soporte experto
-            </p>
-            <hr>
-            <p>
-                Nuestro equipo de soporte técnico está disponible las 24 horas del día, los 7 días de la semana, para ayudarte en cualquier momento. Estamos aquí para resolver tus dudas y brindarte asistencia personalizada cuando más lo necesites.
-            </p>
-        </div>
-        <div class="col-12 col-md-5 div-diferentes">
-            <p class="text-center fw-medium">
-                Flexibilidad y escalabilidad
-            </p>
-            <hr>
-            <p>
-                Entendemos que tus necesidades pueden cambiar con el tiempo. Por eso, ofrecemos planes de <span lang="en">hosting</span> flexibles y escalables, para que puedas ajustar tu infraestructura según tu crecimiento y demanda.
-            </p>
-        </div>
-        
-    </div>
+    <h2 class="text-center mt-3 mb-3">
+        ¿Qué nos hace diferentes?
+    </h2>
+    <ul class="list-unstyled row justify-content-md-center">
+        <li class=" col-12 col-md-5">
+            <div class="div-diferentes">
+                <p class="fw-medium">
+                    Rendimiento superior
+                </p>
+                <hr>
+                <p>
+                    Contamos con servidores de última generación y una infraestructura optimizada para garantizar velocidades de carga rápidas, tiempos de respuesta excepcionales y un rendimiento superior en nuestros servicios de hosting.
+                </p>
+            </div>
+        </li>
+        <li class="col-12 col-md-5">
+            <div class="div-diferentes">
+                <p class="fw-medium">
+                    Seguridad de primer nivel
+                </p>
+                <hr>
+                <p>
+                    Tu seguridad es nuestra prioridad. Implementamos medidas rigurosas para proteger tus datos y salvaguardar tus sitios web y aplicaciones de cualquier amenaza potencial.
+                </p>
+            </div>
+        </li>
+        <li class="col-12 col-md-5">
+            <div class="div-diferentes">
+                <p class="fw-medium">
+                    Soporte experto
+                </p>
+                <hr>
+                <p>
+                    Nuestro equipo de soporte técnico está disponible las 24 horas del día, los 7 días de la semana, para ayudarte en cualquier momento. Estamos aquí para resolver tus dudas y brindarte asistencia personalizada cuando más lo necesites.
+                </p>
+            </div>
+        </li>
+        <li class="col-12 col-md-5">
+            <div class="div-diferentes">
+                <p class="fw-medium">
+                    Flexibilidad y escalabilidad
+                </p>
+                <hr>
+                <p>
+                    Entendemos que tus necesidades pueden cambiar con el tiempo. Por eso, ofrecemos planes de <span lang="en">hosting</span> flexibles y escalables, para que puedas ajustar tu infraestructura según tu crecimiento y demanda.
+                </p>
+            </div>
+        </li>
+    </ul>
     <div class="row align-items-center last-div">
         <div class="col-12 col-md-6">
             <p>
