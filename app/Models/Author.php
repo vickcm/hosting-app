@@ -2,11 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Author extends Model
 {
     protected $primaryKey = "author_id";
-    use HasFactory;
 }

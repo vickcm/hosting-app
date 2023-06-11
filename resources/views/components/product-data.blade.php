@@ -1,5 +1,7 @@
 <?php
 /** @var \App\Models\Product[]|\Illuminate\Database\Eloquent\Collection $products */
+/** quiero ver que tiene la variable products */
+
 ?>
 <div class="col-12">
     <h2 class="mb-3 mt-3 mt-md-5 text-center">Servicios de Hosting</h2>
@@ -22,4 +24,4 @@
         </div>
         @endforeach
     </div> 
-</div>
+</div> 

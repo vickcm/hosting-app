@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('main')
-<h1 class="text-center mb-5 mt-5 blog">Iniciar Sesion</h1>
+<h1 class="text-center mb-5 mt-5 blog">Iniciar Sesión</h1>
 <div class="login">
     <form action="{{ route('auth.processLogin') }}" method="post">
         @csrf

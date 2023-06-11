@@ -9,19 +9,23 @@ use App\Models\Product;
 
 class ProductData extends Component
 {
+    
+
     /**
      * Create a new component instance.
+     *
+     * @param  \Illuminate\Database\Eloquent\Collection|Product[]  $products
+     * @return void
      */
-
-    public $products;
-
-    public function __construct()
+    public function __construct(public $products)
     {
-        $this->products = Product::all();
+        
     }
     
     /**
      * Get the view / contents that represent the component.
+     *
+     * @return \Illuminate\Contracts\View\View|\Closure|string
      */
     public function render(): View|Closure|string
     {

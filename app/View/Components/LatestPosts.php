@@ -13,15 +13,9 @@ class LatestPosts extends Component
      * Create a new component instance.
      */
 
-    public $posts;
-    public function __construct()
+    public function __construct(public $posts)
     {
-        if (Post::count() > 3) {
-            $this->posts = Post::latest()->take(3)->get();
-        }
-        else {
-            $this->posts = Post::all();
-        }
+       
     }
 
     /**

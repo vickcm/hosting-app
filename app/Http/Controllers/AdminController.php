@@ -10,7 +10,7 @@ class AdminController extends Controller
 {
     public function indexPosts()
     {
-        $posts = Post::all();
+        $posts = Post::with('category', 'author')->get();
         return view('admin-views.posts-table', [
             'posts' => $posts,
         ]);

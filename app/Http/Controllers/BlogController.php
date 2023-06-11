@@ -19,7 +19,7 @@ class BlogController extends Controller
     public function viewFullPost(int $id)
     {
 
-        $post = Post::findOrFail($id);
+        $post = Post::with('category', 'author')->findOrFail($id);
 
         return view('posts.fullpost', [
             'post' => $post,
