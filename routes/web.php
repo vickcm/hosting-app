@@ -38,65 +38,67 @@ Route::post('/cerrar-sesion', [\App\Http\Controllers\AuthController::class, 'pro
 // ADMIN - POSTEOS - ENTRADAS
 Route::get('/dashboard', [\App\Http\Controllers\AdminController::class, 'indexPosts'])
     ->name('dashboardPosts')
-    ->middleware('auth');
+    ->middleware(['auth', 'isAdmin']);
 
 // ADMIN - CATEGORIAS 
 Route::get('/dashboard/categorias', [\App\Http\Controllers\AdminController::class, 'indexCategories'])
     ->name('dashboardCategories')
-    ->middleware('auth');
+    ->middleware(['auth', 'isAdmin']);
 
 Route::get('categorias/nueva', [\App\Http\Controllers\CategoryController::class, 'formNew'])
     ->name('categories.formNew')
-    ->middleware('auth');
+    ->middleware(['auth', 'isAdmin']);
 
 Route::post('categorias/nueva', [\App\Http\Controllers\CategoryController::class, 'processNew'])
     ->name('categories.processNew')
-    ->middleware('auth');
+    ->middleware(['auth', 'isAdmin']);
 
 Route::get('categorias/{id}/editar', [\App\Http\Controllers\CategoryController::class, 'formEdit'])
     ->name('categories.formEdit')
-    ->middleware('auth');
+    ->middleware(['auth', 'isAdmin']);
 
 Route::post('categorias/{id}/editar', [\App\Http\Controllers\CategoryController::class, 'processEdit'])
     ->name('categories.processEdit')
-    ->middleware('auth');
+    ->middleware(['auth', 'isAdmin']);
 
 Route::get('categorias/{id}/eliminar', [\App\Http\Controllers\CategoryController::class, 'confirmDelete'])
     ->name('categories.confirmDelete')
-    ->middleware('auth');
+    ->middleware(['auth', 'isAdmin']);
 
 Route::post('categorias/{id}/eliminar', [\App\Http\Controllers\CategoryController::class, 'processDelete'])
     ->name('categories.processDelete')
-    ->middleware('auth');
+    ->middleware(['auth', 'isAdmin']);
 
 // ADMIN ABM ENTRADAS-POSTEOS
 
 Route::get('entradas/nueva', [\App\Http\Controllers\PostController::class, 'formNew'])
     ->name('posts.formNew')
-    ->middleware('auth');
+    ->middleware(['auth', 'isAdmin']);
 
 
 Route::post('entradas/nueva', [\App\Http\Controllers\PostController::class, 'processNew'])
     ->name('posts.processNew')
-    ->middleware('auth');
+    ->middleware(['auth', 'isAdmin']);
 
 
 Route::get('entradas/{id}/editar', [\App\Http\Controllers\PostController::class, 'formEdit'])
     ->name('posts.formEdit')
-    ->middleware('auth');
+    ->middleware(['auth', 'isAdmin']);
 
 
 Route::post('entradas/{id}/editar', [\App\Http\Controllers\PostController::class, 'processEdit'])
     ->name('posts.processEdit')
-    ->middleware('auth');
+    ->middleware(['auth', 'isAdmin']);
 
 Route::get('entradas/{id}', [\App\Http\Controllers\PostController::class, 'view'])
-    ->name('posts.view');
+    ->name('posts.view')
+    ->middleware(['auth', 'isAdmin']);
+
 
 Route::get('entradas/{id}/eliminar', [\App\Http\Controllers\PostController::class, 'confirmDelete'])
     ->name('posts.confirmDelete')
-    ->middleware('auth');
+    ->middleware(['auth', 'isAdmin']);
 
 Route::post('entradas/{id}/eliminar', [\App\Http\Controllers\PostController::class, 'processDelete'])
     ->name('posts.processDelete')
-    ->middleware('auth');
+    ->middleware(['auth', 'isAdmin']);

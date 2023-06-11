@@ -23,10 +23,21 @@ class AuthController extends Controller
         }
 
         $request->session()->regenerate();
+        
+        if (auth()->user()->role === 'user') {
+            return redirect()->route('home')
+                ->with('message', 'Bienvenido ' . auth()->user()->username)
+                ->with('type', 'success');
+        }
 
-        return redirect()->route('dashboardPosts')
-            ->with('message', 'Bienvenido ' . auth()->user()->username)
-            ->with('type', 'success');
+        if (auth()->user()->role === 'admin') {
+            return redirect()->route('dashboardPosts')
+                ->with('message', 'Bienvenido ' . auth()->user()->username)
+                ->with('type', 'success');
+        }
+
+
+       
     }
 
     public function processLogout(Request $request)
