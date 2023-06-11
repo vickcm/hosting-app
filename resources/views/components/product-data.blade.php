@@ -17,7 +17,8 @@
                     <p class="mb-2 text-muted">{{ $product->subtitle }}</p>
                     <p >{{ $product->description }}</p>
                     <p class="text-primary fw-bold">$ {{ $product->price }}  </p>
-                    <button class="btn btn-hostin">Consultar</button>
+                    <a href="{{ route('products.confirmContractProduct', ['id' => $product->product_id]) }}" class="btn btn-hostin">Contratar</a>
+
                 </div>
             </div>
 

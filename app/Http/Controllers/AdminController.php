@@ -26,7 +26,7 @@ class AdminController extends Controller
 
     public function indexUsers()
 {
-    $users = User::with('products')->where('role', 'user')
+    $users = User::with('products')
         ->select('username', 'email', 'user_id')
         ->get();
 

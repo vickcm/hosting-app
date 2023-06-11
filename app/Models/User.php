@@ -42,4 +42,6 @@ class User extends BaseUser
     {
         return $this->belongsToMany(Product::class, 'users_has_products', 'user_id', 'product_id');
     }
+
+    
 }

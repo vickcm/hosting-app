@@ -18,8 +18,11 @@ Route::get('blog/entradas/{id}', [\App\Http\Controllers\BlogController::class, '
     ->name('posts.fullpost');
 
 // Productos
-Route::get('/productos', [\App\Http\Controllers\ProductController::class, 'index'])
-    ->name('products.products');
+Route::get('/productos/{id}/confirmacion', [\App\Http\Controllers\ProductController::class, 'confirmContractProduct'])
+    ->name('products.confirmContractProduct');
+
+Route::post('/productos/contratacion/{id}', [\App\Http\Controllers\ProductController::class, 'processContractProduct'])
+    ->name('products.processContractProduct');
 
 
 // Autenticación - proceso login - logout 
