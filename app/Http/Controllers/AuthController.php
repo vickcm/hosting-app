@@ -17,7 +17,7 @@ class AuthController extends Controller
 
         if (!auth()->attempt($credentials)) {
             return redirect()->route('auth.formLogin')
-                ->with('message', 'datos incorrectos')
+                ->with('message', 'Los datos ingresados son incorrectos')
                 ->with('type', 'danger')
                 ->withInput();
         }
