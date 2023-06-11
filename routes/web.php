@@ -26,6 +26,8 @@ Route::get('/productos', [\App\Http\Controllers\ProductController::class, 'index
 
 Route::get('/registrarse', [\App\Http\Controllers\AuthController::class, 'formRegister'])
     ->name('auth.formRegister');
+Route::post('/registrarse', [\App\Http\Controllers\AuthController::class, 'processRegister'])
+    ->name('auth.processRegister');
 
 Route::get('/iniciar-sesion', [\App\Http\Controllers\AuthController::class, 'formLogin'])
     ->name('auth.formLogin');
