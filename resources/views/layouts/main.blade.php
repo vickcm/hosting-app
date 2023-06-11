@@ -42,6 +42,8 @@
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="{{ route('auth.formLogin') }}">Iniciar Sesión</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="{{ route('auth.formRegister') }}">Registrarse</a>
                             @endauth
                         </ul>
                     </div>

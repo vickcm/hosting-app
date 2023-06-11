@@ -50,4 +50,11 @@ class AuthController extends Controller
             ->with('message', 'Sesión cerrada correctamente')
             ->with('type', 'success');
     }
+
+    public function formRegister()
+    {
+        return view('auth.formRegister');
+    }
+
+    
 }

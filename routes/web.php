@@ -24,6 +24,9 @@ Route::get('/productos', [\App\Http\Controllers\ProductController::class, 'index
 
 // Autenticación - proceso login - logout 
 
+Route::get('/registrarse', [\App\Http\Controllers\AuthController::class, 'formRegister'])
+    ->name('auth.formRegister');
+
 Route::get('/iniciar-sesion', [\App\Http\Controllers\AuthController::class, 'formLogin'])
     ->name('auth.formLogin');
 
