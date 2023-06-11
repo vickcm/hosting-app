@@ -1,8 +1,6 @@
 <?php
-
 namespace App\Http\Controllers;
 use App\Models\Category;
-
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -60,7 +58,6 @@ class CategoryController extends Controller
         $category = Category::findOrFail($id);
 
         //chequear que no tenga posts asociados
-        
         if ($category->posts()->count() > 0) {
             return redirect()
                 ->route('dashboardCategories')
