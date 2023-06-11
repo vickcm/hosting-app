@@ -42,6 +42,15 @@ class UsersSeeder extends Seeder
                     'role' => 'user',
                     'created_at' => now(),
                     'updated_at' => now(),
+                ], 
+                [
+                    "user_id" => 4, // "user_id" => "2
+                    'username' => 'RominaM',
+                    'email' => 'user3@user3.com',
+                    'password' => Hash::Make('olvidate'),
+                    'role' => 'user',
+                    'created_at' => now(),
+                    'updated_at' => now(),
                 ]
 
 

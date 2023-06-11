@@ -5,9 +5,7 @@
 @section('title', 'Listado de Entradas')
 @section('abm-post')
 
-
 <div class="card">
-    
     <div class="card-body">
         <div class="table-responsive">
             <table class="table">
@@ -15,7 +13,8 @@
                     <tr>
                         <th scope="col">Id</th>
                         <th scope="col">Usuario</th>
-                        <th scope="col">Servicio Contratado</th>
+                        <th scope="col">Cantidad de Servicios Contratados</th>
+                        <th scope="col">Servicios Contratados</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -23,14 +22,14 @@
                         <tr>
                             <td>{{ $user->user_id }}</td>
                             <td class="fw-semibold">{{ $user->username }}</td>
+                            <td>{{ $user->products->count() }}</td>
                             <td>
-                                @foreach ($user->products as $product)
-                                    {{ $product->title }}
-                                @endforeach
+                                @if ($user->products->isNotEmpty())
+                                    {{ implode(', ', $user->products->pluck('title')->toArray()) }}
+                                @else
+                                    Sin servicio contratado
+                                @endif
                             </td>
-                            
-                                
-                            
                         </tr>
                     @endforeach
                 </tbody>
