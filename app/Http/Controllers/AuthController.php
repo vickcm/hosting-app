@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -55,6 +57,20 @@ class AuthController extends Controller
     {
         return view('auth.formRegister');
     }
+
+    public function processRegister(Request $request)
+    {
+        $validatedData = $request->validate(User::validationRules(), User::validationMessages());
+    
+        $validatedData['password'] = Hash::make($validatedData['password']);
+    
+        $user = User::create($validatedData);
+    
+        return redirect()->route('auth.formLogin')
+            ->with('message', '¡Registro exitoso! Inicia sesión con tu cuenta.')
+            ->with('type', 'success');
+    }
+    
 
     
 }
