@@ -45,6 +45,10 @@ Route::get('/dashboard', [\App\Http\Controllers\AdminController::class, 'indexPo
     ->name('dashboardPosts')
     ->middleware(['auth', 'isAdmin']);
 
+Route::get('/dashboard/clientes', [\App\Http\Controllers\AdminController::class, 'indexUsers'])
+    ->name('dashboardUsers')
+    ->middleware(['auth', 'isAdmin']);
+
 // ADMIN - CATEGORIAS 
 Route::get('/dashboard/categorias', [\App\Http\Controllers\AdminController::class, 'indexCategories'])
     ->name('dashboardCategories')

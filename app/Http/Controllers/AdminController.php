@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
+use App\Models\User;
 
 class AdminController extends Controller
 {
@@ -20,6 +21,17 @@ class AdminController extends Controller
         $categories = Category::all();
         return view('admin-views.categories-table', [
             'categories' => $categories,
+        ]);
+    }
+
+    public function indexUsers()
+    {
+        $users = User::where('role', 'user')
+        ->select('username', 'email', 'user_id')
+        ->get();
+
+        return view('admin-views.users-table', [
+            'users' => $users,
         ]);
     }
 }
