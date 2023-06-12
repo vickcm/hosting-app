@@ -1,13 +1,14 @@
 <?php
 /** @var \App\Models\Post[]|\Illuminate\Database\Eloquent\Collection $users */
-
-
 ?>
 @extends('layouts.admin')
 @section('title', 'Listado de Entradas')
 @section('abm-post')
 
-<div class="card">
+<div class="card client-table">
+    <div class="card-header d-flex flex-column flex-md-row justify-content-md-between align-items-center">
+        <h1 class="fs-3">Usuarios Registrados</h1>
+    </div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table">

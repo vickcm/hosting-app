@@ -279,6 +279,31 @@ hr{
     background: #a8acf8;
     border-radius: 10px;
 }
+.login form a:hover {
+    color: #150e6b;
+}	
+.form-register{    
+    padding: 15px;
+    margin: auto;
+    width: 65%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}	
+.form-register form button{
+    background: #12289f;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 10px;
+}
+.form-register form button:hover{
+    background: #3648b6;
+    color: #fff;
+    border-radius: 10px;
+}
+.client-table{
+    width: 70%;
+    margin: auto;
+}	
 @media screen and (max-width: 768px) {
     .form-editar, .form-nueva-entrada{
         width: 100%;
@@ -306,6 +331,12 @@ hr{
     .section-nosotros div:nth-child(2){
         padding: 20px;
     }
+    .form-register{
+        width: 100%;
+    }	
+    .client-table{
+        width: 100%;
+    }	
 }
 @media screen and (min-width: 769px) and (max-width: 1200px) {
     .section-tres{
