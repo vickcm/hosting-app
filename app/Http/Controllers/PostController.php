@@ -67,7 +67,6 @@ class PostController extends Controller
 
         }
         $post->update($data);
-
         $this->deleteImage($oldImage);
 
         return redirect()
@@ -89,7 +88,6 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($id);
         $post->delete();
-
         $this->deleteImage($post->image);
 
         return redirect()
@@ -102,10 +100,8 @@ class PostController extends Controller
         $request->validate([
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
-
         $image = $request->file('image');
         $imageName = date('YmdHis') . Str::slug($request->title, '-') . '.' . $image->guessExtension();
-
         $image->storeAs('img', $imageName, 'public');
 
         return $imageName;

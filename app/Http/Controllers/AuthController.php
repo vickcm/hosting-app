@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -16,7 +15,6 @@ class AuthController extends Controller
     public function processLogin(Request $request)
     {
         $credentials = $request->only('email', 'password');
-
         if (!auth()->attempt($credentials)) {
             return redirect()->route('auth.formLogin')
                 ->with('message', 'Los datos ingresados son incorrectos')
@@ -25,21 +23,16 @@ class AuthController extends Controller
         }
 
         $request->session()->regenerate();
-        
         if (auth()->user()->role === 'user') {
             return redirect()->route('home')
                 ->with('message', 'Bienvenido ' . auth()->user()->username)
                 ->with('type', 'success');
         }
-
         if (auth()->user()->role === 'admin') {
             return redirect()->route('dashboardPosts')
                 ->with('message', 'Bienvenido ' . auth()->user()->username)
                 ->with('type', 'success');
         }
-
-
-       
     }
 
     public function processLogout(Request $request)
@@ -63,14 +56,10 @@ class AuthController extends Controller
         $validatedData = $request->validate(User::validationRules(), User::validationMessages());
     
         $validatedData['password'] = Hash::make($validatedData['password']);
-    
         $user = User::create($validatedData);
     
         return redirect()->route('auth.formLogin')
             ->with('message', '¡Registro exitoso! Inicia sesión con tu cuenta.')
             ->with('type', 'success');
     }
-    
-
-    
 }

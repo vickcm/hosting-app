@@ -18,10 +18,8 @@
                     <p >{{ $product->description }}</p>
                     <p class="text-primary fw-bold">$ {{ $product->price }}  </p>
                     <a href="{{ route('products.confirmContractProduct', ['id' => $product->product_id]) }}" class="btn btn-hostin">Contratar</a>
-
                 </div>
             </div>
-
         </li>
         @endforeach
     </ul> 
