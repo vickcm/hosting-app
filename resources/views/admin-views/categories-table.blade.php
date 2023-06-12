@@ -25,9 +25,10 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Descripción</th>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
