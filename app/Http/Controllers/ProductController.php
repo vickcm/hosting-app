@@ -44,7 +44,7 @@ class ProductController extends Controller
             
             // Redireccionar a la página de confirmación o a otra página de tu elección
             return redirect()->route('home')
-                ->with('message', '¡Contratación exitosa!')
+                ->with('message', '¡Contratación exitosa! Le hemos enviado un mail a su casilla con los pasos a seguir. Gracias por confiar en nosotros.')
                 ->with('type', 'success');
         } else {
             // Manejar el caso en el que el usuario o el producto no existan
