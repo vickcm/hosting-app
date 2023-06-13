@@ -35,10 +35,17 @@ hr{
     height: 1px;
     border: none;
 }
-.alert{
+.alert {
     width: 30%;
     margin: auto;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
 }
+
+
 .btn-cancelar{
     color: #e1e5f0;
     background: #b40a1a;
