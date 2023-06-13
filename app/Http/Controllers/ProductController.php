@@ -1,8 +1,13 @@
 <?php
 namespace App\Http\Controllers;
+
+use App\Mail\ProductContract;
 use Illuminate\Http\Request;
+
 use App\Models\Product;
+
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class ProductController extends Controller
 {
@@ -30,11 +35,15 @@ class ProductController extends Controller
         if ($user && $product) {
             // Obtener los IDs del usuario y el producto
             $userId = $user->user_id;
+            $userEmail = $user->email;
             $productId = $product->product_id;
 
             // Realizar la asociación en la tabla pivot
             $user->products()->attach($productId, ['user_id' => $userId, 'product_id' => $productId, 'created_at'=>now()]);
-
+            
+            // Enviar el correo electrónico
+            Mail::to($userEmail->send(new ProductContract()));
+            
             // Redireccionar a la página de confirmación o a otra página de tu elección
             return redirect()->route('home')
                 ->with('message', '¡Contratación exitosa!')
@@ -44,6 +53,6 @@ class ProductController extends Controller
             return redirect()->route('home')
                 ->with('message', 'Error en la contratación')
                 ->with('type', 'error');
-        }
+        }       
     }
 }
