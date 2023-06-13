@@ -17,7 +17,7 @@ Route::get('blog/entradas/{id}', [\App\Http\Controllers\BlogController::class, '
 // Productos
 Route::get('/productos/{id}/confirmacion', [\App\Http\Controllers\ProductController::class, 'confirmContractProduct'])
     ->name('products.confirmContractProduct');
-Route::post('/productos/contratacion/{id}', [\App\Http\Controllers\ProductController::class, 'processContractProduct'])
+Route::post('/productos/{id}/confirmacion', [\App\Http\Controllers\ProductController::class, 'processContractProduct'])
     ->name('products.processContractProduct')
     ->middleware(['auth']);
 

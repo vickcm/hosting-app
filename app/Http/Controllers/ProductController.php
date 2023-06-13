@@ -3,9 +3,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\ProductContract;
 use Illuminate\Http\Request;
-
 use App\Models\Product;
-
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
@@ -42,7 +40,7 @@ class ProductController extends Controller
             $user->products()->attach($productId, ['user_id' => $userId, 'product_id' => $productId, 'created_at'=>now()]);
             
             // Enviar el correo electrónico
-            Mail::to($userEmail->send(new ProductContract()));
+            Mail::to($userEmail)->send(new ProductContract());
             
             // Redireccionar a la página de confirmación o a otra página de tu elección
             return redirect()->route('home')
