@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,6 +29,7 @@
         }
     </style>
 </head>
+
 <body>
     <h1>Tu contratación se realizó con éxito.</h1>
     <p>A continuación, te proporcionamos los pasos para completar el alta del producto de manera correcta.</p>
@@ -36,4 +38,5 @@
         Nube Web, Hosting App.
     </p>
 </body>
+
 </html>
