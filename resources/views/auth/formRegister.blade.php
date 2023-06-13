@@ -13,13 +13,16 @@
             <form action="{{ route('auth.processRegister') }}" method="post">
                 @csrf
                 <div class="mb-3">
-                    <label for="username" class="form-label">Nombre de Usuario<span class="text-danger">*</span> <span
-                            class="form-aclaracion">Campo obligatorio</span> </label>
+                    <label for="username" class="form-label">Nombre de Usuario
+                        <span class="text-danger">*</span> 
+                        <span class="form-aclaracion">Campo obligatorio</span> 
+                    </label>
                     <input type="text" name="username" id="username" class="form-control"
                         @error('username')
-                    aria-describedby="error-username" 
-                    @enderror
-                        value="{{ old('username') }}">
+                        aria-describedby="error-username" 
+                        @enderror
+                        value="{{ old('username') }}"
+                    >
                     @error('username')
                         <div class="text-danger mt-1 bg-light p-2" id="error-username">
                             <i class="bi bi-exclamation-triangle" title="error"></i>
@@ -28,8 +31,28 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email<span class="text-danger">*</span> <span
-                            class="form-aclaracion">Campo obligatorio</span> </label>
+                    <label for="username" class="form-label">Confirme Nombre de Usuario
+                        <span class="text-danger">*</span> 
+                        <span class="form-aclaracion">Campo obligatorio</span> 
+                    </label>
+                    <input type="text" name="username" id="username" class="form-control"
+                        @error('username')
+                        aria-describedby="error-username" 
+                        @enderror
+                        value="{{ old('username') }}"
+                    >
+                    @error('username')
+                        <div class="text-danger mt-1 bg-light p-2" id="error-username">
+                            <i class="bi bi-exclamation-triangle" title="error"></i>
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email
+                        <span class="text-danger">*</span> 
+                        <span class="form-aclaracion">Campo obligatorio</span> 
+                    </label>
                     <input type="email" name="email" id="email" class="form-control"
                         @error('email')
                     aria-describedby="error-email" 
@@ -43,12 +66,30 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="password" class="form-label">Password <span class="text-danger">*</span> <span
-                            class="form-aclaracion">Debe contener al menos 6 caracteres</span></label>
+                    <label for="password" class="form-label">Contraseña 
+                        <span class="text-danger">*</span> 
+                        <span class="form-aclaracion">Debe contener al menos 6 caracteres</span>
+                    </label>
                     <input type="password" name="password" id="password" class="form-control"
                         @error('password')
-                    aria-describedby="error-password" 
-                    @enderror>
+                        aria-describedby="error-password" 
+                        @enderror>
+                    @error('password')
+                        <div class="text-danger mt-1 bg-light p-2" id="error-password">
+                            <i class="bi bi-exclamation-triangle" title="error"></i>
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Confirme la Contraseña 
+                        <span class="text-danger">*</span> 
+                        <span class="form-aclaracion">Debe contener al menos 6 caracteres</span>
+                    </label>
+                    <input type="password" name="password" id="password" class="form-control"
+                        @error('password')
+                        aria-describedby="error-password" 
+                        @enderror>
                     @error('password')
                         <div class="text-danger mt-1 bg-light p-2" id="error-password">
                             <i class="bi bi-exclamation-triangle" title="error"></i>
