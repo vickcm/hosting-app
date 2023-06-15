@@ -28,8 +28,7 @@
             margin-top: 30px;
         }
     </style>
-</head>
-
+</head> -->
 <body>
     <h1>Tu contratación se realizó con éxito.</h1>
     <p>A continuación, te proporcionamos los pasos para completar el alta del producto de manera correcta.</p>
@@ -37,6 +36,6 @@
         Saludos cordiales, <br>
         Nube Web, Hosting App.
     </p>
-</body>
+</body> 
 
 </html>
