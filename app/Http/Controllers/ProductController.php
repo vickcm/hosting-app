@@ -21,7 +21,7 @@ class ProductController extends Controller
         return redirect()->route('home');
     }
 
-    public function processContractProduct(Request $request, $id)
+    public function processContractProduct($id)
     {
         // Obtener el usuario autenticado
         $user = Auth::user();
@@ -41,7 +41,7 @@ class ProductController extends Controller
             
             try {
                 // Enviar el correo electrónico
-                Mail::to($userEmail)->send(new ProductContract(Product::findOrFail($id)));
+                Mail::to($userEmail)->send(new ProductContract($product));
             } catch (\Exception $e) {
                 // Manejar el error de envío de correo electrónico
                 return redirect()->route('home')
