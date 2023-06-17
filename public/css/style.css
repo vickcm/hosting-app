@@ -44,8 +44,6 @@ hr{
     transform: translateX(-50%);
     z-index: 9999;
 }
-
-
 .btn-cancelar{
     color: #e1e5f0;
     background: #b40a1a;
@@ -340,7 +338,7 @@ hr{
         margin: 0;
     }
     .alert{
-        width: 100%;
+        width: 80%;
     }
     .section-nosotros div:nth-child(2){
         padding: 20px;
