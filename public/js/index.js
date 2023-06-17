@@ -1,21 +1,21 @@
 function togglePasswordVisibility() {
-    var passwordInput = document.getElementById('password');
-    var passwordToggleOpenIcon = document.querySelector('.password-toggle-open-icon');
-    var passwordToggleSlashIcon = document.querySelector('.password-toggle-slash-icon');
+    const passwordInput = document.getElementById('password');
+    const passwordToggleOpenIcon = document.querySelector('.password-toggle-open-icon');
+    const passwordToggleSlashIcon = document.querySelector('.password-toggle-slash-icon');
 
-    if (passwordInput.type === 'password') {
-        passwordInput.type = 'text';
-        passwordToggleOpenIcon.style.display = 'none';
-        passwordToggleSlashIcon.style.display = 'block';
-    } else {
-        passwordInput.type = 'password';
-        passwordToggleOpenIcon.style.display = 'block';
-        passwordToggleSlashIcon.style.display = 'none';
-    }
+    const isPasswordVisible = passwordInput.type === 'text';
+
+    passwordInput.type = isPasswordVisible ? 'password' : 'text';
+    passwordToggleOpenIcon.style.display = isPasswordVisible ? 'none' : 'block';
+    passwordToggleSlashIcon.style.display = isPasswordVisible ? 'block' : 'none';
 }
 
 // Ocultar el ícono de la contraseña visible al cargar la página
 document.addEventListener('DOMContentLoaded', function() {
-    var passwordToggleOpenIcon = document.querySelector('.password-toggle-open-icon');
-    passwordToggleOpenIcon.style.display = 'none';
+    const passwordToggleOpenIcons = document.querySelectorAll('.password-toggle-open-icon');
+    for (let i = 0; i < passwordToggleOpenIcons.length; i++) {
+        passwordToggleOpenIcons[i].style.display = 'none';
+    }
 });
+ 
+
