@@ -32,8 +32,8 @@
     <style type="text/css">@media screen and(max-width:600px){.price{font-size:28px; line-height: 36px;}.divider{display:none;visibility:hidden;}}</style>
 </head>
 <body>
-<div style="background:#ffffff;background-color:#ffffff;margin:0px auto;max-width:600px;">
-    <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#ffffff;background-color:#ffffff;width:100%;">
+<div style="background:#ffffff;background-color:#ffffff;margin:0px auto;max-width:600px;margin-top:20px;">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background:#e1e5f0;background-color:#e1e5f0;width:100%;">
         <tbody>
             <tr>
                 <td style="direction:ltr;font-size:0px;padding:0px;padding-left:20px;padding-right:20px;text-align:center;">
@@ -59,32 +59,80 @@
                                                                     <td align="center" style="font-size:0px;padding:0px;word-break:break-word;">
                                                                         <div style="font-family:Helvetica;font-size:14px;font-weight:normal;letter-spacing:-0.1px;line-height:25px;text-align:center;text-transform:uppercase;color:#000000;">
                                                                         <p style="Margin:0;">
-
                                                                         </p></div></td></tr><tr><td style="font-size:0px;padding:0px;word-break:break-word;"
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td align="center" style="font-size:0px;padding:0px;word-break:break-word;">
-                                                                        <div style="font-family:Helvetica;font-size:48px;font-weight:normal;letter-spacing:-1.65px;line-height:58px;text-align:center;color:#000000;">
-                                                                            <p style="Margin:0;">Unmatched<br>Worldwide Payouts Deluxe</p>
+                                                                        <div style="font-family:Helvetica;font-size:16px;font-weight:normal;letter-spacing:-0.3px;line-height:25px;text-align:left;color:#000000;">
+                                                                            <p style="Margin:0;">Estimado/a,</p>
+                                                                            <p style="Margin:0;">¡Gracias por reservar nuestro producto! Nos complace confirmar que su reserva ha sido procesada exitosamente.</p>
                                                                         </div>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td style="font-size:0px;padding:0px;word-break:break-word;">
-                                                                    <div style="height:16px;">&nbsp;</div>
+                                                                    <div style="height:20px;">&nbsp;</div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="center" style="font-size:0px;padding:0px;word-break:break-word;">
+                                                                        <div style="font-family:Helvetica;font-size:48px;font-weight:normal;letter-spacing:-1.65px;line-height:58px;text-align:center;color:#000000;">
+                                                                            <p style="Margin:0;">{{$product->title}}</p>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="font-size:0px;padding:0px;word-break:break-word;">
+                                                                    <div style="height:10px;">&nbsp;</div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="center" style="font-size:0px;padding:0px;word-break:break-word;">
+                                                                        <div style="font-family:Helvetica;font-size:16px;font-weight:bold;letter-spacing:-0.3px;line-height:25px;text-align:center;color:#000000;">
+                                                                            <p style="Margin:0;">{{$product->subtitle}}</p>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="font-size:0px;padding:0px;word-break:break-word;">
+                                                                    <div style="height:20px;">&nbsp;</div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                <td align="center" style="font-size:0px;padding:0px;word-break:break-word;">
+                                                                        <div style="font-family:Helvetica;font-size:16px;font-weight:normal;letter-spacing:-0.3px;line-height:25px;text-align:left;color:#000000;">
+                                                                            <p style="Margin:0;">Para completar su reserva, le enviaremos otro correo electrónico en breve con las instrucciones de pago y los detalles adicionales. Le recomendamos estar atento/a a su bandeja de entrada.</p>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="font-size:0px;padding:0px;word-break:break-word;">
+                                                                    <div style="height:10px;">&nbsp;</div>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td align="center" style="font-size:0px;padding:0px;word-break:break-word;">
                                                                         <div style="font-family:Helvetica;font-size:16px;font-weight:normal;letter-spacing:-0.3px;line-height:25px;text-align:center;color:#000000;">
-                                                                            <p style="Margin:0;">One click mass payment for you.<br>Full payment flexibility for your team, across<br>100+ currencies and 10+ payment methods.</p>
+                                                                            <p style="Margin:0;">Gracias una vez más por elegir nuestros productos. </p>
+                                                                            <p style="Margin:0;">¡Esperamos brindarle una excelente experiencia!</p>
+                                                                            <p style="Margin:0;">
+                                                                                Saludos Coordiales, <br>
+                                                                                El equipo de NubeWeb.
+                                                                            </p>
                                                                         </div>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td style="font-size:0px;padding:0px;word-break:break-word;">
-                                                                        <div style="height:28px;">&nbsp;</div>
+                                                                        <div style="height:22px;">&nbsp;</div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="center" style="font-size:0px;padding:0px;word-break:break-word;">
+                                                                        <div style="font-family:Helvetica;font-size:16px;font-weight:normal;letter-spacing:-0.3px;line-height:25px;text-align:center;color:#000000;">
+                                                                            <p style="Margin:0;">Conoce nuestro blog</p>
+                                                                        </div>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
@@ -93,8 +141,8 @@
                                                                             <tbody>
                                                                                 <tr>
                                                                                     <td align="center" bgcolor="#c9ccff" role="presentation" style="border:none;border-radius:4px;cursor:auto;height:44px;text-align:center;background:#c9ccff;" valign="middle">
-                                                                                        <a href="{{ route('posts') }}" style="display: inline-block; width: 124px; background: #c9ccff; color: #000000; font-family: Helvetica; font-size: 16px; font-weight: normal; line-height: 18px; letter-spacing: 0px; margin: 0; text-decoration: none; text-transform: none; padding: 10px 25px" target="_blank">
-                                                                                            Read more
+                                                                                        <a href="{{ route('posts') }}" style="display: inline-block; width: 124px; background: #c9ccff; color: #000000; font-family: Helvetica; font-size: 16px; font-weight: normal; line-height: 18px; letter-spacing: 0px; margin: 0; text-decoration: none; text-transform: none; padding: 10px 10px" target="_blank">
+                                                                                            Blog
                                                                                         </a>
                                                                                     </td>
                                                                                 </tr>
