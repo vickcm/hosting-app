@@ -10,7 +10,7 @@ class AdminController extends Controller
 {
     public function indexPosts()
     {
-        $posts = Post::with('category', 'author')->paginate(5);
+        $posts = Post::with('category', 'author')->paginate(2);
 
         return view('admin-views.posts-table', [
             'posts' => $posts,
