@@ -1,7 +1,8 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Producto reservado con èxito</title>
+    <title>Reserva del producto {{$product->}}</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -66,7 +67,7 @@
                                                                 <tr>
                                                                     <td align="center" style="font-size:0px;padding:0px;word-break:break-word;">
                                                                         <div style="font-family:Helvetica;font-size:48px;font-weight:normal;letter-spacing:-1.65px;line-height:58px;text-align:center;color:#000000;">
-                                                                            <p style="Margin:0;">Unmatched<br>Worldwide Payouts Deluxe</p>
+                                                                            <p style="Margin:0;">Realizaste la reserva del producto {{$product->title}}</p>
                                                                         </div>
                                                                     </td>
                                                                 </tr>
@@ -78,7 +79,8 @@
                                                                 <tr>
                                                                     <td align="center" style="font-size:0px;padding:0px;word-break:break-word;">
                                                                         <div style="font-family:Helvetica;font-size:16px;font-weight:normal;letter-spacing:-0.3px;line-height:25px;text-align:center;color:#000000;">
-                                                                            <p style="Margin:0;">One click mass payment for you.<br>Full payment flexibility for your team, across<br>100+ currencies and 10+ payment methods.</p>
+                                                                            <p style="Margin:0;">Estimado/a,</p>
+                                                                            <p style="Margin:0;">¡Gracias por reservar nuestro producto! Nos complace confirmar que su reserva ha sido procesada exitosamente.</p>
                                                                         </div>
                                                                     </td>
                                                                 </tr>
@@ -88,13 +90,43 @@
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
+                                                                    <td align="center" style="font-size:0px;padding:0px;word-break:break-word;">
+                                                                        <div style="font-family:Helvetica;font-size:16px;font-weight:normal;letter-spacing:-0.3px;line-height:25px;text-align:center;color:#000000;">
+                                                                            <p style="Margin:0;">Para completar su reserva, le enviaremos otro correo electrónico en breve con las instrucciones de pago y los detalles adicionales. Le recomendamos estar atento/a a su bandeja de entrada.</p>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="center" style="font-size:0px;padding:0px;word-break:break-word;">
+                                                                        <div style="font-family:Helvetica;font-size:16px;font-weight:normal;letter-spacing:-0.3px;line-height:25px;text-align:center;color:#000000;">
+                                                                            <p style="Margin:0;">Si tiene alguna pregunta o necesita más información, no dude en ponerse en contacto con nuestro equipo de atención al cliente. Estaremos encantados de ayudarle en todo lo que podamos.</p>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="center" style="font-size:0px;padding:0px;word-break:break-word;">
+                                                                        <div style="font-family:Helvetica;font-size:16px;font-weight:normal;letter-spacing:-0.3px;line-height:25px;text-align:center;color:#000000;">
+                                                                            <p style="Margin:0;">Gracias una vez más por elegir nuestros productos. ¡Esperamos brindarle una excelente experiencia!</p>
+                                                                            <p style="Margin:0;">
+                                                                                Saludos Coordiales, <br>
+                                                                                El equipo de NubeWeb.
+                                                                            </p>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
                                                                     <td align="center" vertical-align="middle" style="font-size:0px;padding:0px;word-break:break-word;">
                                                                         <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:separate;width:174px;line-height:100%;">
                                                                             <tbody>
                                                                                 <tr>
+                                                                                    <td align="center" style="font-size:0px;padding:0px;word-break:break-word;">
+                                                                                        <div style="font-family:Helvetica;font-size:16px;font-weight:normal;letter-spacing:-0.3px;line-height:25px;text-align:center;color:#000000;">
+                                                                                            <p style="Margin:0;">Conoce el blog de NubeWeb</p>
+                                                                                        </div>
+                                                                                    </td>
                                                                                     <td align="center" bgcolor="#c9ccff" role="presentation" style="border:none;border-radius:4px;cursor:auto;height:44px;text-align:center;background:#c9ccff;" valign="middle">
                                                                                         <a href="{{ route('posts') }}" style="display: inline-block; width: 124px; background: #c9ccff; color: #000000; font-family: Helvetica; font-size: 16px; font-weight: normal; line-height: 18px; letter-spacing: 0px; margin: 0; text-decoration: none; text-transform: none; padding: 10px 25px" target="_blank">
-                                                                                            Read more
+                                                                                            Blog
                                                                                         </a>
                                                                                     </td>
                                                                                 </tr>
@@ -125,4 +157,4 @@
     </table>
 </div>
 </body>
-</html>
+</html> 
