@@ -22,7 +22,7 @@ class User extends BaseUser
         return [
             'username' => 'required',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|min:6',
+            'password' => 'required|min:6|confirmed',
         ];
     }
 
@@ -35,6 +35,8 @@ class User extends BaseUser
             'email.unique' => 'El email ya está registrado',
             'password.required' => 'El campo contraseña es obligatorio',
             'password.min' => 'El campo contraseña debe tener al menos 6 caracteres',
+            'password.confirmed' => 'La confirmación de contraseña no coincide',
+
         ];
     }
 

@@ -52,6 +52,17 @@ hr{
     color: #e1e5f0;
     background: #aa0f0f;
 }
+
+/* PASSWORD */
+.password-input-group {
+    display: flex;
+    align-items: center;
+}
+
+.password-toggle {
+    margin-left: 10px;
+    cursor: pointer;
+}
 /* DASHBOARD */
 /* header */
 .dashboard-header{
