@@ -76,8 +76,9 @@
                                                                 <tr>
                                                                     <td align="center" style="font-size:0px;padding:0px;word-break:break-word;">
                                                                         <div style="font-family:Helvetica;font-size:14px;font-weight:normal;letter-spacing:-0.1px;line-height:25px;text-align:center;text-transform:uppercase;color:#000000;">
-                                                                            <p style="Margin:0;">
-                                                                        <x-product-data :product </x/movie-data></p></div></td></tr><tr><td style="font-size:0px;padding:0px;word-break:break-word;">
+                                                                        <p style="Margin:0;">
+                                                                            {{$product->title}}
+                                                                        </p></div></td></tr><tr><td style="font-size:0px;padding:0px;word-break:break-word;">
                                                                             <!--[if mso | IE]><table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td height="16" style="vertical-align:top;height:16px;"><![endif]-->
                                                                         <div style="height:16px;">&nbsp;</div>
                                                                         <!--[if mso | IE]></td></tr></table><![endif]-->
