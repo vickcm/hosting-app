@@ -2,7 +2,6 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ProductContract;
-use Illuminate\Http\Request;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -25,15 +24,19 @@ class ProductController extends Controller
     {
         // Obtener el usuario autenticado
         $user = Auth::user();
+    
 
         // Obtener el producto por ID
         $product = Product::findOrFail($id);
 
         // Verificar si el usuario y el producto existen
+
+
         if ($user && $product) {
             // Obtener los IDs del usuario y el producto
             $userId = $user->user_id;
             $userEmail = $user->email;
+
             $productId = $product->product_id;
 
             // Realizar la asociación en la tabla pivot
@@ -42,11 +45,13 @@ class ProductController extends Controller
             try {
                 // Enviar el correo electrónico
                 Mail::to($userEmail)->send(new ProductContract($product));
+
             } catch (\Exception $e) {
                 // Manejar el error de envío de correo electrónico
                 return redirect()->route('home')
                     ->with('message', 'El producto se reservó con éxito, pero hubo un error al enviar el correo electrónico. Por favor, contactate con atención al cliente.')
                     ->with('type', 'warning');
+
             }
             
             // Redireccionar a la página de confirmación o a otra página de tu elección
@@ -57,7 +62,7 @@ class ProductController extends Controller
             // Manejar el caso en el que el usuario o el producto no existan
             return redirect()->route('home')
                 ->with('message', 'Error en la contratación')
-                ->with('type', 'error');
+                ->with('type', 'success');
         }       
     }
 }

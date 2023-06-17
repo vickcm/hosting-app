@@ -60,9 +60,15 @@ use Illuminate\Support\Str;
                             </td>
                         </tr>
                     @endforeach
+                   
                 </tbody>
             </table>
+            
         </div>
     </div>
+</div>
+<div class="col-12">
+    <!-- Mostrar los enlaces de paginación -->
+    {!! $posts->links() !!}
 </div>
 @endsection

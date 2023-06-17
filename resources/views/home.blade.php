@@ -2,7 +2,10 @@
 /** @var \App\Models\Product[]|\Illuminate\Database\Eloquent\Collection $products
  * @var \App\Models\Post[]|\Illuminate\Database\Eloquent\Collection $posts
  * 
+ * 
  */
+
+
 
 ?>
 @extends('layouts.main')
@@ -21,6 +24,7 @@
                 premium hosting
             </p>
             <a href="#productos_ancla" class="btn btn-dashboard">Ver Productos</a>
+           
         </div>
     </div>
     <div class="col-12 col-md-7 d-flex justify-content-center justify-content-md-start">

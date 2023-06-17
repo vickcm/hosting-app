@@ -10,7 +10,7 @@ class AdminController extends Controller
 {
     public function indexPosts()
     {
-        $posts = Post::with('category', 'author')->get();
+        $posts = Post::with('category', 'author')->paginate(5);
 
         return view('admin-views.posts-table', [
             'posts' => $posts,
@@ -18,7 +18,7 @@ class AdminController extends Controller
     }
     public function indexCategories()
     {
-        $categories = Category::all();
+        $categories = Category::all()->paginate(5);
 
         return view('admin-views.categories-table', [
             'categories' => $categories,
@@ -29,7 +29,7 @@ class AdminController extends Controller
     {
         $users = User::with('products')
             ->select('username', 'email', 'user_id')
-            ->get();
+            ->paginate(10);
 
         return view('admin-views.users-table', [
             'users' => $users,
