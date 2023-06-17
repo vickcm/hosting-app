@@ -18,10 +18,10 @@
                         <span class="form-aclaracion">Campo obligatorio</span>
                     </label>
                     <input type="text" name="username" id="username" class="form-control"
-                        @error('username')
-                        aria-describedby="error-username" 
-                        @enderror
-                        value="{{ old('username') }}">
+                    @error('username')
+                    aria-describedby="error-username" 
+                    @enderror
+                    value="{{ old('username') }}">
                     @error('username')
                         <div class="text-danger mt-1 bg-light p-2" id="error-username">
                             <i class="bi bi-exclamation-triangle" title="error"></i>
@@ -36,10 +36,10 @@
                         <span class="form-aclaracion">Campo obligatorio</span>
                     </label>
                     <input type="email" name="email" id="email" class="form-control"
-                        @error('email')
+                    @error('email')
                     aria-describedby="error-email" 
                     @enderror
-                        value="{{ old('email') }}">
+                    value="{{ old('email') }}">
                     @error('email')
                         <div class="text-danger mt-1 bg-light p-2" id="error-email">
                             <i class="bi bi-exclamation-triangle" title="error"></i>
@@ -48,26 +48,33 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="password" class="form-label">Contraseña
-                        <span class="text-danger">*</span>
-                        <span class="form-aclaracion">Debe contener al menos 6 caracteres</span>
-                    </label>
-                    <input type="password" name="password" id="password" class="form-control"
-                        @error('password')
-                        aria-describedby="error-password" 
-                        @enderror>
-                        <span class="password-toggle" onclick="togglePasswordVisibility()">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye" style="width: 16px; height: 16px;">
-                                <path d="M22 12s-2-3.5-10-3.5S2 12 2 12s2 3.5 10 3.5S22 12 22 12zM12 15a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
-                                <circle cx="12" cy="12" r="3"/>
-                            </svg>
-                        </span>
-                    @error('password')
-                        <div class="text-danger mt-1 bg-light p-2" id="error-password">
-                            <i class="bi bi-exclamation-triangle" title="error"></i>
-                            {{ $message }}
+                    <div class="row align-items-md-center">
+                        <div class="col-12">
+                            <label for="password" class="form-label">Contraseña
+                                <span class="text-danger">*</span>
+                                <span class="form-aclaracion">Debe contener al menos 6 caracteres</span>
+                            </label>
                         </div>
-                    @enderror
+                        <div class="col-11">
+                            <input type="password" name="password" id="password" class="form-control"
+                            @error('password')
+                            aria-describedby="error-password" 
+                            @enderror>
+                        </div>
+                        <div class="col-1 p-0">
+                            <span class="password-toggle" onclick="togglePasswordVisibility()">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                                    <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/> <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                                </svg>
+                            </span>
+                        </div>
+                        @error('password')
+                            <div class="text-danger mt-1 bg-light p-2" id="error-password">
+                                <i class="bi bi-exclamation-triangle" title="error"></i>
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label for="password_confirmation" class="form-label">Confirme la Contraseña

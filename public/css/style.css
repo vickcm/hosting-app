@@ -284,9 +284,12 @@ hr{
     width: 40%;
     margin: auto;
     background: #e1e5f04a;
-    padding: 54px;
+    padding: 34px;
     border-radius: 10px;
 }
+.login .form-control {
+    width: 94%;
+}	
 .login form button{
     background: #c9ccff;
     border-radius: 10px;
@@ -295,8 +298,8 @@ hr{
     background: #a8acf8;
     border-radius: 10px;
 }
-.login form a:hover {
-    color: #150e6b;
+.login form a span:hover {
+    color: #3648b6;
 }	
 .form-register{    
     padding: 15px;
