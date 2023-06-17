@@ -35,18 +35,22 @@ Route::post('/cerrar-sesion', [\App\Http\Controllers\AuthController::class, 'pro
     ->name('auth.processLogout');
 
 // *** ADMIN AUTH ** 
+
 // ADMIN - POSTEOS - ENTRADAS
 Route::get('/dashboard', [\App\Http\Controllers\AdminController::class, 'indexPosts'])
     ->name('dashboardPosts')
     ->middleware(['auth', 'isAdmin']);
+
 Route::get('/dashboard/clientes', [\App\Http\Controllers\AdminController::class, 'indexUsers'])
     ->name('dashboardUsers')
     ->middleware(['auth', 'isAdmin']);
 
-// ADMIN - CATEGORIAS 
 Route::get('/dashboard/categorias', [\App\Http\Controllers\AdminController::class, 'indexCategories'])
     ->name('dashboardCategories')
     ->middleware(['auth', 'isAdmin']);
+
+// ADMIN - CATEGORIAS 
+
 Route::get('categorias/nueva', [\App\Http\Controllers\CategoryController::class, 'formNew'])
     ->name('categories.formNew')
     ->middleware(['auth', 'isAdmin']);
@@ -88,3 +92,9 @@ Route::get('entradas/{id}/eliminar', [\App\Http\Controllers\PostController::clas
 Route::post('entradas/{id}/eliminar', [\App\Http\Controllers\PostController::class, 'processDelete'])
     ->name('posts.processDelete')
     ->middleware(['auth', 'isAdmin']);
+
+// ADMIN ABM USUARIOS
+Route::get('usuarios/{id}', [\App\Http\Controllers\UsersProductController::class, 'view'])
+    ->name('users.view')
+    ->middleware(['auth', 'isAdmin']);
+
