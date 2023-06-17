@@ -30,7 +30,7 @@ class ProductContract extends Mailable
     {
         return new Envelope(
             from: new Address('no-reply@nubeweb.com', 'Nube Web'),
-            subject: 'Tu contratación fue realizada con éxito',
+            subject: 'Tu reserva fue realizada con éxito',
         );
     }
 
