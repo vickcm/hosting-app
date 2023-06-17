@@ -10,7 +10,7 @@ use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Mail\Mailables\Address;
 
-
+//prueba commit 
 class ProductContract extends Mailable
 {
     use Queueable, SerializesModels;
