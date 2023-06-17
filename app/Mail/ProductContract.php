@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Models\Product;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -18,9 +19,8 @@ class ProductContract extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct(public Product $product)
     {
-        //
     }
 
     /**
@@ -46,7 +46,6 @@ class ProductContract extends Mailable
 
     /**
      * Get the attachments for the message.
-     *
      * @return array<int, \Illuminate\Mail\Mailables\Attachment>
      */
     public function attachments(): array

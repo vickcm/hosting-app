@@ -41,7 +41,8 @@ class ProductController extends Controller
             
             try {
                 // Enviar el correo electrónico
-                Mail::to($userEmail)->send(new ProductContract());
+                Mail::to($userEmail)->send(new ProductContract(Product::findOrFail($id)));
+                
             } catch (\Exception $e) {
                 // Manejar el error de envío de correo electrónico
                 return redirect()->route('home')
