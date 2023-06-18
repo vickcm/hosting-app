@@ -11,7 +11,7 @@ use Illuminate\Support\Str;
     <div class="card me-3">
         <div class="card-body">
             <p class="card-title">{{ count($posts) }}</p>
-            <span class="card-text">Posteos</span>
+            <p class="card-text">Posteos</p>
         </div>
     </div>
 </div>

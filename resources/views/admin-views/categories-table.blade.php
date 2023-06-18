@@ -9,7 +9,7 @@
     <div class="card me-3">
         <div class="card-body">
             <p class="card-title">{{ count($categories) }}</p>
-            <span class="card-text">Categorías</span>
+            <p class="card-text">Categorías</p>
         </div>
     </div>
 </div>
