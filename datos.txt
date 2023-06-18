@@ -23,5 +23,8 @@ ALUMNA2: Guggiari,  Micaela
 ***
 DOCENTE:
 Gallino, Santiago
+***
+USUARIO:
+-admin: sojita2004@hotmail.com pasword: olvidate
 
-# Primer Parcial - Portales y Comercio Electrónico
+# Segundo Parcial - Portales y Comercio Electrónico
