@@ -29,31 +29,28 @@ class PostController extends Controller
 
     public function processNew(request $request) 
     {
-        
-      try {
-        $data = $request->except(['_token']);
-        $request->validate(Post::validationRules(), Post::validationMessages());
+        try {
+            $data = $request->except(['_token']);
+            $request->validate(Post::validationRules(), Post::validationMessages());
 
-        if ($request->hasFile('image')) {
-            $data['image'] = $this->uploadImage($request);
+            if ($request->hasFile('image')) {
+                $data['image'] = $this->uploadImage($request);
+            }
+
+            Post::create($data);
+            return redirect()
+                ->route('dashboardPosts')
+                ->with('message', 'Entrada creada correctamente')
+                ->with('type', 'warning');
+        } catch (\Exception $e) {
+            return redirect()
+                ->route('dashboardPosts')
+                ->with('message', 'Error al crear la entrada')
+                ->with('type', 'danger');
         }
-
-        Post::create($data);
-        return redirect()
-            ->route('dashboardPosts')
-            ->with('message', 'Entrada creada correctamente')
-            ->with('type', 'warning');
-      } catch (\Exception $e) {
-        return redirect()
-            ->route('dashboardPosts')
-            ->with('message', 'Error al crear la entrada')
-            ->with('type', 'danger');
-      }
     }
-
     public function formEdit(int $id)
     {
-        
         $post = Post::findOrFail($id);
 
         return view('posts.formEdit', [
@@ -65,7 +62,6 @@ class PostController extends Controller
 
     public function processEdit(int $id, Request $request)
     {
-
         try {
             $post = Post::findOrFail($id);
             $request->validate(Post::validationRules(), Post::validationMessages());
@@ -79,7 +75,6 @@ class PostController extends Controller
             }
             $post->update($data);
             $this->deleteImage($oldImage);
-
     
             return redirect()
                 ->route('dashboardPosts')
@@ -91,10 +86,8 @@ class PostController extends Controller
                 ->route('dashboardPosts')
                 ->with('message', 'Error al editar la entrada')
                 ->with('type', 'danger');
-          }
-      
+        }
     }
-
     public function confirmDelete(int $id)
     {
         $post = Post::findOrFail($id);
@@ -113,15 +106,12 @@ class PostController extends Controller
 
             $post->delete();
         
-           
-        
             return redirect()
                 ->route('dashboardPosts')
                 ->with('message', 'Entrada eliminada correctamente')
                 ->with('type', 'success');
                 
         } catch (\Exception $e) {
-           
         
             return redirect()
                 ->route('dashboardPosts')
@@ -130,8 +120,7 @@ class PostController extends Controller
         }
     }
 
-
-protected function uploadImage(Request $request):string
+    protected function uploadImage(Request $request):string
     {
         $request->validate([
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
