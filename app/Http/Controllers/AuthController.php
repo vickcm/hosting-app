@@ -29,7 +29,7 @@ class AuthController extends Controller
                 ->with('type', 'success');
         }
         if (auth()->user()->role === 'admin') {
-            return redirect()->route('dashboardPosts')
+            return redirect()->route('dashboard')
                 ->with('message', 'Bienvenido ' . auth()->user()->username)
                 ->with('type', 'success');
         }

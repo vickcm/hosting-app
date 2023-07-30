@@ -37,7 +37,11 @@ Route::post('/cerrar-sesion', [\App\Http\Controllers\AuthController::class, 'pro
 // *** ADMIN AUTH ** 
 
 // ADMIN - POSTEOS - ENTRADAS
-Route::get('/dashboard', [\App\Http\Controllers\AdminController::class, 'indexPosts'])
+Route::get('/dashboard', [\App\Http\Controllers\AdminController::class, 'index'])
+    ->name('dashboard')
+    ->middleware(['auth', 'isAdmin']);
+
+Route::get('/dashboard/entradas', [\App\Http\Controllers\AdminController::class, 'indexPosts'])
     ->name('dashboardPosts')
     ->middleware(['auth', 'isAdmin']);
 
