@@ -38,9 +38,9 @@ class ProductController extends Controller
             $userEmail = $user->email;
 
             $productId = $product->product_id;
-
+            $pricePaid = $product->price;
             // Realizar la asociación en la tabla pivot
-            $user->products()->attach($productId, ['user_id' => $userId, 'product_id' => $productId, 'created_at'=>now()]);
+            $user->products()->attach($productId, ['user_id' => $userId, 'product_id' => $productId, 'price_paid' => $pricePaid ,'created_at'=>now()]);
             
             try {
                 // Enviar el correo electrónico
