@@ -4,6 +4,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as BaseUser;
 use Illuminate\Notifications\Notifiable;
+use App\Models\Profile;
+
+
 class User extends BaseUser
 {
 //    use HasFactory;
@@ -43,6 +46,11 @@ class User extends BaseUser
     public function products()
     {
         return $this->belongsToMany(Product::class, 'users_has_products', 'user_id', 'product_id');
+    }
+
+    public function profile()
+    {
+        return $this->hasOne(Profile::class, 'user_id', 'user_id');
     }
 
     
