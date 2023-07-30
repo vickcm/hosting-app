@@ -105,3 +105,15 @@ Route::get('usuarios/{id}', [\App\Http\Controllers\UsersProductController::class
 /** MERCADO PAGO */
 Route::get('mp/test', [\App\Http\Controllers\MercadoPagoController::class, 'show'])
     ->name('mp.test');
+
+Route::get('mp/test-v2', [\App\Http\Controllers\MercadoPagoController::class, 'showV2'])
+->name('mp.test-v2');
+
+Route::get('mp/success', [\App\Http\Controllers\MercadoPagoController::class, 'processSuccess'])
+    ->name('mp.success');
+
+Route::get('mp/pending', [\App\Http\Controllers\MercadoPagoController::class, 'processPending'])
+->name('mp.pending');
+
+Route::get('mp/failure', [\App\Http\Controllers\MercadoPagoController::class, 'processFailure'])
+->name('mp.failure');

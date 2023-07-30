@@ -65,6 +65,6 @@
     </div>
     <script src="{{ url('js/bootstrap.bundle.js') }}"></script>
     <script src="{{ url('js/index.js') }}"></script>
-
+    @stack('js')
 </body>
 </html>

@@ -7,6 +7,18 @@
 
 @section('title', 'Mercado Pago')
 
+@push('js')
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <script>
+        const mp = new MercadoPago("<?= $publicKey;?>");
+        mp.bricks().create("wallet", "mp-cobro", {
+            initialization: {
+                preferenceId: "<?= $preference->id;?>",
+            },
+        });
+    </script>
+@endpush
+
 @section('main')
     <h1>Mercado Pago</h1>
     <table class="table">
@@ -31,14 +43,4 @@
     </table>
 
     <div id="mp-cobro"></div>
-
-    <script src="https://sdk.mercadopago.com/js/v2"></script>
-    <script>
-        const mp = new MercadoPago("<?= $publicKey;?>");
-        mp.bricks().create("wallet", "mp-cobro", {
-            initialization: {
-                preferenceId: "<?= $preference->id;?>",
-            },
-        });
-    </script>
 @endsection
