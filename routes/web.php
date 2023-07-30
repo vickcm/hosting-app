@@ -22,7 +22,7 @@ Route::post('/productos/{id}/confirmacion', [\App\Http\Controllers\ProductContro
     ->name('products.processContractProduct')
     ->middleware(['auth']);
 
-// Autenticación - proceso login - logout 
+// Autenticación - proceso login - logout - register
 Route::get('/registrarse', [\App\Http\Controllers\AuthController::class, 'formRegister'])
     ->name('auth.formRegister');
 Route::post('/registrarse', [\App\Http\Controllers\AuthController::class, 'processRegister'])
@@ -33,6 +33,11 @@ Route::post('/iniciar-sesion', [\App\Http\Controllers\AuthController::class, 'pr
     ->name('auth.processLogin');
 Route::post('/cerrar-sesion', [\App\Http\Controllers\AuthController::class, 'processLogout'])
     ->name('auth.processLogout');
+
+// Perfil de usuario
+Route::get('/perfil', [\App\Http\Controllers\ProfileController::class, 'viewProfile'])
+    ->name('profiles.viewProfile')
+    ->middleware(['auth']);
 
 // *** ADMIN AUTH ** 
 

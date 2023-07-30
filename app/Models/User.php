@@ -45,8 +45,11 @@ class User extends BaseUser
 
     public function products()
     {
-        return $this->belongsToMany(Product::class, 'users_has_products', 'user_id', 'product_id');
+        return $this->belongsToMany(Product::class, 'users_has_products', 'user_id', 'product_id')
+        ->withPivot('price_paid', 'created_at'); // Para acceder a los datos adicionales en la tabla pivot;
     }
+
+ 
 
     public function profile()
     {
