@@ -27,12 +27,19 @@ class AdminController extends Controller
 
         // Obtener la cantidad de posteos por autor
         $cantidadPosteosPorAutor = Author::withCount('posts')->get();
-        // Obtener todos los autores para enviarlos a la vista
+
+         // Obtener el autor con más posteos en el último mes
+         $autorConMasPosteosUltimoMes = Author::withCount(['posts' => function ($query) use ($fechaUnMesAtras) {
+            $query->where('created_at', '>=', $fechaUnMesAtras);
+        }])->orderBy('posts_count', 'desc')->first();
+        
 
         return view('admin-views.dashboard', [
             'posts' => $posts,
             'cantidadPosteosUltimoMes' => $cantidadPosteosUltimoMes,
             'cantidadPosteosPorAutor' => $cantidadPosteosPorAutor,
+            'autorConMasPosteosUltimoMes' => $autorConMasPosteosUltimoMes,
+
             
 
         ]);

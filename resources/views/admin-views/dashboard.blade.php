@@ -18,7 +18,6 @@ use Illuminate\Support\Str;
 
 
 
-
     <div>
         <p>Cantidad de Posteos totales: {{ count($posts) }}</p>
         <p>Cantidad de posteos en el último mes: {{ $cantidadPosteosUltimoMes }}
@@ -28,5 +27,12 @@ use Illuminate\Support\Str;
         @foreach ($cantidadPosteosPorAutor as $autor)
             <p>Autor: {{ $autor->name }} - Cantidad de posteos: {{ $autor->posts_count }}</p>
         @endforeach
+    </div>
+
+    <div>
+        @if ($autorConMasPosteosUltimoMes)
+            <p>Autor con más posteos en el último mes: {{ $autorConMasPosteosUltimoMes->name }} - Cantidad de posteos:
+                {{ $autorConMasPosteosUltimoMes->posts_count }}</p>
+        @endif
     </div>
 @endsection

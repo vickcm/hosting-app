@@ -15,18 +15,21 @@ class UsersHasProductsSeeder extends Seeder
             [
                 'user_id' => 2,
                 'product_id' => 1,
+                'price_paid' => 1250,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'user_id' => 3,
                 'product_id' => 2,
+                'price_paid' => 2250,
                 'created_at' => now(),
                 'updated_at' => now(),
             ], 
             [
                 'user_id' => 3,
                 'product_id' => 1,
+                'price_paid' => 1250,
                 'created_at' => now(),
                 'updated_at' => now(),
             ]
