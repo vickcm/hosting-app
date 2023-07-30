@@ -102,3 +102,6 @@ Route::get('usuarios/{id}', [\App\Http\Controllers\UsersProductController::class
     ->name('users.view')
     ->middleware(['auth', 'isAdmin']);
 
+/** MERCADO PAGO */
+Route::get('mp/test', [\App\Http\Controllers\MercadoPagoController::class, 'show'])
+    ->name('mp.test');
