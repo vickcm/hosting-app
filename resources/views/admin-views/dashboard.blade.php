@@ -35,4 +35,16 @@ use Illuminate\Support\Str;
                 {{ $autorConMasPosteosUltimoMes->posts_count }}</p>
         @endif
     </div>
+    <p>Monto total recaudado en el mes actual: ${{ $montoTotalRecaudadoMesActual }}</p>
+    <p>Cantidad de productos vendidos en el mes: {{ $cantidadProductosVendidosMesActual }} </p>
+
+    <p>Cliente con mayor suma de dinero gastado en el mes actual:</p>
+    @if ($clienteMayorSumaDineroGastado)
+        <p>Nombre: {{ $clienteMayorSumaDineroGastado->username }}</p>
+        <p>Email: {{ $clienteMayorSumaDineroGastado->email }}</p>
+        <p>Total gastado: ${{ $clienteMayorSumaDineroGastado->total_amount_spent }}</p>
+    @else
+        <p>No hay datos disponibles.</p>
+    @endif
+
 @endsection
