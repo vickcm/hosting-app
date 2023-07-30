@@ -38,8 +38,10 @@ class AdminController extends Controller
             $query->where('created_at', '>=', $fechaUnMesAtras);
         }])->orderBy('posts_count', 'desc')->first();
 
+        // Obtener las transacciones del mes actual con status = true
         $transaccionesMesActual = DB::table('users_has_products')
             ->where('created_at', '>=', $fechaInicioMes)
+            ->where('status', true)
             ->get();
 
         // Calcular el monto total recaudado en el mes actual
@@ -48,9 +50,10 @@ class AdminController extends Controller
         $cantidadProductosVendidosMesActual = $transaccionesMesActual->count();
 
         // Obtener el cliente (user) con la mayor suma de productos adquiridos en el mes actual
-       
+
+        // Obtener el cliente (user) con la mayor suma de productos adquiridos en el mes actual (con status = true)
         $clienteMayorSumaDineroGastado = DB::table('users')
-            ->join(DB::raw('(SELECT user_id, SUM(price_paid) as total_amount_spent FROM users_has_products GROUP BY user_id) as uhp'), 'users.user_id', '=', 'uhp.user_id')
+            ->join(DB::raw('(SELECT user_id, SUM(price_paid) as total_amount_spent FROM users_has_products WHERE status = true GROUP BY user_id) as uhp'), 'users.user_id', '=', 'uhp.user_id')
             ->select('users.*', 'uhp.total_amount_spent')
             ->orderByDesc('uhp.total_amount_spent')
             ->first();
