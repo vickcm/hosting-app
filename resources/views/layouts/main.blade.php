@@ -54,6 +54,10 @@
             @if (Session::has('message'))
             <div class="alert alert-{{ Session::get('type') }} alert-dismissible fade show" role="alert">
                 <p>{!! Session::get('message') !!}</p>
+                @if (session('error'))
+                <br>
+                <strong>Error:</strong> {{ session('error') }}
+            @endif
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
             </div>
             @endif

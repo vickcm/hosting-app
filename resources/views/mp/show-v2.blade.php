@@ -31,14 +31,14 @@
         </tr>
         </thead>
         <tbody>
-            @foreach($products as $product)
+           
             <tr>
                 <td>{{ $product->title }}</td>
                 <td>$ {{ $product->price }}</td>
                 <td>1</td>
                 <td>$ {{ $product->price }}</td>
             </tr>
-            @endforeach
+        
         </tbody>
     </table>
 

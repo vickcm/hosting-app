@@ -5,9 +5,9 @@
     <p class="text-center titulo-admin fw-bold">Estás a punto de reservar el siguiente producto:</p>
     <h2 class="text-center">{{ $product->title }}</h2>
     <p>{{ $product->description }}</p>
-    <form action="{{ route('products.processContractProduct', $product->product_id) }}" method="POST" class="d-flex justify-content-center">
+    <form action="{{ route('mp.test-v2', $product->product_id) }}" method="GET" class="d-flex justify-content-center">
         @csrf
-        <button type="submit" class="btn btn-hostin">Confirmar Reserva</button>
+        <button type="submit" class="btn btn-hostin">Pagar Con Mercado Pago</button>
     </form>
     <p class="form-aclaracion text-center mt-3">Recibirás con un mail con las indicaciones para finalizar el proceso de reserva</p>
 </div>

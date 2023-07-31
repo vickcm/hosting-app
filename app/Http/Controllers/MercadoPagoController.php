@@ -1,18 +1,21 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class MercadoPagoController extends Controller
 {
     // public function show()
     // {
     //     $products = Product::whereIn('product_id', [1,2])->get();
-        
+
     //     //configuramos el sdk de mp con nuestras credenciales de acceso
     //     \MercadoPago\SDK::setAccessToken(config('mercadopago.accessToken'));
-        
+
     //     //creamos la preferencia, cobro que vamos a pedirle al usuario
     //     //para crearla, como requisito tenemos que asociarle al menos un item
     //     // los items a cobrar deben ser instancia de la clase \MercadoPago\Item y deben asignarse como un array a la propiedad items de la preferencia
@@ -46,13 +49,17 @@ class MercadoPagoController extends Controller
     //         'publicKey' => config('mercadopago.publicKey'),
     //     ]);
     // }
-    public function showV2()
+    public function showV2($id)
     {
-        $products = Product::whereIn('product_id', [1,2])->get();
-        
+
+
+        // Obtener el producto por ID (aquí utilizamos el $id recibido desde la URL)
+        $product = Product::find($id);
+
+
         $payment = new \App\PaymentProviders\MercadoPagoPayment;
-        $payment 
-            ->addItems($products)
+        $payment
+            ->addItem($product)
             ->withBackUrls(
                 route('mp.success'),
                 route('mp.pending'),
@@ -62,27 +69,30 @@ class MercadoPagoController extends Controller
             ->save();
 
         return view('mp.show-v2', [
-            'products' => $products,
+            'product' => $product,
             'payment' => $payment,
         ]);
     }
 
-    public function processSuccess (Request $request)
+    public function processSuccess(Request $request)
     {
         // aca podriamos guardar los datos de que la compra se realizo correctamente, para habilitar el servicio, marcar como abonado los productos para proceder a su envio, etc
-        echo"Succes";
+        echo "Succes";
+        dd($request);
+
+       
+    }
+
+
+    public function processPending(Request $request)
+    {
+        echo "Pending";
         dd($request);
     }
 
-    public function processPending (Request $request)
+    public function processFailure(Request $request)
     {
-        echo"Pending";
-        dd($request);
-    }
-
-    public function processFailure (Request $request)
-    {
-        echo"Failure";
+        echo "Failure";
         dd($request);
     }
 }

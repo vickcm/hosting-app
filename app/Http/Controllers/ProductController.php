@@ -6,6 +6,7 @@ use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
+
 class ProductController extends Controller
 {
     public function confirmContractProduct($id)
@@ -42,17 +43,21 @@ class ProductController extends Controller
             // Realizar la asociación en la tabla pivot
             $user->products()->attach($productId, ['user_id' => $userId, 'product_id' => $productId, 'price_paid' => $pricePaid ,'created_at'=>now()]);
             
-            try {
+           /*  try {
                 // Enviar el correo electrónico
                 Mail::to($userEmail)->send(new ProductContract($product));
 
             } catch (\Exception $e) {
                 // Manejar el error de envío de correo electrónico
+                $errorMessage = $e->getMessage();
+
                 return redirect()->route('home')
                     ->with('message', 'El producto se reservó con éxito, pero hubo un error al enviar el correo electrónico. Por favor, contactate con atención al cliente.')
-                    ->with('type', 'warning');
+                    ->with('type', 'warning')
+                    ->with('error', $errorMessage);
 
-            }
+
+            } */
             
             // Redireccionar a la página de confirmación o a otra página de tu elección
             return redirect()->route('home')

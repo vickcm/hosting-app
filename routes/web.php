@@ -22,6 +22,18 @@ Route::post('/productos/{id}/confirmacion', [\App\Http\Controllers\ProductContro
     ->name('products.processContractProduct')
     ->middleware(['auth']);
 
+Route::get('mp/test-v2/{id}', [\App\Http\Controllers\MercadoPagoController::class, 'showV2'])
+->name('mp.test-v2');
+
+Route::get('mp/success', [\App\Http\Controllers\MercadoPagoController::class, 'processSuccess'])
+    ->name('mp.success');
+
+Route::get('mp/pending', [\App\Http\Controllers\MercadoPagoController::class, 'processPending'])
+->name('mp.pending');
+
+Route::get('mp/failure', [\App\Http\Controllers\MercadoPagoController::class, 'processFailure'])
+->name('mp.failure');
+
 // Autenticación - proceso login - logout - register
 Route::get('/registrarse', [\App\Http\Controllers\AuthController::class, 'formRegister'])
     ->name('auth.formRegister');
@@ -108,17 +120,6 @@ Route::get('usuarios/{id}', [\App\Http\Controllers\UsersProductController::class
     ->middleware(['auth', 'isAdmin']);
 
 /** MERCADO PAGO */
-Route::get('mp/test', [\App\Http\Controllers\MercadoPagoController::class, 'show'])
-    ->name('mp.test');
+/* Route::get('mp/test', [\App\Http\Controllers\MercadoPagoController::class, 'show'])
+    ->name('mp.test'); */
 
-Route::get('mp/test-v2', [\App\Http\Controllers\MercadoPagoController::class, 'showV2'])
-->name('mp.test-v2');
-
-Route::get('mp/success', [\App\Http\Controllers\MercadoPagoController::class, 'processSuccess'])
-    ->name('mp.success');
-
-Route::get('mp/pending', [\App\Http\Controllers\MercadoPagoController::class, 'processPending'])
-->name('mp.pending');
-
-Route::get('mp/failure', [\App\Http\Controllers\MercadoPagoController::class, 'processFailure'])
-->name('mp.failure');
