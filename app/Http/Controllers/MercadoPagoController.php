@@ -61,7 +61,7 @@ class MercadoPagoController extends Controller
         $payment
             ->addItem($product)
             ->withBackUrls(
-                route('mp.success'),
+                route('mp.success', [$product]), // Aquí agregamos el ID del producto a la URL de éxito
                 route('mp.pending'),
                 route('mp.failure')
             )
@@ -74,14 +74,78 @@ class MercadoPagoController extends Controller
         ]);
     }
 
-    public function processSuccess(Request $request)
+   /*  public function processSuccess($product, Request $request)
     {
         // aca podriamos guardar los datos de que la compra se realizo correctamente, para habilitar el servicio, marcar como abonado los productos para proceder a su envio, etc
         echo "Succes";
         dd($request);
 
+          
+
+        // obtengo el usuario logueado
+        $user = Auth::user();
+
+        if ($user && $product) {
+            // Obtener los IDs del usuario y el producto
+            $userId = $user->user_id;
+
+            $productId = $product->product_id;
+            $pricePaid = $product->price;
+            // Realizar la asociación en la tabla pivot
+            $user->products()->attach($productId, ['user_id' => $userId, 'product_id' => $productId, 'price_paid' => $pricePaid ,'created_at'=>now()]);
+        
+
        
+    } */
+
+    public function processSuccess($id)
+
+    // faltaría enviarle el mail - hacer la otra vista - y agregar a la base de datos los datos de pago puede ser en la misma tabla o tal vez en otra
+    {
+        // Obtener el usuario autenticado
+        $user = Auth::user();
+    
+
+        // Obtener el producto por ID
+        $product = Product::findOrFail($id);
+
+        // Verificar si el usuario y el producto existen
+
+
+        if ($user && $product) {
+            // Obtener los IDs del usuario y el producto
+            $userId = $user->user_id;
+            $userEmail = $user->email;
+
+            $productId = $product->product_id;
+            $pricePaid = $product->price;
+            // Realizar la asociación en la tabla pivot
+            $user->products()->attach($productId, ['user_id' => $userId, 'product_id' => $productId, 'price_paid' => $pricePaid ,'created_at'=>now()]);
+            
+           /*  try {
+                // Enviar el correo electrónico
+                Mail::to($userEmail)->send(new ProductContract($product));
+
+            } catch (\Exception $e) {
+                // Manejar el error de envío de correo electrónico
+                $errorMessage = $e->getMessage();
+
+                return redirect()->route('home')
+                    ->with('message', 'El producto se reservó con éxito, pero hubo un error al enviar el correo electrónico. Por favor, contactate con atención al cliente.')
+                    ->with('type', 'warning')
+                    ->with('error', $errorMessage);
+
+
+            } */
+            
+          
+        } else {
+           // ver si no se graba en la base de datos
+        }       
     }
+
+
+
 
 
     public function processPending(Request $request)

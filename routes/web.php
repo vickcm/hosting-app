@@ -25,7 +25,7 @@ Route::post('/productos/{id}/confirmacion', [\App\Http\Controllers\ProductContro
 Route::get('mp/test-v2/{id}', [\App\Http\Controllers\MercadoPagoController::class, 'showV2'])
 ->name('mp.test-v2');
 
-Route::get('mp/success', [\App\Http\Controllers\MercadoPagoController::class, 'processSuccess'])
+Route::get('mp/success/{id}', [\App\Http\Controllers\MercadoPagoController::class, 'processSuccess'])
     ->name('mp.success');
 
 Route::get('mp/pending', [\App\Http\Controllers\MercadoPagoController::class, 'processPending'])

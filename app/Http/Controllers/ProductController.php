@@ -21,6 +21,8 @@ class ProductController extends Controller
         return redirect()->route('home');
     }
 
+    // este ya no lo usamos!! 
+    
     public function processContractProduct($id)
     {
         // Obtener el usuario autenticado
