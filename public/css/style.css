@@ -58,11 +58,11 @@ hr{
     display: flex;
     align-items: center;
 }
-
 .password-toggle {
     margin-left: 10px;
     cursor: pointer;
 }
+
 /* DASHBOARD */
 /* header */
 .dashboard-header{
@@ -116,6 +116,24 @@ hr{
 .cards-abm .card span{
     color: grey;
 }
+/* cards - graficos  */
+.cards-graficos {
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0px 0px 3px 1px rgb(54 72 182 / 32%);
+    border-radius: 10px;
+    margin: 5px;
+}
+.cards-graficos-header{
+    display: flex;
+}
+.p-color{
+    color:#676565;
+}
+.card-grafico .card .card-header {
+    background-color: #fff !important;
+}
+
 /* form editar y nuevo */
 .form-editar, .form-nueva-entrada{
     background: #fff;
