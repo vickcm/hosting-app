@@ -22,24 +22,26 @@
     <h1 class="text-center mt-5">Estas por contratar el servicio de hosting: <span class="titulo-admin">{{ $product->title }}</span></h1>
     <p class="text-center p-color">Seras redirigido a mercado pago</p>
     <div class="client-table mt-5">
-        <table class="table table-striped table-bordered">
-            <thead>
-            <tr>
-                <th>Título</th>
-                <th>Precio</th>
-                <th>Cantidad</th>
-                <th>Subtotal</th>
-            </tr>
-            </thead>
-            <tbody>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead>
                 <tr>
-                    <td>{{ $product->title }}</td>
-                    <td>$ {{ $product->price }}</td>
-                    <td>1</td>
-                    <td>$ {{ $product->price }}</td>
+                    <th>Título</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
                 </tr>
-            </tbody>
-        </table>
-        <div id="mp-cobro"></div>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ $product->title }}</td>
+                        <td>$ {{ $product->price }}</td>
+                        <td>1</td>
+                        <td>$ {{ $product->price }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="mp-cobro"></div>
+        </div>
     </div>
 @endsection
