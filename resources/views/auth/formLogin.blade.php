@@ -1,5 +1,7 @@
 @extends('layouts.main')
 
+@section('title', 'Iniciar Sesión :: Nube web')
+
 @section('main')
     <h1 class="text-center mb-5 mt-5 blog">Iniciar Sesión</h1>
     <div class="login mb-5">

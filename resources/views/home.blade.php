@@ -10,7 +10,7 @@
 ?>
 @extends('layouts.main')
 
-@section('title', 'Home')
+@section('title', 'Home :: Nube web')
 
 @section('main')
 <section class="section-uno row">

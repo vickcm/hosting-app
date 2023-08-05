@@ -1,5 +1,7 @@
 @extends('layouts.main')
 
+@section('title', 'Registrarse :: Nube web')
+
 @section('main')
     <h1 class="text-center mb-5 mt-5 blog">Crear una cuenta</h1>
     <div class="row mb-5 justify-content-md-center align-items-md-center form-register">
