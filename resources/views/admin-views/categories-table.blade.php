@@ -2,7 +2,7 @@
 /** @var \App\Models\Post[]|\Illuminate\Database\Eloquent\Collection $categories */
 ?>
 @extends('layouts.admin')
-@section('title', 'Listado de Entradas')
+@section('title', 'Categorías :: Nube web')
 @section('abm-post')
 
 <div class="mb-3 d-flex cards-abm">

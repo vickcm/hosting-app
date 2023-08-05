@@ -2,7 +2,9 @@
 /** @var \App\Models\Post[]|\Illuminate\Database\Eloquent\Collection $users */
 ?>
 @extends('layouts.admin')
-@section('title', 'Listado de Entradas')
+
+@section('title', $user->username . ' ' . 'Listado de productos adquiridos :: Nube web')
+
 @section('abm-post')
 <div class="mb-3 d-flex justify-content-center cards-abm">
     <div class="card me-3">

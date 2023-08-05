@@ -2,7 +2,7 @@
 /** @var \App\Models\Post[]|\Illuminate\Database\Eloquent\Collection $users */
 ?>
 @extends('layouts.admin')
-@section('title', 'Listado de Entradas')
+@section('title', 'Listado de Usuarios :: Nube web')
 @section('abm-post')
 
 <div class="card client-table">

@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', 'Listado de Entradas')
+@section('title', 'Dashboard :: Nube web')
 @section('abm-post')
 <div class="client-table mt-4">
     <div class="row">

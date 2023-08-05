@@ -4,7 +4,7 @@ use Illuminate\Support\Str;
 
 ?>
 @extends('layouts.admin')
-@section('title', 'Listado de Entradas')
+@section('title', 'Listado de Entradas :: Nube web')
 @section('abm-post')
 
 <div class="mb-3 d-flex cards-abm">
