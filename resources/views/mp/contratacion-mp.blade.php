@@ -19,9 +19,9 @@
 @endpush
 
 @section('main')
-    <h1 class="text-center mb-5 mt-5 titulo-admin">Estas por contratar el servicio de hosting</h1>
+    <h1 class="text-center mt-5">Estas por contratar el servicio de hosting: <span class="titulo-admin">{{ $product->title }}</span></h1>
     <p class="text-center p-color">Seras redirigido a mercado pago</p>
-    <div class="client-table">
+    <div class="client-table mt-5">
         <table class="table table-striped table-bordered">
             <thead>
             <tr>
@@ -38,7 +38,6 @@
                     <td>1</td>
                     <td>$ {{ $product->price }}</td>
                 </tr>
-            
             </tbody>
         </table>
         <div id="mp-cobro"></div>
