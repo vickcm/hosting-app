@@ -5,7 +5,7 @@
 
 @extends('layouts.main')
 
-@section('title', 'Home')
+@section('title', $post->title)
 
 @section('main')
 <section class="section-entrada-blog">

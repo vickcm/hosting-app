@@ -1,5 +1,7 @@
 @extends('layouts.main')
 
+@section('title', 'Sobre Nosotros :: Nube web')
+
 @section('main')
 <section class="section-nosotros">
     <div class="row">

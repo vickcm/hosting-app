@@ -1,4 +1,7 @@
 @extends('layouts.main')
+
+@section('title', 'Confirmar Reserva :: Nube web')
+
 @section('main')
 <div class="div-confirm-product mt-5">
     <h1 class="fs-2 text-center blog visually-hidden">Confirmar Reserva</h1>

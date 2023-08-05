@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ url('css/bootstrap/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url('css/style.css') }}">
-    <title>@yield('title') :: NubeWeb </title>
+    <title>@yield('title')</title>
     <link rel="icon" href="{{ url('img/logo.png') }}">
 </head>
 <body>

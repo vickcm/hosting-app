@@ -1,5 +1,5 @@
 <?php
-/** @var \App\Models\Movie[]|\Illuminate\Database\Eloquent\Collection $movies */
+/** @var \App\Models\Movie[]|\Illuminate\Database\Eloquent\Collection $product */
 /** @var \App\PaymentProviders\MercadoPagoPayment $payment */
 ?>
 @extends('layouts.main')

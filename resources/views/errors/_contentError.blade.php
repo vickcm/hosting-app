@@ -5,7 +5,7 @@
                 ¡Ups! Ha ocurrido un error...
             </h1>
             <p>Te invitamos a ver nuestros últimos posteos mientras trabajamos en ello</p>
-            <a class="btn btn-dashboard" href="{{ route('home') }}">ir el Sitio Web </a>
+            <a class="btn btn-dashboard" href="{{ route('home') }}">Ir al Sitio Web </a>
         </div>
     </div>
     <div class="col-12 col-md-7 d-flex justify-content-center justify-content-md-start">
