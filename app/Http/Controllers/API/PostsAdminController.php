@@ -34,12 +34,31 @@ class PostsAdminController extends Controller
 
        Post::create($request->all());
 
+        return response()->json([
+            'status' => 0,
+        ]);
+    
+    }
+
+    public function updatePost(Request $request, $id) {
+
+        $post = Post::findorFail($id);
+        $post->update($request->all());
 
         return response()->json([
             'status' => 0,
         ]);
+    
+    }
 
-        
+    public function deletePost($id) {
 
+        $post = Post::findorFail($id);
+        $post->delete();
+
+        return response()->json([
+            'status' => 0,
+        ]);
+    
     }
 }
