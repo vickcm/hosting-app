@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('title', 'Listado de Entradas')
 @section('abm-post')
-<div class="container mt-4">
+<div class="client-table mt-4">
     <div class="row">
         <div class="col-md-6">
             <h1 class="titulo-admin">Dashboard</h1>

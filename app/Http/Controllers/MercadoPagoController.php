@@ -49,14 +49,10 @@ class MercadoPagoController extends Controller
     //         'publicKey' => config('mercadopago.publicKey'),
     //     ]);
     // }
-    public function showV2($id)
+    public function contratacionMercadoPago($id)
     {
-
-
         // Obtener el producto por ID (aquí utilizamos el $id recibido desde la URL)
         $product = Product::find($id);
-
-
         $payment = new \App\PaymentProviders\MercadoPagoPayment;
         $payment
             ->addItem($product)
@@ -68,20 +64,16 @@ class MercadoPagoController extends Controller
             ->withAutoReturn()
             ->save();
 
-        return view('mp.show-v2', [
+        return view('mp.contratacion-mp', [
             'product' => $product,
             'payment' => $payment,
         ]);
     }
-
-   /*  public function processSuccess($product, Request $request)
+    /*  public function processSuccess($product, Request $request)
     {
         // aca podriamos guardar los datos de que la compra se realizo correctamente, para habilitar el servicio, marcar como abonado los productos para proceder a su envio, etc
         echo "Succes";
         dd($request);
-
-          
-
         // obtengo el usuario logueado
         $user = Auth::user();
 
@@ -93,9 +85,6 @@ class MercadoPagoController extends Controller
             $pricePaid = $product->price;
             // Realizar la asociación en la tabla pivot
             $user->products()->attach($productId, ['user_id' => $userId, 'product_id' => $productId, 'price_paid' => $pricePaid ,'created_at'=>now()]);
-        
-
-       
     } */
 
     public function processSuccess($id)
@@ -104,24 +93,19 @@ class MercadoPagoController extends Controller
     {
         // Obtener el usuario autenticado
         $user = Auth::user();
-    
 
         // Obtener el producto por ID
         $product = Product::findOrFail($id);
 
         // Verificar si el usuario y el producto existen
-
-
         if ($user && $product) {
             // Obtener los IDs del usuario y el producto
             $userId = $user->user_id;
             $userEmail = $user->email;
-
             $productId = $product->product_id;
             $pricePaid = $product->price;
             // Realizar la asociación en la tabla pivot
             $user->products()->attach($productId, ['user_id' => $userId, 'product_id' => $productId, 'price_paid' => $pricePaid ,'created_at'=>now()]);
-            
            /*  try {
                 // Enviar el correo electrónico
                 Mail::to($userEmail)->send(new ProductContract($product));
@@ -134,26 +118,16 @@ class MercadoPagoController extends Controller
                     ->with('message', 'El producto se reservó con éxito, pero hubo un error al enviar el correo electrónico. Por favor, contactate con atención al cliente.')
                     ->with('type', 'warning')
                     ->with('error', $errorMessage);
-
-
             } */
-            
-          
         } else {
            // ver si no se graba en la base de datos
         }       
     }
-
-
-
-
-
     public function processPending(Request $request)
     {
         echo "Pending";
         dd($request);
     }
-
     public function processFailure(Request $request)
     {
         echo "Failure";

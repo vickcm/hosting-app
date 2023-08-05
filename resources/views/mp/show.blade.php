@@ -21,26 +21,29 @@
 
 @section('main')
     <h1>Mercado Pago</h1>
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Titulo</th>
-                <th scope="col">Precio</th>
-                <th scope="col">Cantidad</th>
-                <th scope="col">Subtotal</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($products as $product)
-            <tr>
-                <td>{{$product->title}}</td>
-                <td>$ {{$product->price}}</td>
-                <td>1</td>
-                <td>$ {{$product->price}}</td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
-
-    <div id="mp-cobro"></div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th scope="col">Titulo</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($products as $product)
+                    <tr>
+                        <td>{{$product->title}}</td>
+                        <td>$ {{$product->price}}</td>
+                        <td>1</td>
+                        <td>$ {{$product->price}}</td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+            <div id="mp-cobro"></div>
+        </div>
+    </div>
 @endsection

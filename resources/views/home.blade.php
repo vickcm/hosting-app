@@ -24,7 +24,6 @@
                 premium hosting
             </p>
             <a href="#productos_ancla" class="btn btn-dashboard">Ver Productos</a>
-           
         </div>
     </div>
     <div class="col-12 col-md-7 d-flex justify-content-center justify-content-md-start">
