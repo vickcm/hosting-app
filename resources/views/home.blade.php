@@ -1,12 +1,7 @@
 <?php
 /** @var \App\Models\Product[]|\Illuminate\Database\Eloquent\Collection $products
  * @var \App\Models\Post[]|\Illuminate\Database\Eloquent\Collection $posts
- * 
- * 
  */
-
-
-
 ?>
 @extends('layouts.main')
 

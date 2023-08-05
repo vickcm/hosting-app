@@ -1,7 +1,7 @@
 <?php
 /** @var \App\Models\Post[]|\Illuminate\Database\Eloquent\Collection $posts */
 ?>
-@section('title', 'Blog')
+@section('title', 'Blog :: Nube web')
 
 @extends('layouts.main')
 
