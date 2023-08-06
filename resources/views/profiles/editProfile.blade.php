@@ -3,7 +3,7 @@
 @section('title', 'Editar Perfil :: Nube web')
 
 @section('main')
-<h1 class="text-center mb-5 mt-5 blog">Editar Perfil</h1>
+    <h1 class="text-center mb-5 mt-5 blog">Editar Perfil</h1>
     <div class="row mb-5 justify-content-md-center align-items-md-center form-register">
         <div class="col-12 col-md-5">
             <picture>
@@ -12,69 +12,78 @@
             </picture>
         </div>
         <div class="col-12 col-md-6">
-            <form action="{{ route('profiles.editProfile', ['id' => $profile->profile_id  ] ) }}" method="post" >
+            <form action="{{ route('profiles.editProfile', ['id' => $profile->profile_id]) }}" method="post">
                 @csrf
+
                 <div class="mb-3">
-                    <label for="name" class="form-label">Nombre</label>
-                    <input type="text" id="name" name="name" class="form-control"
-                        placeholder="Ingrese el nombre de la categoria"
-                        @error('name')
-                        aria-describedby="error-name" 
+                    <label for="full_name" class="form-label">Nombre Completo</label>
+                    <input type="text" id="full_name" name="full_name" class="form-control"
+                        @error('full_name')
+                        aria-describedby="error-full_name" 
                         @enderror
-                        value="{{ old('name', $user->name) }}">
-                    @error('name')
-                        <div class="text-danger mt-1 bg-light p-2" id="error-name">
+                        value="{{ old('full_name', $profile->full_name) }}">
+                    @error('full_name')
+                        <div class="text-danger mt-1 bg-light p-2" id="error-full_name">
                             <i class="bi bi-exclamation-triangle" title="error"></i>
                             {{ $message }}
                         </div>
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="description" class="form-label">Descripción</label>
-                    <textarea id="description" name="description" class="form-control"
-                    @error('description') aria-describedby="error-description" @enderror
-                    >{{ old('description', $category->description) }}</textarea>
-                    @error('description')
-                        <div class="text-danger mt-1 bg-light p-2" id="error-description">
+                    <label for="address" class="form-label">Dirección</label>
+                    <input type="text" id="address" name="address" class="form-control"
+                        @error('address')
+                        aria-describedby="error-address" 
+                        @enderror
+                        value="{{ old('address', $profile->address) }}">
+                    @error('address')
+                        <div class="text-danger mt-1 bg-light p-2" id="error-address">
                             <i class="bi bi-exclamation-triangle" title="error"></i>
                             {{ $message }}
                         </div>
                     @enderror
                 </div>
-                <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-warning me-3">Editar Perfil</button>
-                    <a href="{{ route('dashboardCategories') }}" class="btn btn-cancelar"> 
-                        Cancelar
-                    </a>
+                <div class="mb-3">
+                    <label for="phone_number">Número de Celular</label>
+                    <input type="text" id="phone_number" name="phone_number" class="form-control"
+                        @error('phone_number')
+                        aria-describedby="error-phone_number" 
+                        @enderror
+                        value="{{ old('phone_number', $profile->phone_number) }}">
+                    @error('phone_number')
+                        <div class="text-danger mt-1 bg-light p-2" id="error-phone_number">
+                            <i class="bi bi-exclamation-triangle" title="error"></i>
+                            {{ $message }}
+                        </div>
+                    @enderror
+
+
                 </div>
+
+                <div class="mb-3">
+                    <label for="birth_date">Fecha de Nacimiento</label>
+                    <input type="date" id="birth_date" name="birth_date" class="form-control"
+                        @error('birth_date')
+                        aria-describedby="error-birth_date" 
+                        @enderror
+                        value="{{ old('birth_date', $profile->birth_date) }}">
+                    @error('birth_date')
+                        <div class="text-danger mt-1 bg-light p-2" id="error-birth_date">
+                            <i class="bi bi-exclamation-triangle" title="error"></i>
+                            {{ $message }}
+                        </div>
+                    @enderror
+
+                </div>
+
+
+
             </form>
+
             <div>
-                <p class="fw-semibold mb-1">Nombre:</p>
-                <p class="fw-normal">{{ $user->username }}</p>
+
             </div>
-            <div>
-                <p class="fw-semibold mb-1">Mail:</p>
-                <p class="fw-normal">{{ $user->email }}</p>
-            </div>
-            <div>
-                @if ($profile)
-                    <!-- Mostrar datos de perfil -->
-                @else
-                    <p class="mt-4">No se ha encontrado perfil asociado a este usuario.</p>
-                @endif
-            </div>
-            <div>
-                <h2 class="mt-4 fs-4">Productos contratados</h2>
-                @if ($contractedProducts->count() > 0)
-                    <ul>
-                        @foreach ($contractedProducts as $product)
-                            <li>{{ $product->title }} - Precio: {{ $product->pivot->price_paid }} - Fecha de contratación: {{ $product->pivot->created_at }} <button class="btn p-cancelar">Cancelar Suscripción</button></li>
-                        @endforeach
-                    </ul>
-                @else
-                    <p>No tienes productos contratados.</p>
-                @endif
-            </div>
+
         </div>
         <div class="d-flex justify-content-end">
             <a href="" class="btn btn-dashboard">Editar Perfil</a>

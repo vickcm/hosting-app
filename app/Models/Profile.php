@@ -23,10 +23,34 @@ class Profile extends Model
         'address',
         'phone_number',
         'birth_date',
-        
+
     ];
     public function profile()
     {
         return $this->hasOne(Profile::class, 'user_id', 'user_id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'user_id');
+    }
+
+    public static function validationRules(): array
+    {
+        return [
+            'full_name' => 'required|string',
+            'address' => 'nullable|string',
+            'phone_number' => 'nullable|string|max:20',
+            'birth_date' => 'nullable|date',
+        ];
+    }
+
+    public static function validationMessages(): array
+    {
+        return [
+            'full_name.required' => 'El campo nombre es obligatorio.',
+            'phone_number.max' => 'El campo teléfono no debe exceder los 20 caracteres.',
+            'birth_date.date' => 'El campo fecha de nacimiento debe ser una fecha válida.',
+        ];
     }
 }

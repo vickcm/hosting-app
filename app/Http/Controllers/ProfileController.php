@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Models\Profile;
@@ -26,8 +27,22 @@ class ProfileController extends Controller
         return view('profiles.viewProfile', compact('user', 'profile', 'contractedProducts'));
     }
 
-    public function editProfile()
+    public function editProfile(int $id)
+
     {
-        return view('profiles.editProfile');
+        try {
+            $profile = Profile::findOrFail($id);
+
+            return view('profiles.editProfile', [
+                'profile' => $profile
+            ]);
+        } catch (\Exception $e) {
+
+            return redirect()
+                ->route('home')
+                ->with('message', 'Perfil no encontrado')
+                ->with('type', 'danger');
+           
+        }
     }
 }
