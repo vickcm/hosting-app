@@ -74,4 +74,9 @@ class ProfileController extends Controller
             // Puedes redirigir a una página de error o hacer lo que necesites
         }
     }
+    public function createProfile(int $id)
+
+    {
+        return view('profiles.createProfile');
+    }
 }
