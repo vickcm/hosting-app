@@ -50,6 +50,16 @@ class Post extends Model
         ];
     }
 
+    public static function updateValidationRules(): array
+    {
+        return [
+            'title' => 'sometimes|string',
+            'content' => 'sometimes|string|min:30',
+            'category_id' => 'sometimes|integer|not_in:0',
+            'author_id' => 'sometimes|integer|not_in:0',
+        ];
+    }
+
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class, 'category_id', 'category_id');
