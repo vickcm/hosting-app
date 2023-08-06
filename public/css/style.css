@@ -54,11 +54,15 @@ hr{
 }
 .p-cancelar{
     color: #b40a1a;
+    background: #b40a1a0d;
 }
 .p-cancelar:hover{
     color: #aa0f0f;
+    background: #b40a1a2e;
 }
-
+.titulo-cancelar{
+    color: #aa0f0f;
+}
 /* PASSWORD */
 .password-input-group {
     display: flex;
