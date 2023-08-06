@@ -11,11 +11,15 @@
         </picture>
         <div>
             <h1 class="mt-md-5 mb-md-3">
-                ¡La contratacion del hosting {{ $product->title }} fue realizada con éxito!
+                ¡La contratacioón del hosting  <span class="fw-bold">{{ $product->title }} </span>  fue realizada con éxito!
             </h1>
             <p class="mt-2 text-center">
-                Felicitaciones, ya puedes empezar hacer uso del mismo. Cualquier cosa que necesites, no dudes en contactarnos.
+                Felicitaciones, ya puedes empezar hacer uso del mismo. Cualquier consulta, no dudes en contactarnos.
             </p>
+
+            <div class="d-flex justify-content-center mt-5 mb-4">
+                <a href="{{ route('profiles.viewProfile') }}" class="btn btn-primary">Productos Contratados</a>
+           
         </div>
     </div>
 </section>

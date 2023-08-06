@@ -45,7 +45,8 @@
                                 <p class="fw-normal">{{ $profile->address }}</p>
                             </div>
                             <div class="d-flex justify-content-center mt-2 mb-4 mb-lg-0">
-                                <a href="{{ route('profiles.editProfile', ['id' => $profile->profile_id]) }}" class="btn btn-dashboard">
+                                <a href="{{ route('profiles.editProfile', ['id' => $profile->profile_id]) }}"
+                                    class="btn btn-dashboard">
                                     Editar Perfil
                                 </a>
                             </div>
@@ -55,7 +56,7 @@
                             </div>
                         @endif
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -64,10 +65,16 @@
             @if ($contractedProducts->count() > 0)
                 <ul class="list-group list-group-flush">
                     @foreach ($contractedProducts as $product)
-                        <li class="list-group-item d-flex justify-content-center align-items-center">{{ $product->title }} -
-                            Precio: {{ $product->pivot->price_paid }} - 
-                            Fecha de contratación: {{ $product->pivot->created_at }} 
-                            <a href="{{ route('products.confirmCancelProduct', ['id' => $product->product_id]) }}" class="ms-3 btn p-cancelar">
+                        <li class="list-group-item d-flex justify-content-center align-items-center">
+                            Producto: {{ $product->title }}
+                            <br>
+                            Precio: {{ $product->pivot->price_paid }} 
+                            <br>
+                            Fecha de contratación:
+                            {{ \Carbon\Carbon::parse($product->pivot->created_at)->format('d/m/Y H:i:s') }}
+                            <br>
+                            <a href="{{ route('products.confirmCancelProduct', ['id' => $product->product_id]) }}"
+                                class="ms-3 btn p-cancelar">
                                 Cancelar Suscripción
                             </a>
                         </li>
@@ -81,10 +88,14 @@
             @if ($cancelProducts->count() > 0)
                 <ul class="list-group list-group-flush">
                     @foreach ($cancelProducts as $product)
-                        <li class="list-group-item d-flex justify-content-center align-items-center">{{ $product->title }} -
-                            Precio: {{ $product->pivot->price_paid }} - Fecha de cancelación:
-                            {{ $product->pivot->updated_at }} 
-                            
+                        <li class="list-group-item d-flex justify-content-center align-items-center">
+                            Producto:{{ $product->title }}
+                            <br>
+                            Precio: {{ $product->pivot->price_paid }}
+                            <br>
+                            Fecha de cancelación:
+                            {{ \Carbon\Carbon::parse($product->pivot->updated_at)->format('d/m/Y H:i:s') }}
+
                         </li>
                     @endforeach
                 </ul>

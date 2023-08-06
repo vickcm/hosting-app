@@ -24,7 +24,8 @@ class ProfileController extends Controller
 
         // Obtener los productos contratados por el usuario que no esten cancelados, chequear status, campo boolean true o false. True para vigentes, false para cancelados
         $contractedProducts = $user->products()->wherePivot('status', true)->get();
-        $cancelProducts= $user->products()->wherePivot('status', false)->get();
+        // obtener los productos cancelados
+        $cancelProducts = $user->products()->wherePivot('status', false)->withPivot('updated_at')->get();
 
         return view('profiles.viewProfile', compact('user', 'profile', 'contractedProducts', 'cancelProducts'));
     }
@@ -32,19 +33,26 @@ class ProfileController extends Controller
     public function editProfile(int $id)
 
     {
-        try {
+       
             $profile = Profile::findOrFail($id);
 
-            return view('profiles.editProfile', [
-                'profile' => $profile
-            ]);
-        } catch (\Exception $e) {
-
-            return redirect()
+            if ($profile) {
+                return view('profiles.editProfile', [
+                    'profile' => $profile
+                ]);
+            } else {
+                return redirect()
                 ->route('home')
                 ->with('message', 'Perfil no encontrado')
                 ->with('type', 'danger');
-        }
+
+            }
+
+            
+       
+
+            
+        
     }
 
     public function processEditProfile(Request $request, int $id)
@@ -62,17 +70,15 @@ class ProfileController extends Controller
                 ->route('profiles.viewProfile',)
                 ->with('message', 'Perfil actualizado exitosamente.')
                 ->with('type', 'success');
-        } catch (ValidationException $e) {
-            return back()->withErrors($e->errors())->withInput();
-        } catch (\Exception $e) {
+       
 
+          
+        } 
+        catch (\Exception $e) {
             return redirect()
                 ->route('home')
-                ->with('message', '$e->getMessage()')
+                ->with('message', 'Error al editar el perfil')
                 ->with('type', 'danger');
-
-            // Manejar otras excepciones, como no encontrar el perfil
-            // Puedes redirigir a una página de error o hacer lo que necesites
         }
     }
     public function createProfile()

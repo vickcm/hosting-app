@@ -40,7 +40,7 @@ class Profile extends Model
         return [
             'full_name' => 'required|string',
             'address' => 'nullable|string',
-            'phone_number' => 'nullable|string|max:20',
+            'phone_number' => 'nullable|interger|max:20',
             'birth_date' => 'nullable|date',
         ];
     }

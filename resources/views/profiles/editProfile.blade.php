@@ -44,7 +44,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="phone_number">Número de Celular</label>
-                    <input type="text" id="phone_number" name="phone_number" class="form-control"
+                    <input type="tel" id="phone_number" name="phone_number" class="form-control"
                         @error('phone_number')
                         aria-describedby="error-phone_number" 
                         @enderror

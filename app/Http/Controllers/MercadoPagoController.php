@@ -31,7 +31,7 @@ class MercadoPagoController extends Controller
             'payment' => $payment,
         ]);
     }
-    public function processSuccess($id)
+    public function processSuccess($id, Request $request)
 
     // faltaría enviarle el mail - hacer la otra vista - y agregar a la base de datos los datos de pago puede ser en la misma tabla o tal vez en otra
     {
@@ -41,40 +41,33 @@ class MercadoPagoController extends Controller
         // Obtener el producto por ID
         $product = Product::findOrFail($id);
 
-        // Verificar si el usuario y el producto existen
+        // dd($request);
+
+
         if ($user && $product) {
-            // Obtener los IDs del usuario y el producto
+
+            // datos de usuario y producto 
             $userId = $user->user_id;
             $userEmail = $user->email;
             $productId = $product->product_id;
             $pricePaid = $product->price;
+
+            // datos del objeto request 
+
+            $collection_status =  $request->input('status');
+            $paymentId = $request->input('payment_id');
+
             // Realizar la asociación en la tabla pivot
-            $user->products()->attach($productId, ['user_id' => $userId, 'product_id' => $productId, 'price_paid' => $pricePaid, 'created_at' => now()]);
+            $user->products()->attach($productId, ['user_id' => $userId, 'product_id' => $productId, 'price_paid' => $pricePaid,  'collection_status' => $collection_status, // Campo adicional
+            'payment_id' => $paymentId,  'created_at' => now()]);
             Mail::to($userEmail)->send(new ProductMail($product));
 
             return view('mp.success', [
                 'user' => $user,
                 'product' => $product,
-            ])
-            ->with('message', 'El producto se reservó con éxito, y se envió un correo electrónico a tu casilla de correo.')
-            ->with('type', 'success');
-
-           /*  try {
-                // Enviar el correo electrónico
-                Mail::to($userEmail)->send(new ProductMail($product));
-            } catch (\Exception $e) {
-                // Manejar el error de envío de correo electrónico
-                $errorMessage = $e->getMessage();
-
-                return redirect()->route('home')
-                    ->with('message', 'El producto se reservó con éxito, pero hubo un error al enviar el correo electrónico. Por favor, contactate con atención al cliente.')
-                    ->with('type', 'warning')
-                    ->with('error', $errorMessage);
-            }
-        } else {
-            // ver si no se graba en la base de datos
-        } */
-    } }
+            ]);
+        }
+    }
 
     public function processPending(Request $request)
     {

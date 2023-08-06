@@ -19,8 +19,8 @@
 @endpush
 
 @section('main')
-    <h1 class="text-center mt-5">Estas por contratar el servicio de hosting: <span class="titulo-admin">{{ $product->title }}</span></h1>
-    <p class="text-center p-color">Seras redirigido a mercado pago</p>
+    <h1 class="text-center mt-5">Estás por contratar el servicio de hosting: <span class="titulo-admin">{{ $product->title }}</span></h1>
+    <p class="text-center p-color">Serás redirigido a Mercado Pago</p>
     <div class="client-table mt-5">
         <div class="table-responsive">
             <table class="table table-striped table-bordered">
