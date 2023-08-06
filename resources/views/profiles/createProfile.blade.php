@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('title', 'Editar Perfil :: Nube web')
+@section('title', 'Crear Perfil :: Nube web')
 
 @section('main')
     <h1 class="text-center mb-5 mt-5 blog">Crear Perfil</h1>
