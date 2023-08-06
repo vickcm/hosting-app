@@ -56,6 +56,10 @@ Route::get('/perfil/{id}/editar', [\App\Http\Controllers\ProfileController::clas
     ->name('profiles.editProfile')
     ->middleware(['auth']);
 
+Route::post('/perfil/{id}/editar', [\App\Http\Controllers\ProfileController::class, 'processEditProfile'])
+    ->name('profiles.editProfile')
+    ->middleware(['auth']);
+
 // *** ADMIN AUTH ** 
 
 // ADMIN - POSTEOS - ENTRADAS

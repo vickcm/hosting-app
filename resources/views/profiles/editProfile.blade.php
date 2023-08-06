@@ -76,17 +76,14 @@
 
                 </div>
 
-
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-warning me-3">Editar</button>
+                </div>
 
             </form>
 
-            <div>
-
-            </div>
-
+            
         </div>
-        <div class="d-flex justify-content-end">
-            <a href="" class="btn btn-dashboard">Editar Perfil</a>
-        </div>
+        
     </div>
 @endsection
