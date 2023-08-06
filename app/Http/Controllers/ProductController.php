@@ -72,4 +72,18 @@ class ProductController extends Controller
                 ->with('type', 'success');
         }       
     }
+
+   public function confirmCancelProduct($id) {
+
+    $product = Product::findOrFail($id);
+    $user = Auth::user();
+
+    if ($product && $user) {
+        return view('products.confirmCancelProduct')
+            ->with('product', $product);
+    }
+    return redirect()->route('home');
+    
+    
+   }
 }

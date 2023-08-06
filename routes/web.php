@@ -17,11 +17,20 @@ Route::get('blog/entradas/{id}', [\App\Http\Controllers\BlogController::class, '
 
 // Productos
 Route::get('/productos/{id}/confirmacion', [\App\Http\Controllers\ProductController::class, 'confirmContractProduct'])
-    ->name('products.confirmContractProduct');
+    ->name('products.confirmContractProduct')
+    ->middleware(['auth']);
 
 Route::post('/productos/{id}/confirmacion', [\App\Http\Controllers\ProductController::class, 'processContractProduct'])
     ->name('products.processContractProduct')
     ->middleware(['auth']);
+
+Route::get('/productos/{id}/cancelacion', [\App\Http\Controllers\ProductController::class, 'confirmCancelProduct'])
+    ->name('products.confirmCancelProduct')
+    ->middleware(['auth']);
+Route::post('/productos/{id}/cancelacion', [\App\Http\Controllers\ProductController::class, 'ProcessCancelProduct'])
+    ->name('products.confirmCancelProduct')
+    ->middleware(['auth']);
+
 
 //Mercado Pago
 Route::get('mp/contratacion-mp/{id}', [\App\Http\Controllers\MercadoPagoController::class, 'contratacionMercadoPago'])
