@@ -7,6 +7,7 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use Illuminate\Testing\Fluent\AssertableJson;
 use App\Models\User;
+use App\Models\Post;
 
 use function PHPUnit\Framework\assertJson;
 
@@ -119,7 +120,7 @@ class PostsAdminAPITest extends TestCase
             'category_id' => 1,
             'author_id' => 1,
             'title' => 'Post de prueba',
-            'content' => 'Contenido del post de prueba',
+            'content' => 'Contenido del post de prueba para probar y testear la api. Contenido del post de prueba para probar y testear la api',
 
         ];
 
@@ -174,6 +175,13 @@ class PostsAdminAPITest extends TestCase
         $response->assertStatus(403);
     }
 
+    public function test_updating_non_existent_post_by_id_returns_404(): void
+    {
+        $nonExistentId = 999; // 
+        $response = $this->authenticateAsAdmin()->putJson('/api/posts/' . $nonExistentId);
+        $response->assertStatus(404);
+    }
+
     public function test_admin_can_update_post()
     {
 
@@ -181,7 +189,7 @@ class PostsAdminAPITest extends TestCase
             'category_id' => 1,
             'author_id' => 1,
             'title' => 'Post de prueba',
-            'content' => 'Contenido del post de prueba',
+            'content' => 'Contenido del post de prueba para probar y testear la api. Contenido del post de prueba para probar y testear la api',
 
         ];
 
@@ -231,12 +239,7 @@ class PostsAdminAPITest extends TestCase
         $response->assertStatus(403);
     }
 
-    public function test_updating_non_existent_post_by_id_returns_404(): void
-    {
-        $nonExistentId = 999; // 
-        $response = $this->authenticateAsAdmin()->putJson('/api/posts/' . $nonExistentId);
-        $response->assertStatus(404);
-    }
+
 
     public function test_admin_can_delete_post()
     {
@@ -270,4 +273,67 @@ class PostsAdminAPITest extends TestCase
         $response = $this->deleteJson('/api/posts/1');
         $response->assertStatus(403);
     }
+
+    public function test_partial_update_post_as_admin_with_valid_data_returns_updated_post(): void
+    {
+        // Datos de prueba para la actualización parcial
+        $data = [
+            'title' => 'Nuevo título',
+        ];
+
+        // ID de un post existente
+        $postId = 1;
+
+        // Realiza la solicitud PATCH autenticado como admin
+        $response = $this->authenticateAsAdmin()->patchJson("/api/posts/{$postId}", $data);
+
+        // Verifica que la respuesta sea exitosa
+        $response->assertStatus(200);
+
+        // Verifica la estructura JSON de la respuesta
+        $response->assertJsonStructure([
+            'status',
+        ]);
+
+        // Verifica que el post haya sido actualizado en la base de datos
+        $updatedPost = Post::find($postId);
+        $this->assertEquals($data['title'], $updatedPost->title);
+    }
+
+
+    public function test_partial_update_post_with_invalid_data_returns_validation_errors(): void
+    {
+        // Datos de prueba para la actualización parcial con datos inválidos
+        $invalidData = [
+            'title' => '', // Título vacío (esto debería ser inválido según las reglas de validación)
+        ];
+
+        // ID de un post existente
+        $postId = 1;
+
+        // Realiza la solicitud PATCH autenticado como admin
+        $response = $this->authenticateAsAdmin()->patchJson("/api/posts/{$postId}", $invalidData);
+
+        // Verifica que la respuesta tenga un código de estado 422 (Unprocessable Entity)
+        $response->assertStatus(422);
+
+        // Verifica que la respuesta incluya los errores de validación esperados
+        $response->assertJsonValidationErrors(['title']);
+    }
+
+    public function test_authenticated_non_admin_user_cannot_update_parcialpost_returns_403()
+    {
+        $this->authenticateAsUser();
+
+        $response = $this->patchJson('/api/posts/1');
+        // 401 si no está autenticado y 403 si tiene el acceso denegado. Está prohibido
+        $response->assertStatus(403);
+    }
+
+    public function test_updating_partial_post_without_autentication_returns_401()
+    {
+        $response = $this->patchJson('/api/posts/1');
+        $response->assertStatus(401);
+    }
+
 }
