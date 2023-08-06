@@ -399,6 +399,10 @@ hr{
     .div-confirm-product{
         width: 100%;
     }	
+    .perfil .perfil-div{
+        border-right: none;
+        border-bottom: 1px solid rgb(8 8 8 / 13%);
+    }
 }
 @media screen and (min-width: 769px) and (max-width: 1200px) {
     .section-tres{

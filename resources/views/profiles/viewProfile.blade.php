@@ -50,8 +50,8 @@
                             @endif
                         </div>
                     </div>
-                    <div class="d-flex justify-content-center mt-2">
-                        <a href="" class="btn btn-dashboard">Editar Perfil</a>
+                    <div class="d-flex justify-content-center mt-2 mb-4 mb-md-0">
+                        <a href="{{route('profiles.editProfile')}}" class="btn btn-dashboard">Editar Perfil</a>
                     </div>
                 </div>      
             </div>

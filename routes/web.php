@@ -51,7 +51,6 @@ Route::post('/cerrar-sesion', [\App\Http\Controllers\AuthController::class, 'pro
 Route::get('/perfil', [\App\Http\Controllers\ProfileController::class, 'viewProfile'])
     ->name('profiles.viewProfile')
     ->middleware(['auth']);
-
 Route::get('/editar-perfil', [\App\Http\Controllers\ProfileController::class, 'editProfile'])
 ->name('profiles.editProfile')
 ->middleware(['auth']);
