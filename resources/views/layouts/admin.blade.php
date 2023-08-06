@@ -78,7 +78,7 @@
                 <button class="btn btn-header" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/></svg>
                 </button>
-                <p class="text-center fs-2 mt-1 mb-0 mt-md-0 mb-md-1">Panel de Administración || <span>NuveWeb</span></p>
+                <p class="text-center fs-2 mt-1 mb-0 mt-md-0 mb-md-1">Panel de Administración || <span>NubeWeb</span></p>
             </div>
         </header>
         <section class="container-fluid dashboard">
