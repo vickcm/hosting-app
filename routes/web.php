@@ -52,6 +52,10 @@ Route::get('/perfil', [\App\Http\Controllers\ProfileController::class, 'viewProf
     ->name('profiles.viewProfile')
     ->middleware(['auth']);
 
+Route::get('/editar-perfil', [\App\Http\Controllers\ProfileController::class, 'editProfile'])
+->name('profiles.editProfile')
+->middleware(['auth']);
+
 // *** ADMIN AUTH ** 
 
 // ADMIN - POSTEOS - ENTRADAS
