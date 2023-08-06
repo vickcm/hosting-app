@@ -74,9 +74,31 @@ class ProfileController extends Controller
             // Puedes redirigir a una página de error o hacer lo que necesites
         }
     }
-    public function createProfile(int $id)
+    public function createProfile()
 
     {
         return view('profiles.createProfile');
+    }
+
+    public function processCreateProfile(request $request) {
+
+        try {
+            $data = $request->except(['_token']);
+            $request->validate(Profile::validationRules(), Profile::validationMessages());
+            // le tengo que agregar el campo del user_id al array $data
+            $data['user_id'] = auth()->user()->user_id;
+
+            Profile::create($data);
+            return redirect()
+                ->route('profiles.viewProfile')
+                ->with('message', 'Perfil creado correctamente')
+                ->with('type', 'success');
+        } catch (\Exception $e) {
+            return redirect()
+                ->route('home')
+                ->with('message', 'Error al crear el perfil')
+                ->with('type', 'danger');
+        }
+
     }
 }

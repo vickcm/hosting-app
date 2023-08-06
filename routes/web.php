@@ -52,13 +52,22 @@ Route::post('/cerrar-sesion', [\App\Http\Controllers\AuthController::class, 'pro
 Route::get('/perfil', [\App\Http\Controllers\ProfileController::class, 'viewProfile'])
     ->name('profiles.viewProfile')
     ->middleware(['auth']);
+
+Route::get('/perfil/crear', [\App\Http\Controllers\ProfileController::class, 'createProfile'])
+    ->name('profiles.createProfile')
+    ->middleware(['auth']);
+Route::post('/perfil/crear', [\App\Http\Controllers\ProfileController::class, 'processCreateProfile'])
+    ->name('profiles.createProfile')
+    ->middleware(['auth']);
+
 Route::get('/perfil/{id}/editar', [\App\Http\Controllers\ProfileController::class, 'editProfile'])
     ->name('profiles.editProfile')
     ->middleware(['auth']);
-
 Route::post('/perfil/{id}/editar', [\App\Http\Controllers\ProfileController::class, 'processEditProfile'])
     ->name('profiles.editProfile')
     ->middleware(['auth']);
+
+
 
 // *** ADMIN AUTH ** 
 
