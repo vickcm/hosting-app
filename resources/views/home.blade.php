@@ -44,7 +44,7 @@
         <div class="col-12 mt-3">
             <div class="d-flex justify-content-evenly flex-column flex-md-row align-items-center">
                 <div class="card-body-dos">
-                    <img src="{{ url('img/server.png') }}" alt="nuve atendiendo servidor">
+                    <img src="{{ url('img/server.png') }}" alt="nube atendiendo servidor">
                     <p class="fw-semibold text-center mt-2">99.9% Garantía de tiempo de actividad</p>
                 </div>
                 <div class="card-body-dos mt-2 mt-md-0">
