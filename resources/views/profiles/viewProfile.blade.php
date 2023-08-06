@@ -21,6 +21,23 @@
                 <p class="fw-normal">{{ $user->email }}</p>
             </div>
             <div>
+                <p class="fw-semibold mb-1">Nombre Completo</p>
+                <p class="fw-normal">{{ $profile->full_name }}</p>
+            </div>
+
+            <div>
+                <p class="fw-semibold mb-1">Fecha de nacimiento:</p>
+                <p class="fw-normal">{{ $profile->formatted_birth_date }}</p>
+            </div>
+            <div>
+                <p class="fw-semibold mb-1">Teléfono:</p>
+                <p class="fw-normal">{{ $profile->phone_number }}</p>
+            </div>
+            <div>
+                <p class="fw-semibold mb-1">Dirección:</p>
+                <p class="fw-normal">{{ $profile->address }}</p>
+            </div>
+            <div>
                 @if ($profile)
                     <!-- Mostrar datos de perfil -->
                 @else
