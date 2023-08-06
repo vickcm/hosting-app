@@ -22,6 +22,7 @@ Route::post('/productos/{id}/confirmacion', [\App\Http\Controllers\ProductContro
     ->name('products.processContractProduct')
     ->middleware(['auth']);
 
+//Mercado Pago
 Route::get('mp/contratacion-mp/{id}', [\App\Http\Controllers\MercadoPagoController::class, 'contratacionMercadoPago'])
 ->name('mp.contratacion-mp');
 

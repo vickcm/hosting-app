@@ -32,7 +32,7 @@
                 @if ($contractedProducts->count() > 0)
                     <ul>
                         @foreach ($contractedProducts as $product)
-                            <li>{{ $product->title }} - Precio: {{ $product->pivot->price_paid }} - Fecha de contratación: {{ $product->pivot->created_at }}</li>
+                            <li>{{ $product->title }} - Precio: {{ $product->pivot->price_paid }} - Fecha de contratación: {{ $product->pivot->created_at }} <button class="btn p-cancelar">Cancelar Suscripción</button></li>
                         @endforeach
                     </ul>
                 @else

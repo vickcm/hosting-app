@@ -52,6 +52,12 @@ hr{
     color: #e1e5f0;
     background: #aa0f0f;
 }
+.p-cancelar{
+    color: #b40a1a;
+}
+.p-cancelar:hover{
+    color: #aa0f0f;
+}
 
 /* PASSWORD */
 .password-input-group {

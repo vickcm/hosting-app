@@ -32,6 +32,9 @@
                                 <a class="nav-link text-white" href="{{ route('posts') }}">Blog</a>
                             </li> 
                             @auth
+                            <li>
+                                <a class="nav-link text-white" href="{{ route('profiles.viewProfile') }}">Perfil</a>
+                            </li>
                             <li class="nav-item">
                                 <form action="{{ route('auth.processLogout') }}" method="post">
                                     @csrf
