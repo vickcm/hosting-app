@@ -79,6 +79,21 @@
             @else
                 <p class="text-center">No tienes productos contratados.</p>
             @endif
+
+            <h2 class="mb-4 fs-4 text-center">Productos Cancelados</h2>
+            @if ($cancelProducts->count() > 0)
+                <ul class="list-group list-group-flush">
+                    @foreach ($cancelProducts as $product)
+                        <li class="list-group-item d-flex justify-content-center align-items-center">{{ $product->title }} -
+                            Precio: {{ $product->pivot->price_paid }} - Fecha de cancelación:
+                            {{ $product->pivot->updated_at }} 
+                            
+                        </li>
+                    @endforeach
+                </ul>
+            @else
+                <p class="text-center">No tienes productos contratados.</p>
+            @endif
         </div>
     </div>
 @endsection

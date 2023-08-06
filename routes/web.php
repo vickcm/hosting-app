@@ -27,7 +27,7 @@ Route::post('/productos/{id}/confirmacion', [\App\Http\Controllers\ProductContro
 Route::get('/productos/{id}/cancelacion', [\App\Http\Controllers\ProductController::class, 'confirmCancelProduct'])
     ->name('products.confirmCancelProduct')
     ->middleware(['auth']);
-Route::post('/productos/{id}/cancelacion', [\App\Http\Controllers\ProductController::class, 'ProcessCancelProduct'])
+Route::post('/productos/{id}/cancelacion', [\App\Http\Controllers\ProductController::class, 'processCancelProduct'])
     ->name('products.confirmCancelProduct')
     ->middleware(['auth']);
 
