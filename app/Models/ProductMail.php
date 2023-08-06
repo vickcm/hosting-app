@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Mail;
+namespace App\Models;
 
 use App\Models\Product;
 use Illuminate\Bus\Queueable;
@@ -11,21 +11,16 @@ use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Mail\Mailables\Address;
 
-//prueba commit 
-class ProductContract extends Mailable
+class ProductMail extends Mailable
 {
-    use Queueable, SerializesModels;
+   use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     */
+   
     public function __construct(public Product $product)
     {
     }
 
-    /**
-     * Get the message envelope.
-     */
+    
     public function envelope(): Envelope
     {
         return new Envelope(
@@ -34,9 +29,7 @@ class ProductContract extends Mailable
         );
     }
 
-    /**
-     * Get the message content definition.
-     */
+  
     public function content(): Content
     {
         return new Content(
@@ -44,10 +37,7 @@ class ProductContract extends Mailable
         );
     }
 
-    /**
-     * Get the attachments for the message.
-     * @return array<int, \Illuminate\Mail\Mailables\Attachment>
-     */
+   
     public function attachments(): array
     {
         return [];

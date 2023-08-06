@@ -24,6 +24,7 @@ class AuthController extends Controller
 
         $request->session()->regenerate();
         if (auth()->user()->role === 'user') {
+            
             return redirect()->route('home')
                 ->with('message', 'Bienvenido ' . auth()->user()->username)
                 ->with('type', 'success');
