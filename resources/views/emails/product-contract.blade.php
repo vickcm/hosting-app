@@ -65,8 +65,8 @@
                                                                 <tr>
                                                                     <td align="center" style="font-size:0px;padding:0px;word-break:break-word;">
                                                                         <div style="font-family:Helvetica;font-size:16px;font-weight:normal;letter-spacing:-0.3px;line-height:25px;text-align:left;color:#000000;">
-                                                                            <p style="Margin:0;">Estimado/a,</p>
-                                                                            <p style="Margin:0;">¡Gracias por reservar nuestro producto! Nos complace confirmar que su reserva ha sido procesada exitosamente.</p>
+                                                                            <p style="Margin:0;">¡Felicitaciones!</p>
+                                                                            <p style="Margin:0;">Acabas de realizar la contratacion del hosting,</p>
                                                                         </div>
                                                                     </td>
                                                                 </tr>
@@ -102,7 +102,7 @@
                                                                 <tr>
                                                                 <td align="center" style="font-size:0px;padding:0px;word-break:break-word;">
                                                                         <div style="font-family:Helvetica;font-size:16px;font-weight:normal;letter-spacing:-0.3px;line-height:25px;text-align:left;color:#000000;">
-                                                                            <p style="Margin:0;">Para completar su reserva, le enviaremos otro correo electrónico en breve con las instrucciones de pago y los detalles adicionales. Le recomendamos estar atento/a a su bandeja de entrada.</p>
+                                                                            <p style="Margin:0;">Para completar el alta del servicio, le enviaremos otro correo electrónico en breve con las instrucciones y detalles adicionales. Le recomendamos estar atento/a a su bandeja de entrada.</p>
                                                                         </div>
                                                                     </td>
                                                                 </tr>

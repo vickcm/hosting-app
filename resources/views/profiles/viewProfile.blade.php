@@ -4,7 +4,7 @@
 
 @section('main')
 <h1 class="text-center mb-5 mt-5 blog">Mi Cuenta</h1>
-    <div class="row mb-5 justify-content-md-center align-items-md-center perfil">
+    <div class="row perfil">
         <div class="col-12 col-lg-6 perfil-div">
             <div class="row justify-content-center align-items-center">
                 <div class="col-12 col-md-5">
@@ -57,16 +57,16 @@
             </div>
         </div>
         <div class="col-12 col-lg-6">
-            <h2 class="mt-4 fs-4 text-center">Productos contratados</h2>
+            <h2 class="mb-4 fs-4 text-center">Productos Contratados</h2>
             @if ($contractedProducts->count() > 0)
                 <ul class="list-group list-group-flush">
                     @foreach ($contractedProducts as $product)
                         <li class="list-group-item d-flex justify-content-center align-items-center">{{ $product->title }} - Precio: {{ $product->pivot->price_paid }} - Fecha de contratación: {{ $product->pivot->created_at }} <button class="btn p-cancelar">Cancelar Suscripción</button></li>
                     @endforeach
                 </ul>
-            @else
-                <p class="text-center">No tienes productos contratados.</p>
-            @endif
+                @else
+                    <p class="text-center">No tienes productos contratados.</p>
+                @endif
         </div>
     </div>
 @endsection
