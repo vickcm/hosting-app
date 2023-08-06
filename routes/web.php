@@ -55,6 +55,9 @@ Route::get('/perfil', [\App\Http\Controllers\ProfileController::class, 'viewProf
 Route::get('/perfil/{id}/editar', [\App\Http\Controllers\ProfileController::class, 'editProfile'])
     ->name('profiles.editProfile')
     ->middleware(['auth']);
+Route::get('/crearperfil', [\App\Http\Controllers\ProfileController::class, 'createProfile'])
+    ->name('profiles.createProfile')
+    ->middleware(['auth']);
 
 Route::post('/perfil/{id}/editar', [\App\Http\Controllers\ProfileController::class, 'processEditProfile'])
     ->name('profiles.editProfile')
