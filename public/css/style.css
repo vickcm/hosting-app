@@ -415,4 +415,8 @@ hr{
     .div-confirm-product{
         width: 60%;
     }	
+    .perfil .perfil-div{
+        border-right: none;
+        border-bottom: 1px solid rgb(8 8 8 / 13%);
+    }
 }

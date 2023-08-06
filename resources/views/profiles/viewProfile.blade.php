@@ -5,7 +5,7 @@
 @section('main')
 <h1 class="text-center mb-5 mt-5 blog">Mi Cuenta</h1>
     <div class="row mb-5 justify-content-md-center align-items-md-center perfil">
-        <div class="col-12 col-md-6 perfil-div">
+        <div class="col-12 col-lg-6 perfil-div">
             <div class="row justify-content-center align-items-center">
                 <div class="col-12 col-md-5">
                     <picture>
@@ -50,13 +50,13 @@
                             @endif
                         </div>
                     </div>
-                    <div class="d-flex justify-content-center mt-2 mb-4 mb-md-0">
+                    <div class="d-flex justify-content-center mt-2 mb-4 mb-lg-0">
                         <a href="{{route('profiles.editProfile')}}" class="btn btn-dashboard">Editar Perfil</a>
                     </div>
                 </div>      
             </div>
         </div>
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-lg-6">
             <h2 class="mt-4 fs-4 text-center">Productos contratados</h2>
             @if ($contractedProducts->count() > 0)
                 <ul class="list-group list-group-flush">
