@@ -51,7 +51,7 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-center mt-2 mb-4 mb-lg-0">
-                        <a href="{{route('profiles.editProfile')}}" class="btn btn-dashboard">Editar Perfil</a>
+                        <a href="{{route('profiles.editProfile', ['id' => $profile->profile_id])}}" class="btn btn-dashboard">Editar Perfil</a>
                     </div>
                 </div>      
             </div>

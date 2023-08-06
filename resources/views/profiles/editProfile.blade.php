@@ -12,7 +12,7 @@
             </picture>
         </div>
         <div class="col-12 col-md-6">
-            <form action="{{ route('profiles.editProfile', ['id' => $user->user_id  ] ) }}" method="post" >
+            <form action="{{ route('profiles.editProfile', ['id' => $profile->profile_id  ] ) }}" method="post" >
                 @csrf
                 <div class="mb-3">
                     <label for="name" class="form-label">Nombre</label>

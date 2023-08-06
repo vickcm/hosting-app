@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\Route;
 
@@ -17,23 +18,23 @@ Route::get('blog/entradas/{id}', [\App\Http\Controllers\BlogController::class, '
 // Productos
 Route::get('/productos/{id}/confirmacion', [\App\Http\Controllers\ProductController::class, 'confirmContractProduct'])
     ->name('products.confirmContractProduct');
-    
+
 Route::post('/productos/{id}/confirmacion', [\App\Http\Controllers\ProductController::class, 'processContractProduct'])
     ->name('products.processContractProduct')
     ->middleware(['auth']);
 
 //Mercado Pago
 Route::get('mp/contratacion-mp/{id}', [\App\Http\Controllers\MercadoPagoController::class, 'contratacionMercadoPago'])
-->name('mp.contratacion-mp');
+    ->name('mp.contratacion-mp');
 
 Route::get('mp/success/{id}', [\App\Http\Controllers\MercadoPagoController::class, 'processSuccess'])
     ->name('mp.success');
 
 Route::get('mp/pending', [\App\Http\Controllers\MercadoPagoController::class, 'processPending'])
-->name('mp.pending');
+    ->name('mp.pending');
 
 Route::get('mp/failure', [\App\Http\Controllers\MercadoPagoController::class, 'processFailure'])
-->name('mp.failure');
+    ->name('mp.failure');
 
 // Autenticación - proceso login - logout - register
 Route::get('/registrarse', [\App\Http\Controllers\AuthController::class, 'formRegister'])
@@ -51,9 +52,9 @@ Route::post('/cerrar-sesion', [\App\Http\Controllers\AuthController::class, 'pro
 Route::get('/perfil', [\App\Http\Controllers\ProfileController::class, 'viewProfile'])
     ->name('profiles.viewProfile')
     ->middleware(['auth']);
-Route::get('/editar-perfil', [\App\Http\Controllers\ProfileController::class, 'editProfile'])
-->name('profiles.editProfile')
-->middleware(['auth']);
+Route::get('/perfil/{id}/editar', [\App\Http\Controllers\ProfileController::class, 'editProfile'])
+    ->name('profiles.editProfile')
+    ->middleware(['auth']);
 
 // *** ADMIN AUTH ** 
 
@@ -126,4 +127,3 @@ Route::get('usuarios/{id}', [\App\Http\Controllers\UsersProductController::class
 /** MERCADO PAGO */
 /* Route::get('mp/test', [\App\Http\Controllers\MercadoPagoController::class, 'show'])
     ->name('mp.test'); */
-
