@@ -24,8 +24,9 @@ class ProfileController extends Controller
 
         // Obtener los productos contratados por el usuario que no esten cancelados, chequear status, campo boolean true o false. True para vigentes, false para cancelados
         $contractedProducts = $user->products()->wherePivot('status', true)->get();
+        $cancelProducts= $user->products()->wherePivot('status', false)->get();
 
-        return view('profiles.viewProfile', compact('user', 'profile', 'contractedProducts'));
+        return view('profiles.viewProfile', compact('user', 'profile', 'contractedProducts', 'cancelProducts'));
     }
 
     public function editProfile(int $id)
