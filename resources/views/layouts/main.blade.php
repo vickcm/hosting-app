@@ -33,7 +33,7 @@
                             </li> 
                             @auth
                             <li>
-                                <a class="nav-link text-white" href="{{ route('profiles.viewProfile') }}">Perfil</a>
+                                <a class="nav-link text-white" href="{{ route('profiles.viewProfile') }}">Cuenta</a>
                             </li>
                             <li class="nav-item">
                                 <form action="{{ route('auth.processLogout') }}" method="post">

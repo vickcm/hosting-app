@@ -354,6 +354,17 @@ hr{
     border-radius: 10px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
+.perfil{
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    margin: auto;
+    width: 90%;
+}
+.perfil .perfil-div{
+    border-right: 1px solid rgb(8 8 8 / 13%);
+}
+
 @media screen and (max-width: 768px) {
     .form-editar, .form-nueva-entrada{
         width: 100%;

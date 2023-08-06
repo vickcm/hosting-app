@@ -15,7 +15,7 @@ class ProfilesSeeder extends Seeder
         DB::table('profiles')->insert([
             [
                 'user_id' => 1,
-                'full_name' => 'Nombre Completo Sojita',
+                'full_name' => 'Laura Romano',
                 'address' => 'Calle Principal, Ciudad',
                 'phone_number' => '1234567890',
                 'birth_date' => '1990-01-01',
@@ -24,7 +24,7 @@ class ProfilesSeeder extends Seeder
             ],
             [
                 'user_id' => 2,
-                'full_name' => 'Nombre Completo Lucas',
+                'full_name' => 'Lucas Diglaglio',
                 'address' => 'Calle Secundaria, Ciudad',
                 'phone_number' => '9876543210',
                 'birth_date' => '1995-05-05',
@@ -33,7 +33,7 @@ class ProfilesSeeder extends Seeder
             ],
             [
                 'user_id' => 3,
-                'full_name' => 'Nombre Completo Pedro',
+                'full_name' => 'Pedro Perez',
                 'address' => 'Calle Secundaria, Ciudad',
                 'phone_number' => '9876543210',
                 'birth_date' => '1995-05-05',
@@ -42,7 +42,7 @@ class ProfilesSeeder extends Seeder
             ],
             [
                 'user_id' => 4,
-                'full_name' => 'Nombre Completo Romina',
+                'full_name' => 'Romina Rodriguez',
                 'address' => 'Calle Secundaria, Ciudad',
                 'phone_number' => '9876543210',
                 'birth_date' => '1995-05-05',
