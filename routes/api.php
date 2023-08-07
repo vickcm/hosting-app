@@ -16,7 +16,9 @@ Route::get('products',  ['App\Http\Controllers\API\ProductsAdminController', 'in
 //ABM ENTRADAS POSTEOS
 
 // listado de posteos/entradas sin auth 
-Route::get('posts',  ['App\Http\Controllers\API\PostsAdminController', 'index']);
+Route::get('posts',  ['App\Http\Controllers\API\PostsAdminController', 'index'])
+    ->middleware(['auth', 'isAdminAPI']);
+
 
 
 // Creación de posteos/entradas con ADMIN
@@ -24,7 +26,9 @@ Route::post('posts',  ['App\Http\Controllers\API\PostsAdminController', 'createP
     ->middleware(['auth', 'isAdminAPI']);
 
 // listado de posteos o entrada con ID sin auth
-Route::get('posts/{id}',  ['App\Http\Controllers\API\PostsAdminController', 'view']);
+Route::get('posts/{id}',  ['App\Http\Controllers\API\PostsAdminController', 'view'])
+    ->middleware(['auth', 'isAdminAPI']);
+
 // listado de posteos/entradas
 
 // Actualización completa de un posteo/entrada con ADMIN

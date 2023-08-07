@@ -33,26 +33,19 @@ class ProfileController extends Controller
     public function editProfile(int $id)
 
     {
-       
-            $profile = Profile::findOrFail($id);
 
-            if ($profile) {
-                return view('profiles.editProfile', [
-                    'profile' => $profile
-                ]);
-            } else {
-                return redirect()
+        $profile = Profile::findOrFail($id);
+
+        if ($profile) {
+            return view('profiles.editProfile', [
+                'profile' => $profile
+            ]);
+        } else {
+            return redirect()
                 ->route('home')
                 ->with('message', 'Perfil no encontrado')
                 ->with('type', 'danger');
-
-            }
-
-            
-       
-
-            
-        
+        }
     }
 
     public function processEditProfile(Request $request, int $id)
@@ -70,24 +63,23 @@ class ProfileController extends Controller
                 ->route('profiles.viewProfile',)
                 ->with('message', 'Perfil actualizado exitosamente.')
                 ->with('type', 'success');
-       
-
-          
-        } 
-        catch (\Exception $e) {
+        } catch (\Exception $e) {
             return redirect()
-                ->route('home')
-                ->with('message', 'Error al editar el perfil')
-                ->with('type', 'danger');
+            ->route('profiles.editProfile', ['id' => $id])
+            ->withInput()
+            ->with('message',  $e->getMessage())
+            ->with('type', 'danger');
         }
     }
+
     public function createProfile()
 
     {
         return view('profiles.createProfile');
     }
 
-    public function processCreateProfile(request $request) {
+    public function processCreateProfile(request $request)
+    {
 
         try {
             $data = $request->except(['_token']);
@@ -106,6 +98,5 @@ class ProfileController extends Controller
                 ->with('message', 'Error al crear el perfil')
                 ->with('type', 'danger');
         }
-
     }
 }

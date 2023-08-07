@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id')->unique();
             $table->string('full_name')->nullable(false);
             $table->string('address')->nullable();
-            $table->integer('phone_number', 20)->nullable();
+            $table->string('phone_number')->nullable();
             $table->date('birth_date')->nullable();
             $table->timestamps();
             // Definir la relación con la tabla users

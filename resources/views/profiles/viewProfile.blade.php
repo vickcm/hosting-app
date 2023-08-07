@@ -3,7 +3,14 @@
 @section('title', 'Mi Cuenta :: Nube web')
 
 @section('main')
-    <h1 class="text-center mb-5 mt-5 blog">Mi Cuenta</h1>
+<div class="text-center mt-5">
+    <h1 class=" blog">Mi Cuenta</h1>
+    @if ($user->role === 'admin')
+        <a href="{{ route('dashboard') }}" class="btn btn-dashboard my-3">Dashboard Administración</a>
+    @endif
+</div>
+
+
     <div class="row perfil mb-5">
         <div class="col-12 col-lg-6 perfil-div">
             <div class="row justify-content-center align-items-center">
@@ -68,7 +75,7 @@
                         <li class="list-group-item d-flex justify-content-center align-items-center">
                             Producto: {{ $product->title }}
                             <br>
-                            Precio: {{ $product->pivot->price_paid }} 
+                            Precio: {{ $product->pivot->price_paid }}
                             <br>
                             Fecha de contratación:
                             {{ \Carbon\Carbon::parse($product->pivot->created_at)->format('d/m/Y H:i:s') }}

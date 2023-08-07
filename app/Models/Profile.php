@@ -40,7 +40,7 @@ class Profile extends Model
         return [
             'full_name' => 'required|string',
             'address' => 'nullable|string',
-            'phone_number' => 'nullable|interger|max:20',
+            'phone_number' => 'nullable|integer',
             'birth_date' => 'nullable|date',
         ];
     }
@@ -49,7 +49,7 @@ class Profile extends Model
     {
         return [
             'full_name.required' => 'El campo nombre es obligatorio.',
-            'phone_number.max' => 'El campo teléfono no debe exceder los 20 caracteres.',
+            'phone_number.integer' => 'El campo teléfono debe contener números.',
             'birth_date.date' => 'El campo fecha de nacimiento debe ser una fecha válida.',
         ];
     }
