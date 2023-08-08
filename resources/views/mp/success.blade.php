@@ -17,7 +17,7 @@
                 Felicitaciones, ya puedes empezar hacer uso del mismo. Cualquier consulta, no dudes en contactarnos.
             </p>
             <div class="d-flex justify-content-center mt-5 mb-4">
-                <a href="{{ route('profiles.viewProfile') }}" class="btn btn-primary">Productos Contratados</a>
+                <a href="{{ route('profiles.viewProfile') }}" class="btn btn-dashboard">Productos Contratados</a>
             </div>
         </div>
     </div>
