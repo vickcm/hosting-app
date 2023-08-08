@@ -13,9 +13,8 @@ use Illuminate\Mail\Mailables\Address;
 
 class ProductMail extends Mailable
 {
-   use Queueable, SerializesModels;
+    use Queueable, SerializesModels;
 
-   
     public function __construct(public Product $product)
     {
     }
@@ -28,16 +27,12 @@ class ProductMail extends Mailable
             subject: 'Tu reserva fue realizada con éxito',
         );
     }
-
-  
     public function content(): Content
     {
         return new Content(
             view: 'emails.product-contract',
         );
     }
-
-   
     public function attachments(): array
     {
         return [];

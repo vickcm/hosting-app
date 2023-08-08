@@ -32,8 +32,6 @@ class MercadoPagoController extends Controller
         ]);
     }
     public function processSuccess($id, Request $request)
-
-    // faltaría enviarle el mail - hacer la otra vista - y agregar a la base de datos los datos de pago puede ser en la misma tabla o tal vez en otra
     {
         // Obtener el usuario autenticado
         $user = Auth::user();
@@ -42,10 +40,7 @@ class MercadoPagoController extends Controller
         $product = Product::findOrFail($id);
 
         // dd($request);
-
-
         if ($user && $product) {
-
             // datos de usuario y producto 
             $userId = $user->user_id;
             $userEmail = $user->email;
@@ -53,7 +48,6 @@ class MercadoPagoController extends Controller
             $pricePaid = $product->price;
 
             // datos del objeto request 
-
             $collection_status =  $request->input('status');
             $paymentId = $request->input('payment_id');
 

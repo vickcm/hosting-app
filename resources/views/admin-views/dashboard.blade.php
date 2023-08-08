@@ -69,19 +69,6 @@
             </div>
         </div>
         <div class="col-12 col-md-6 my-2 card-grafico">
-            @if ($autorConMasPosteosUltimoMes)
-                <div class="card">
-                    <div class="card-header">
-                        <p class="fw-semibold mb-0">Autor con más posteos en el último mes</p>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">Autor: {{ $autorConMasPosteosUltimoMes->name }}</p>
-                        <p class="card-text">Cantidad de posteos: {{ $autorConMasPosteosUltimoMes->posts_count }}</p>
-                    </div>
-                </div>
-            @endif
-        </div>
-        <div class="col-12 col-md-6 my-2 card-grafico">
             <div class="card">
                 <div class="card-header">
                     <p class="fw-semibold mb-0">Cliente con mayor suma de dinero gastado en el mes actual</p>
@@ -96,6 +83,19 @@
                     @endif
                 </div>
             </div>
+        </div>
+        <div class="col-12 col-md-6 my-2 card-grafico">
+            @if ($autorConMasPosteosUltimoMes)
+                <div class="card">
+                    <div class="card-header">
+                        <p class="fw-semibold mb-0">Autor con más posteos en el último mes</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Autor: {{ $autorConMasPosteosUltimoMes->name }}</p>
+                        <p class="card-text">Cantidad de posteos: {{ $autorConMasPosteosUltimoMes->posts_count }}</p>
+                    </div>
+                </div>
+            @endif
         </div>
     </div>
 </div>

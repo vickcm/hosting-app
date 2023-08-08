@@ -54,11 +54,9 @@ class MercadoPagoPayment
     public function addItem(Product $product): self
     {
         $item = new Item();
-
         $item->title = $product->title;
         $item->unit_price = $product->price;
         $item->quantity = 1;
-
         $this->items[] = $item;
 
         return $this;

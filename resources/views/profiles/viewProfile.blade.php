@@ -3,14 +3,12 @@
 @section('title', 'Mi Cuenta :: Nube web')
 
 @section('main')
-<div class="text-center mt-5">
-    <h1 class=" blog">Mi Cuenta</h1>
-    @if ($user->role === 'admin')
-        <a href="{{ route('dashboard') }}" class="btn btn-dashboard my-3">Dashboard Administración</a>
-    @endif
-</div>
-
-
+    <div class="text-center mt-5">
+        <h1 class=" blog">Mi Cuenta</h1>
+        @if ($user->role === 'admin')
+            <a href="{{ route('dashboard') }}" class="btn btn-dashboard my-3">Dashboard Administración</a>
+        @endif
+    </div>
     <div class="row perfil mb-5">
         <div class="col-12 col-lg-6 perfil-div">
             <div class="row justify-content-center align-items-center">
@@ -33,7 +31,6 @@
                             <p class="fw-semibold mb-1">Mail:</p>
                             <p class="fw-normal">{{ $user->email }}</p>
                         </div>
-
                         @if ($profile)
                             <div class="col-12 col-md-6">
                                 <p class="fw-semibold mb-1">Nombre Completo:</p>
@@ -58,12 +55,11 @@
                                 </a>
                             </div>
                         @else
-                            <div class="col-12 col-md-6">
+                            <div class="col-12 col-md-6 mb-4 mb-lg-0">
                                 <a href="{{ route('profiles.createProfile') }}" class="btn btn-dashboard">Crear Perfil</a>
                             </div>
                         @endif
                     </div>
-
                 </div>
             </div>
         </div>
@@ -72,7 +68,7 @@
             @if ($contractedProducts->count() > 0)
                 <ul class="list-group list-group-flush">
                     @foreach ($contractedProducts as $product)
-                        <li class="list-group-item d-flex justify-content-center align-items-center">
+                        <li class="list-group-item d-flex flex-column flex-lg-row justify-content-center align-items-center ">
                             Producto: {{ $product->title }}
                             <br>
                             Precio: {{ $product->pivot->price_paid }}
@@ -81,7 +77,7 @@
                             {{ \Carbon\Carbon::parse($product->pivot->created_at)->format('d/m/Y H:i:s') }}
                             <br>
                             <a href="{{ route('products.confirmCancelProduct', ['id' => $product->product_id]) }}"
-                                class="ms-3 btn p-cancelar">
+                                class="ms-3 btn p-cancelar mt-3">
                                 Cancelar Suscripción
                             </a>
                         </li>
@@ -90,7 +86,6 @@
             @else
                 <p class="text-center">No tienes productos contratados.</p>
             @endif
-
             <h2 class="mb-4 fs-4 text-center">Productos Cancelados</h2>
             @if ($cancelProducts->count() > 0)
                 <ul class="list-group list-group-flush">
@@ -102,7 +97,6 @@
                             <br>
                             Fecha de cancelación:
                             {{ \Carbon\Carbon::parse($product->pivot->updated_at)->format('d/m/Y H:i:s') }}
-
                         </li>
                     @endforeach
                 </ul>

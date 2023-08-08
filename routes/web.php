@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\Route;
 
@@ -19,7 +18,6 @@ Route::get('blog/entradas/{id}', [\App\Http\Controllers\BlogController::class, '
 Route::get('/productos/{id}/confirmacion', [\App\Http\Controllers\ProductController::class, 'confirmContractProduct'])
     ->name('products.confirmContractProduct')
     ->middleware(['auth']);
-
 Route::post('/productos/{id}/confirmacion', [\App\Http\Controllers\ProductController::class, 'processContractProduct'])
     ->name('products.processContractProduct')
     ->middleware(['auth']);
@@ -31,17 +29,13 @@ Route::post('/productos/{id}/cancelacion', [\App\Http\Controllers\ProductControl
     ->name('products.confirmCancelProduct')
     ->middleware(['auth']);
 
-
 //Mercado Pago
 Route::get('mp/contratacion-mp/{id}', [\App\Http\Controllers\MercadoPagoController::class, 'contratacionMercadoPago'])
     ->name('mp.contratacion-mp');
-
 Route::get('mp/success/{id}', [\App\Http\Controllers\MercadoPagoController::class, 'processSuccess'])
     ->name('mp.success');
-
 Route::get('mp/pending', [\App\Http\Controllers\MercadoPagoController::class, 'processPending'])
     ->name('mp.pending');
-
 Route::get('mp/failure', [\App\Http\Controllers\MercadoPagoController::class, 'processFailure'])
     ->name('mp.failure');
 
@@ -61,14 +55,12 @@ Route::post('/cerrar-sesion', [\App\Http\Controllers\AuthController::class, 'pro
 Route::get('/perfil', [\App\Http\Controllers\ProfileController::class, 'viewProfile'])
     ->name('profiles.viewProfile')
     ->middleware(['auth']);
-
 Route::get('/perfil/crear', [\App\Http\Controllers\ProfileController::class, 'createProfile'])
     ->name('profiles.createProfile')
     ->middleware(['auth']);
 Route::post('/perfil/crear', [\App\Http\Controllers\ProfileController::class, 'processCreateProfile'])
     ->name('profiles.createProfile')
     ->middleware(['auth']);
-
 Route::get('/perfil/{id}/editar', [\App\Http\Controllers\ProfileController::class, 'editProfile'])
     ->name('profiles.editProfile')
     ->middleware(['auth']);
@@ -76,29 +68,22 @@ Route::post('/perfil/{id}/editar', [\App\Http\Controllers\ProfileController::cla
     ->name('profiles.editProfile')
     ->middleware(['auth']);
 
-
-
 // *** ADMIN AUTH ** 
-
 // ADMIN - POSTEOS - ENTRADAS
 Route::get('/dashboard', [\App\Http\Controllers\AdminController::class, 'index'])
     ->name('dashboard')
     ->middleware(['auth', 'isAdmin']);
-
 Route::get('/dashboard/entradas', [\App\Http\Controllers\AdminController::class, 'indexPosts'])
     ->name('dashboardPosts')
     ->middleware(['auth', 'isAdmin']);
-
 Route::get('/dashboard/clientes', [\App\Http\Controllers\AdminController::class, 'indexUsers'])
     ->name('dashboardUsers')
     ->middleware(['auth', 'isAdmin']);
-
 Route::get('/dashboard/categorias', [\App\Http\Controllers\AdminController::class, 'indexCategories'])
     ->name('dashboardCategories')
     ->middleware(['auth', 'isAdmin']);
 
 // ADMIN - CATEGORIAS 
-
 Route::get('categorias/nueva', [\App\Http\Controllers\CategoryController::class, 'formNew'])
     ->name('categories.formNew')
     ->middleware(['auth', 'isAdmin']);
@@ -145,7 +130,3 @@ Route::post('entradas/{id}/eliminar', [\App\Http\Controllers\PostController::cla
 Route::get('usuarios/{id}', [\App\Http\Controllers\UsersProductController::class, 'view'])
     ->name('users.view')
     ->middleware(['auth', 'isAdmin']);
-
-/** MERCADO PAGO */
-/* Route::get('mp/test', [\App\Http\Controllers\MercadoPagoController::class, 'show'])
-    ->name('mp.test'); */

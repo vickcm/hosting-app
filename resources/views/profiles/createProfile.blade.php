@@ -14,7 +14,6 @@
         <div class="col-12 col-md-6">
             <form action="{{ route('profiles.createProfile') }}" method="post">
                 @csrf
-
                 <div class="mb-3">
                     <label for="full_name" class="form-label">Nombre Completo</label>
                     <input type="text" id="full_name" name="full_name" class="form-control"
@@ -56,10 +55,7 @@
                             {{ $message }}
                         </div>
                     @enderror
-
-
                 </div>
-
                 <div class="mb-3">
                     <label for="birth_date">Fecha de Nacimiento</label>
                     <input type="date" id="birth_date" name="birth_date" class="form-control"
@@ -73,18 +69,11 @@
                             {{ $message }}
                         </div>
                     @enderror
-
                 </div>
-
                 <div class="d-flex justify-content-end">
                     <button type="submit" class="btn btn-warning me-3">Crear</button>
                 </div>
-
             </form>
-
-            
         </div>
-        
     </div>
 @endsection
-

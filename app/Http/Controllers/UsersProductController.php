@@ -8,7 +8,6 @@ class UsersProductController extends Controller
 {
     //
     public function view($id)
-
     {
         $user = User::findOrFail($id);
 
@@ -16,5 +15,4 @@ class UsersProductController extends Controller
             'user' => $user,
         ]);
     }
-
 }
