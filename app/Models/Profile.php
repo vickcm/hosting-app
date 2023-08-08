@@ -1,17 +1,7 @@
 <?php
-
 namespace App\Models;
-
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
-/* $table->id('profile_id');
-$table->unsignedBigInteger('user_id')->unique();
-$table->string('full_name')->nullable(false);
-$table->string('address')->nullable();
-$table->string('phone_number', 20)->nullable();
-$table->date('birth_date')->nullable();
-$table->timestamps(); */
 
 class Profile extends Model
 {
@@ -34,7 +24,6 @@ class Profile extends Model
     {
         return $this->belongsTo(User::class, 'user_id', 'user_id');
     }
-
     public static function validationRules(): array
     {
         return [
@@ -44,7 +33,6 @@ class Profile extends Model
             'birth_date' => 'nullable|date',
         ];
     }
-
     public static function validationMessages(): array
     {
         return [

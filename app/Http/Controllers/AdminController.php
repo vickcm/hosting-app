@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Http\Controllers\Controller;
 use App\Models\Author;
 use App\Models\Post;
@@ -12,7 +10,6 @@ use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
-
     public function index()
     {
         $posts = Post::with('category', 'author')->get();
@@ -20,7 +17,6 @@ class AdminController extends Controller
         // Obtener la fecha de hace un mes desde hoy
         $fechaUnMesAtras = Carbon::now()->subMonth();
         $fechaInicioMes = Carbon::now()->startOfMonth();
-
 
         // Filtrar los posteos que fueron creados en el último mes
         $postsUltimoMes = $posts->filter(function ($post) use ($fechaUnMesAtras) {
@@ -46,10 +42,9 @@ class AdminController extends Controller
 
         // Calcular el monto total recaudado en el mes actual
         $montoTotalRecaudadoMesActual = $transaccionesMesActual->sum('price_paid');
+        
         // Contar la cantidad de productos vendidos en el mes 
         $cantidadProductosVendidosMesActual = $transaccionesMesActual->count();
-
-        // Obtener el cliente (user) con la mayor suma de productos adquiridos en el mes actual
 
         // Obtener el cliente (user) con la mayor suma de productos adquiridos en el mes actual (con status = true)
         $clienteMayorSumaDineroGastado = DB::table('users')
@@ -66,9 +61,6 @@ class AdminController extends Controller
             'montoTotalRecaudadoMesActual' => $montoTotalRecaudadoMesActual,
             'cantidadProductosVendidosMesActual' => $cantidadProductosVendidosMesActual,
             'clienteMayorSumaDineroGastado' => $clienteMayorSumaDineroGastado,
-
-
-
         ]);
     }
 

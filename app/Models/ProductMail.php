@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Models;
-
 use App\Models\Product;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -18,7 +16,6 @@ class ProductMail extends Mailable
     public function __construct(public Product $product)
     {
     }
-
     
     public function envelope(): Envelope
     {

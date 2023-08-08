@@ -39,7 +39,6 @@
         </div>
     </div>
 </div>
-
 <div class="col-12 mt-2">
     <!-- Mostrar los enlaces de paginación -->
     {!! $users->links() !!}

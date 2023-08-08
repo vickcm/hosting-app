@@ -1,6 +1,5 @@
 <?php
 namespace App\PaymentProviders;
-
 use App\Models\Product;
 use App\PaymentProviders\Exceptions\UndefinedAccessTokenException;
 use App\PaymentProviders\Exceptions\UndefinedPublicKeyException;
@@ -11,13 +10,9 @@ use MercadoPago\Preference;
 class MercadoPagoPayment
 {
     protected Preference $preference;
-
     protected array $items = [];
-
     protected array $backUrls = [];
-
     protected bool $autoReturn = false;
-
     protected string $publicKey;
 
     /**

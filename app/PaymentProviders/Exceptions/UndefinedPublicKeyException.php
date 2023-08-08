@@ -1,7 +1,5 @@
 <?php
-
 namespace App\PaymentProviders\Exceptions;
-
 
 class UndefinedPublicKeyException extends \Exception
 {

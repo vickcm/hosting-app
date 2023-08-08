@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Models\Profile;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -31,11 +29,8 @@ class ProfileController extends Controller
     }
 
     public function editProfile(int $id)
-
     {
-
         $profile = Profile::findOrFail($id);
-
         if ($profile) {
             return view('profiles.editProfile', [
                 'profile' => $profile
@@ -52,7 +47,6 @@ class ProfileController extends Controller
     {
         try {
             $profile = Profile::findOrFail($id);
-
             $validatedData = $request->validate(Profile::validationRules(), Profile::validationMessages());
 
             // Ahora puedes actualizar el perfil con los datos validados
@@ -73,14 +67,12 @@ class ProfileController extends Controller
     }
 
     public function createProfile()
-
     {
         return view('profiles.createProfile');
     }
 
     public function processCreateProfile(request $request)
     {
-
         try {
             $data = $request->except(['_token']);
             $request->validate(Profile::validationRules(), Profile::validationMessages());

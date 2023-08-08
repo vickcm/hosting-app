@@ -90,7 +90,6 @@
                         <span class="form-aclaracion">Debe contener al menos 6 caracteres</span>
                     </label>
                     <input type="password" name="password_confirmation" id="password_confirmation" class="form-control">
-                    
                 </div>
                 <button type="submit" class="btn float-end">Crear Cuenta</button>
             </form>

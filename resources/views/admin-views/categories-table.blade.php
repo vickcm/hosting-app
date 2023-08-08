@@ -4,7 +4,6 @@
 @extends('layouts.admin')
 @section('title', 'Categorías :: Nube web')
 @section('abm-post')
-
 <div class="mb-3 d-flex cards-abm">
     <div class="card me-3">
         <div class="card-body">
@@ -57,10 +56,8 @@
         </div>
     </div>
 </div>
-
 <div class="col-12 mt-2">
     <!-- Mostrar los enlaces de paginación -->
     {!! $categories->links() !!}
-    
 </div>
 @endsection

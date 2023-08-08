@@ -1,12 +1,9 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Mail\ProductContract;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
-
 
 class ProductController extends Controller
 {
@@ -22,20 +19,15 @@ class ProductController extends Controller
         return redirect()->route('home');
     }
 
-    // este ya no lo usamos!! 
-
     public function processContractProduct($id)
     {
         // Obtener el usuario autenticado
         $user = Auth::user();
 
-
         // Obtener el producto por ID
         $product = Product::findOrFail($id);
 
         // Verificar si el usuario y el producto existen
-
-
         if ($user && $product) {
             // Obtener los IDs del usuario y el producto
             $userId = $user->user_id;
@@ -45,8 +37,6 @@ class ProductController extends Controller
             $pricePaid = $product->price;
             // Realizar la asociación en la tabla pivot
             $user->products()->attach($productId, ['user_id' => $userId, 'product_id' => $productId, 'price_paid' => $pricePaid, 'created_at' => now()]);
-
-            
 
             // Redireccionar a la página de confirmación o a otra página de tu elección
             return redirect()->route('profiles.viewProfile')

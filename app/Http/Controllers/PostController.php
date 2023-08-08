@@ -103,7 +103,6 @@ class PostController extends Controller
         
             $post = Post::findOrFail($id);
             $this->deleteImage($post->image);
-
             $post->delete();
         
             return redirect()
@@ -112,7 +111,6 @@ class PostController extends Controller
                 ->with('type', 'success');
                 
         } catch (\Exception $e) {
-        
             return redirect()
                 ->route('dashboardPosts')
                 ->with('message', 'Error al borrar la entrada')

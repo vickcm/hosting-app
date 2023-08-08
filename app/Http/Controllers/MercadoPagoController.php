@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Models\Product;
 use App\Models\ProductMail;
 use Illuminate\Http\Request;
@@ -65,17 +63,11 @@ class MercadoPagoController extends Controller
 
     public function processPending(Request $request)
     {
-        // echo "Pending";
-        // dd($request);
-
         return view('mp.pending');
     }
     public function processFailure(Request $request)
     {
-        // echo "Failure";
-        // dd($request);
         $user = Auth::user();
-
         return view('mp.failure', [
             'user' => $user
         ]);

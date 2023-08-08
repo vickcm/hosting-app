@@ -32,9 +32,6 @@
             <div class="d-grid gap-2 mb-2">
                 <button type="submit" class="btn">Ingresar</button>
             </div>
-            <div>
-
-            </div>
             <a href="{{ route('auth.formRegister') }}" class="btn ps-0">¿Aún no tienes cuenta? <span>Registrate para Iniciar Sesión.</span></a>
         </form>
     </div>

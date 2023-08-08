@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Middleware;
-
 use Closure;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -18,6 +16,5 @@ class isAdminAPI
         }
 
         throw new AuthorizationException('"Acceso denegado: No tienes los permisos necesarios para acceder a esta sección."', 403);
-
     }
 }

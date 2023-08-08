@@ -1,15 +1,13 @@
 <?php
 namespace App\Models;
-
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as BaseUser;
 use Illuminate\Notifications\Notifiable;
 use App\Models\Profile;
 
-
 class User extends BaseUser
 {
-//    use HasFactory;
+    //use HasFactory;
     use Notifiable;
     protected $primaryKey = "user_id";
     protected $hidden = ["password", "remember_token"];
@@ -17,7 +15,6 @@ class User extends BaseUser
         'username',
         'email',
         'password',
-        
     ];
 
     public static function validationRules(): array
@@ -39,7 +36,6 @@ class User extends BaseUser
             'password.required' => 'El campo contraseña es obligatorio',
             'password.min' => 'El campo contraseña debe tener al menos 6 caracteres',
             'password.confirmed' => 'La confirmación de contraseña no coincide',
-
         ];
     }
 
@@ -49,12 +45,8 @@ class User extends BaseUser
         ->withPivot('price_paid', 'created_at'); // Para acceder a los datos adicionales en la tabla pivot;
     }
 
- 
-
     public function profile()
     {
         return $this->hasOne(Profile::class, 'user_id', 'user_id');
     }
-
-    
 }

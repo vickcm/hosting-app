@@ -2,7 +2,6 @@
 // Laravel crea en todas las vistas de Blade, automáticamente, una variable $errors de tipo ViewErrorBag.
 // Esta variable contiene los mensajes de error que hayan ocurrido, en caso de haberlos.
 /** @var \Illuminate\Support\ViewErrorBag $errors */
-
 ?>
 
 @extends('layouts.admin')
