@@ -16,7 +16,7 @@ class DatabaseConnectionTest extends TestCase
         $this->assertTrue(true);
     }
 
-    public function testDatabaseConnection()
+    public function test_database_connection()
     {
         try {
             DB::connection()->getPdo();

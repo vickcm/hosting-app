@@ -2,9 +2,9 @@
 
 namespace Tests\Unit;
 
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 
-class UserTest extends TestCase
+class AuthControllerTest extends TestCase
 {
     /**
      * A basic unit test example.
@@ -14,5 +14,4 @@ class UserTest extends TestCase
         $this->assertTrue(true);
     }
 
-    
 }

@@ -20,7 +20,7 @@ class AdminControllerTest extends TestCase
     protected $seed = true;
 
 
-    public function testIndexPosts()
+    public function test_index_posts()
     {
         // Crear dos registros de prueba en la base de datos manualmente
         $post1 = new Post();
@@ -51,7 +51,7 @@ class AdminControllerTest extends TestCase
 
     }
 
-    public function testIndex()
+    public function test_index()
     {
 
         $author = new Author([

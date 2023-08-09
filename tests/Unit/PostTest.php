@@ -9,6 +9,7 @@ use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\PostController;
 use App\Models\User;
+use Illuminate\Support\Facades\Validator;
 
 class PostTest extends TestCase
 {
@@ -80,5 +81,40 @@ class PostTest extends TestCase
             'category_id' => 1,
         ]);
         $post->save();
+    }
+
+    // crear un test para verificar el mensaje de error cuando no se pasa el content
+
+    public function test_content_is_required_error_messagge()
+    {
+        $postData = [
+            'title' => 'Test Title',
+            'category_id' => 1,
+            'author_id' => 1,
+            // No se proporciona el campo 'content'
+        ];
+
+        $validator = Validator::make($postData, Post::validationRules(), Post::validationMessages());
+
+        $this->assertTrue($validator->fails());
+        $this->assertTrue($validator->errors()->has('content'));
+        $this->assertEquals('El campo contenido es obligatorio', $validator->errors()->first('content'));
+    }
+
+    public function test_post_data_is_fillable()
+    {
+        $fillable = ['title', 'content', 'image', 'image_description', 'author_id', 'category_id'];
+
+        // Crear un arreglo con datos que solo incluyen las claves del $fillable
+        $data = [];
+        foreach ($fillable as $key) {
+            $data[$key] = 'test value';
+        }
+
+        // Crear un nuevo Post usando los datos
+        $post = Post::create($data);
+
+        // Verificar que los datos llenados coincidan con los del arreglo $fillable
+        $this->assertEquals($data, $post->only($fillable));
     }
 }
