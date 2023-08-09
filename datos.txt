@@ -27,4 +27,4 @@ Gallino, Santiago
 USUARIO:
 -admin: sojita2004@hotmail.com pasword: olvidate
 
-# Segundo Parcial - Portales y Comercio Electrónico
+# FINAL - Portales y Comercio Electrónico
