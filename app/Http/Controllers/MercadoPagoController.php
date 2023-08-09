@@ -29,6 +29,7 @@ class MercadoPagoController extends Controller
             'payment' => $payment,
         ]);
     }
+
     public function processSuccess($id, Request $request)
     {
         // Obtener el usuario autenticado

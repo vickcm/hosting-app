@@ -55,7 +55,6 @@ class AuthController extends Controller
     public function processRegister(Request $request)
     {
         $validatedData = $request->validate(User::validationRules(), User::validationMessages());
-    
         $validatedData['password'] = Hash::make($validatedData['password']);
         $user = User::create($validatedData);
     

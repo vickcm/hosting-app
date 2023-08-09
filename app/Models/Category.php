@@ -31,5 +31,4 @@ class Category extends Model
             'description.required' => 'El campo descripción es obligatorio',
         ];
     }   
-    // use HasFactory;
 }

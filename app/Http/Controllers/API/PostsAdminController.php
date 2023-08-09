@@ -48,6 +48,7 @@ class PostsAdminController extends Controller
     public function updatePartialPost(Request $request, $id)
     {
         $post = Post::findOrFail($id);
+        
         // Aplicar las reglas de validación para la solicitud PATCH
         $validatedData = $request->validate(Post::updateValidationRules());
         $post->update($validatedData);
@@ -59,7 +60,6 @@ class PostsAdminController extends Controller
 
     public function deletePost($id)
     {
-
         $post = Post::findorFail($id);
         $post->delete();
 

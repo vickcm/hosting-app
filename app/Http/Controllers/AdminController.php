@@ -80,7 +80,6 @@ class AdminController extends Controller
             'categories' => $categories,
         ]);
     }
-
     public function indexUsers()
     {
         $users = User::with('products')

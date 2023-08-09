@@ -14,7 +14,6 @@ class isAdminAPI
         if (Auth::check() && Auth::user()->role === 'admin') {
             return $next($request);
         }
-
         throw new AuthorizationException('"Acceso denegado: No tienes los permisos necesarios para acceder a esta sección."', 403);
     }
 }

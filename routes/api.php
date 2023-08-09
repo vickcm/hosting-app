@@ -1,14 +1,6 @@
 <?php
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
-
-
-/* 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-}); */
 
 // listado de productos sin auth 
 Route::get('products',  ['App\Http\Controllers\API\ProductsAdminController', 'index']); // listado de productos
@@ -19,8 +11,6 @@ Route::get('products',  ['App\Http\Controllers\API\ProductsAdminController', 'in
 Route::get('posts',  ['App\Http\Controllers\API\PostsAdminController', 'index'])
     ->middleware(['auth', 'isAdminAPI']);
 
-
-
 // Creación de posteos/entradas con ADMIN
 Route::post('posts',  ['App\Http\Controllers\API\PostsAdminController', 'createPost'])
     ->middleware(['auth', 'isAdminAPI']);
@@ -28,8 +18,6 @@ Route::post('posts',  ['App\Http\Controllers\API\PostsAdminController', 'createP
 // listado de posteos o entrada con ID sin auth
 Route::get('posts/{id}',  ['App\Http\Controllers\API\PostsAdminController', 'view'])
     ->middleware(['auth', 'isAdminAPI']);
-
-// listado de posteos/entradas
 
 // Actualización completa de un posteo/entrada con ADMIN
 Route::put('posts/{id}', ['App\Http\Controllers\API\PostsAdminController', 'updatePost'])

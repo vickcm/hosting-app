@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Post extends Model
 {
-
     // Listamos los datos que deben aceptarse en los arrays para create() y update().
     protected $fillable = ['title', 'content', 'image', 'image_description', 'author_id', 'category_id'];
     // use HasFactory;

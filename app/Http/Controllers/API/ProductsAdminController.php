@@ -8,7 +8,6 @@ class ProductsAdminController extends Controller
 {
     public function index() 
     {
-
         return response()->json([
             'status' => 0,
             'data'=> Product::all()

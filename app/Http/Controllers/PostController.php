@@ -32,7 +32,7 @@ class PostController extends Controller
         try {
             $data = $request->except(['_token']);
             $request->validate(Post::validationRules(), Post::validationMessages());
-
+            
             if ($request->hasFile('image')) {
                 $data['image'] = $this->uploadImage($request);
             }
@@ -75,12 +75,10 @@ class PostController extends Controller
             }
             $post->update($data);
             $this->deleteImage($oldImage);
-    
             return redirect()
                 ->route('dashboardPosts')
                 ->with('message', 'Entrada editada correctamente')
                 ->with('type', 'warning');
-
         } catch (\Exception $e) {
             return redirect()
                 ->route('dashboardPosts')
@@ -100,7 +98,6 @@ class PostController extends Controller
     public function processDelete(int $id)
     {
         try {
-        
             $post = Post::findOrFail($id);
             $this->deleteImage($post->image);
             $post->delete();
