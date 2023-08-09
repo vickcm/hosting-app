@@ -20,13 +20,14 @@ class Post extends Model
     |--------------------------------------------------------------------------
     */
 
+
     public static function validationRules(): array
     {
         return [
             'title' => 'required',
             'content' => 'required|min:30',
-            'category_id' => 'required| not_in:0',
-            'author_id' => 'required| not_in:0',
+            'category_id' => 'required|not_in:0',
+            'author_id' => 'required|not_in:0',
         ];
     }
 
