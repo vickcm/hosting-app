@@ -20,8 +20,8 @@ class PostTest extends TestCase
         $post = new Post([
             'title' => 'Test Title',
             'content' => 'Test Content',
-            'category_id' => 1, // Asegúrate de proporcionar un valor válido aquí
-            'author_id' => 1, // Asegúrate de proporcionar un valor válido aquí
+            'category_id' => 1, 
+            'author_id' => 1, 
         ]);
         $post->save();
 
@@ -84,7 +84,6 @@ class PostTest extends TestCase
     }
 
     // crear un test para verificar el mensaje de error cuando no se pasa el content
-
     public function test_content_is_required_error_messagge()
     {
         $postData = [
@@ -93,9 +92,7 @@ class PostTest extends TestCase
             'author_id' => 1,
             // No se proporciona el campo 'content'
         ];
-
         $validator = Validator::make($postData, Post::validationRules(), Post::validationMessages());
-
         $this->assertTrue($validator->fails());
         $this->assertTrue($validator->errors()->has('content'));
         $this->assertEquals('El campo contenido es obligatorio', $validator->errors()->first('content'));

@@ -1,7 +1,5 @@
 <?php
-
 namespace Tests\Unit;
-
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Models\Product;
@@ -17,7 +15,6 @@ class ProductPriceTest extends TestCase
     }
 
     use RefreshDatabase;
-
     public function test_price_attribute_conversion()
     {
         // Crea un producto manualmente para la prueba
@@ -31,7 +28,6 @@ class ProductPriceTest extends TestCase
         // dividir el precio por 100 para convertirlo a flotante 
         $product->price = $product->price / 100;
 
-          
         // Verifica el valor convertido a flotante
         $this->assertSame(10.00, $product->price);
 
@@ -39,14 +35,5 @@ class ProductPriceTest extends TestCase
         $product->price = $product->price / 100;
 
         $this->assertSame(15.50, $product->price);
-
-
-       /*  // multiplicar el precio por 100 para convertirlo a entero
-        $product->price = $product->price * 100;
-
-        // Verifica el valor convertido a entero
-        $this->assertSame(1000, $product->price); */
-
-
     }
 }

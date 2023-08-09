@@ -1,7 +1,5 @@
 <?php
-
 namespace Tests\Unit;
-
 use Tests\TestCase;
 use App\Models\Post;
 use App\Models\Category;
@@ -26,7 +24,6 @@ class PostCategoryRelationTest extends TestCase
         $category = Category::create([
             'category_id' => 1,
             'name' => 'Category Test',
-            // Otros campos necesarios
         ]);
 
         // Crea un post y asócialo con la categoría
@@ -35,9 +32,7 @@ class PostCategoryRelationTest extends TestCase
             'content' => 'Content of the post',
             'category_id' => $category->category_id,
             'author_id' => 1,
-            // Otros campos necesarios
         ]);
-
 
         // Verifica la relación entre el post y la categoría
         $this->assertInstanceOf(Category::class, $post->category);
@@ -45,8 +40,8 @@ class PostCategoryRelationTest extends TestCase
 
         // probar obtener el nombre de la categoría desde el post
         $this->assertEquals($category->name, $post->category->name);
+
         // probar obtener el nombre de la categoría desde el metodo category()
         $this->assertEquals($category->name, $post->category()->first()->name);
-        
     }
 }

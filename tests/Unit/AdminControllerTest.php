@@ -1,7 +1,5 @@
 <?php
-
 namespace Tests\Unit;
-
 use Tests\TestCase;
 use App\Models\User;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
@@ -15,11 +13,9 @@ use App\Models\Author;
 
 class AdminControllerTest extends TestCase
 {
-
     use RefreshDatabase;
     protected $seed = true;
-
-
+    
     public function test_index_posts()
     {
         // Crear dos registros de prueba en la base de datos manualmente
@@ -29,7 +25,6 @@ class AdminControllerTest extends TestCase
         $post1->category_id = 1;
         $post1->author_id = 1;
         $post1->save();
-
         $post2 = new Post();
         $post2->title = 'Post 2';
         $post2->content = 'Contenido del post 2';
@@ -46,19 +41,15 @@ class AdminControllerTest extends TestCase
         // Realiza aserciones en la respuesta
         $this->assertInstanceOf(View::class, $response);
         $this->assertEquals('admin-views.posts-table', $response->name());
-       
-
-
     }
 
     public function test_index()
     {
-
         $author = new Author([
             'name' => 'Pedro Díaz',
             'email' => 'pdiaz@nubeweb.com',
-            // Otras propiedades del autor si es necesario
         ]);
+
         // Crear objetos de prueba manualmente
         $post1 = new Post([
             'title' => 'Post 1',
@@ -67,6 +58,7 @@ class AdminControllerTest extends TestCase
             'author_id' => 1,
             'created_at' => Carbon::now()->subDays(15), // Post del último mes
         ]);
+
         $post2 = new Post([
             'title' => 'Post 2',
             'content' => 'Contenido del post 2',
@@ -100,10 +92,5 @@ class AdminControllerTest extends TestCase
         $this->assertInstanceOf('Illuminate\View\View', $response);
         $this->assertCount(2, $response->getData()['posts']);
         $this->assertEquals(1, $response->getData()['cantidadPosteosUltimoMes']);
-        // ... y así sucesivamente con el resto de datos
-
-        // No es necesario hacer verificaciones adicionales de base de datos
     }
-
-    
 }

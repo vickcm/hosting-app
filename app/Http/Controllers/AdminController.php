@@ -72,6 +72,7 @@ class AdminController extends Controller
             'posts' => $posts,
         ]);
     }
+
     public function indexCategories()
     {
         $categories = Category::paginate(10);
@@ -80,6 +81,7 @@ class AdminController extends Controller
             'categories' => $categories,
         ]);
     }
+    
     public function indexUsers()
     {
         $users = User::with('products')

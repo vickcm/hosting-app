@@ -1,10 +1,7 @@
 <?php
-
 namespace Tests\Unit;
-
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-
 
 class SeederOrderTest extends TestCase
 {
@@ -17,7 +14,7 @@ class SeederOrderTest extends TestCase
     }
 
     use RefreshDatabase;
-
+    
     public function test_seeders_are_in_correct_order()
     {
         // Ejecutar la migración sin errores

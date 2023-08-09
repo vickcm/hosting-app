@@ -1,7 +1,5 @@
 <?php
-
 namespace Tests\Unit;
-
 use Tests\TestCase;
 use App\Models\Post;
 use App\Models\Author;
@@ -26,7 +24,6 @@ class PostAuthorRelationTest extends TestCase
             'author_id' => 1,
             'name' => 'Author Test',
             'email' => 'author@author.com',
-            // Otros campos necesarios
         ]);
 
         // Crea un post y asócialo con el autor
@@ -35,7 +32,6 @@ class PostAuthorRelationTest extends TestCase
             'content' => 'Content of the post',
             'author_id' => $author->author_id,
             'category_id' => 1,
-            // Otros campos necesarios
         ]);
 
         // Verifica la relación entre el post y el autor
@@ -44,10 +40,8 @@ class PostAuthorRelationTest extends TestCase
 
         // probar obtener el nombre de autor desde el post 
         $this->assertEquals($author->name, $post->author->name);
+
         // probar obtener el nombre del autor desde el metodo author()
         $this->assertEquals($author->name, $post->author()->first()->name);
-        
-
     }
-
 }

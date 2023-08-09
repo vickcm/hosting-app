@@ -1,12 +1,9 @@
 <?php
-
 namespace Tests\Unit;
-
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Schema;
-
 
 class CreateTablesMigrationTest extends TestCase
 {
@@ -19,7 +16,7 @@ class CreateTablesMigrationTest extends TestCase
     }
 
     use RefreshDatabase;
-
+    
     public function test_tables_are_created()
     {
         // Ejecutar todas las migraciones
@@ -33,11 +30,8 @@ class CreateTablesMigrationTest extends TestCase
         $this->assertTrue(Schema::hasTable('users'));
         $this->assertTrue(Schema::hasTable('users_has_products'));
         $this->assertTrue(Schema::hasTable('profiles'));
+
         // Finalmente, verifica que todas las aserciones fueron exitosas
         $this->assertTrue(true, 'Todas las tablas se crearon correctamente');
     }
-
-    // 
-
-    
 }

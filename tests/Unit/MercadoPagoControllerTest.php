@@ -1,7 +1,5 @@
 <?php
-
 namespace Tests\Unit;
-
 use App\Http\Controllers\MercadoPagoController;
 use Tests\TestCase;
 use App\Models\Product;
@@ -11,11 +9,8 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\ProductMail;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-
-
 class MercadoPagoControllerTest extends TestCase
 {
-
     use RefreshDatabase;
 
     /**
@@ -33,8 +28,6 @@ class MercadoPagoControllerTest extends TestCase
             'username' => 'Test User',
             'email' => 'test@example.com',
             'password' => bcrypt('password'),
-
-            // Agrega otros campos que necesites
         ]);
         Auth::login($user);
 
@@ -44,9 +37,7 @@ class MercadoPagoControllerTest extends TestCase
             'subtitle' => 'Product Test Subtitle',
             'description' => 'Product Test Description',
             'price' => 100,
-            // Agrega otros campos que necesites
         ]);
-
 
         // Simular una solicitud HTTP con los datos necesarios
         $request = new Request([
@@ -59,13 +50,7 @@ class MercadoPagoControllerTest extends TestCase
 
         // Ejecutar el método que queremos probar
         $response = $controller->processSuccess($product->product_id, $request);
-
-        // Verificar que el correo electrónico se haya enviado
-       /*  Mail::assertSent(ProductMail::class, function ($mail) use ($user, $product) {
-            return $mail->hasTo($user->email) &&
-                   $mail->product->product_id === $product->product_id;
-        }); */
-
+        
         // Verificar que la vista 'mp.success' se haya devuelto con los datos correctos
         $this->assertInstanceOf('Illuminate\View\View', $response);
         $this->assertEquals($user->user_id, $response->getData()['user']->user_id);
