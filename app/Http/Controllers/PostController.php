@@ -44,9 +44,12 @@ class PostController extends Controller
                 ->with('type', 'warning');
         } catch (\Exception $e) {
             return redirect()
-                ->route('dashboardPosts')
+                ->route('posts.formNew' )
+                ->withInput()
                 ->with('message', 'Error al crear la entrada')
                 ->with('type', 'danger');
+               
+
         }
     }
     public function formEdit(int $id)
